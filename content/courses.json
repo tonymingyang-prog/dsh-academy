@@ -1,0 +1,724 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "slug": "install-first-run",
+      "order": 1,
+      "title": "安装与首次启动",
+      "subtitle": "15 分钟跑通 Web UI",
+      "level": "入门",
+      "duration": 15,
+      "tags": ["安装", "Web UI"],
+      "summary": "从零启动 DSH Web UI，选中工作区并完成第一次带工具调用的任务。学完你能判断启动失败是 Node 版本、端口占用还是模型未配置。",
+      "objectives": [
+        "用 npx 启动 Web UI，并说清 3080 端口、--no-open 与 --port 的作用",
+        "选中工作区并完成一次会读写文件、执行命令的任务",
+        "在 设置 → 模型 中确认模型与凭据状态，知道启动失败先去哪查"
+      ],
+      "steps": [
+        {
+          "title": "确认 Node.js 与 npm",
+          "body": "先确认 Node 与 npm 可用。当前 0.2.2-rc.1 的 dsh 包声明 Node >= 24.9.0，版本过低会在安装或启动时直接失败。",
+          "code": {
+            "lang": "sh",
+            "content": "node -v\nnpm -v"
+          },
+          "tip": "公司网络需要代理时，先导出 HTTPS_PROXY 与 HTTP_PROXY 再执行 npx；DSH 在启动时读取这两个变量。"
+        },
+        {
+          "title": "启动 Web UI",
+          "body": "在项目目录执行启动命令。它默认监听 http://127.0.0.1:3080，并在本机启动时用默认浏览器打开页面。通过 SSH 启动时只打印宿主机 URL，本地转发由 SSH 客户端或编辑器负责。",
+          "code": {
+            "lang": "sh",
+            "content": "npx @deepseek-ai/dsh web"
+          }
+        },
+        {
+          "title": "换端口或只启动服务器",
+          "body": "3080 被占用时用 --port 换一个端口；--no-open 只启动服务器、不打开浏览器。--host 只接受本机某个具体地址，不能填 0.0.0.0。",
+          "code": {
+            "lang": "sh",
+            "content": "npx @deepseek-ai/dsh web --no-open --port 3081"
+          },
+          "tip": "启动日志里打印的 URL 才是实际地址；换了端口后不要继续打开旧的 3080 页面。"
+        },
+        {
+          "title": "选择工作区",
+          "body": "dsh 进程把启动目录作为默认文件系统位置，但全新的 Web UI 不会自动选中工作区，未选中前会话输入框不可用。点击 选择工作区，添加并选中你的项目目录。",
+          "tip": "工作区同时是 workspace-write 沙箱的写入边界，选错目录会让后续写文件全部越界。"
+        },
+        {
+          "title": "跑第一个任务",
+          "body": "新建会话并发送：Summarize this repository and identify its main packages. 模型会读取文件、运行命令并维护计划；按当前权限策略需要审批的操作，Web UI 会先问你。",
+          "code": {
+            "lang": "text",
+            "content": "Summarize this repository and identify its main packages."
+          }
+        },
+        {
+          "title": "确认模型已配置",
+          "body": "如果会话提示缺少凭据或模型选择器为空，打开 设置 → 模型 填入 DeepSeek API 密钥并保存。密钥是只写的，保存后页面只收到脱敏描述符。",
+          "tip": "模型变更在下一次请求生效，不需要重启服务器。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "启动报端口占用，进程直接退出",
+          "fix": "用 --port 换一个空闲端口；或先找出占用 3080 的进程并确认是否旧的 dsh 实例。Windows 可用 Get-NetTCPConnection -LocalPort 3080 -State Listen 查 PID。"
+        },
+        {
+          "problem": "页面能打开，但输入框不可用",
+          "fix": "通常是没选工作区，或没有可用模型。先选中项目工作区，再到 设置 → 模型 确认凭据已配置。"
+        },
+        {
+          "problem": "npx 安装很慢或装到旧版本",
+          "fix": "确认 node -v 满足要求；代理环境先导出 HTTPS_PROXY/HTTP_PROXY；需要固定版本时显式写 @deepseek-ai/dsh@0.2.2-rc.1。"
+        },
+        {
+          "problem": "通过 SSH 启动后，本机浏览器打不开打印的地址",
+          "fix": "DSH 打印的是宿主机 URL，需要自行做端口转发；这是预期行为，不是启动失败。"
+        }
+      ],
+      "checklist": [
+        "启动后能看到 http://127.0.0.1:3080 或你指定的端口",
+        "已选中一个项目工作区，输入框可以输入",
+        "设置 → 模型 中有可用模型，没有 MISSING_CREDENTIAL",
+        "一次任务里能看到至少一次工具调用及其结果",
+        "会用 --port 与 --no-open 处理端口冲突和浏览器行为"
+      ],
+      "links": [
+        {"label": "官方文档：使用 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html"},
+        {"label": "官方文档：配置模型", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.html"},
+        {"label": "官方文档：网络代理", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.html"}
+      ]
+    },
+    {
+      "slug": "configure-models",
+      "order": 2,
+      "title": "模型与凭据配置",
+      "subtitle": "DeepSeek、第三方与自建网关",
+      "level": "入门",
+      "duration": 20,
+      "tags": ["模型", "凭据", "网关"],
+      "summary": "把 DeepSeek 密钥、第三方提供商和 OpenAI 兼容网关接进 DSH，并知道请求被网关拒绝时该改哪个字段。学完你能独立排查 MISSING_CREDENTIAL 与 401。",
+      "objectives": [
+        "在 设置 → 模型 中保存 DeepSeek 密钥并选择默认模型",
+        "用自定义模型 API 接入中转站或公司网关，正确选择协议",
+        "用 compat 开关修复网关拒绝请求的问题"
+      ],
+      "steps": [
+        {
+          "title": "保存 DeepSeek 密钥",
+          "body": "打开 设置 → 模型，在 DeepSeek 卡片输入 API 密钥并保存。密钥只写，保存在 $DSH_HOME/.credentials.yaml，settings 只保留对它的引用。",
+          "tip": "Windows 默认位置是 C:\\Users\\<you>\\.dsh\\.credentials.yaml；不要把它提交进仓库。"
+        },
+        {
+          "title": "添加第三方提供商",
+          "body": "选择 添加模型提供商，在 第三方模型提供商 中选取 dsh 自带的条目，列表显示的是提供商 id，例如 anthropic、openai、Kimi 的 moonshotai、GLM 的 zai。输入密钥保存即可。"
+        },
+        {
+          "title": "接入自定义模型 API",
+          "body": "中转站、公司网关或自建服务器切到 自定义模型 API，填写小写 Provider ID、基础 URL、API 协议、凭据和至少一个模型。一个提供商只使用一种协议；网关同时支持两种协议时建两个提供商。",
+          "tip": "Provider ID 是永久的，请求、会话、默认模型和凭据引用都用它。要改名只能新建提供商再删旧的。"
+        },
+        {
+          "title": "探测或手动添加模型",
+          "body": "在 模型目录 点 获取可用模型，成功就勾选后 添加所选；失败或列表为空时手动填模型 ID，效果一样。内置提供商始终由已安装目录作答，想探测网关实际模型请用自定义提供商。",
+          "code": {
+            "lang": "text",
+            "content": "模型目录 → 获取可用模型 → 勾选 → 添加所选"
+          }
+        },
+        {
+          "title": "选择模型与推理等级",
+          "body": "在模型选择器里选定模型，它同时成为新会话的默认值；已发送过请求的会话保留自己日志里的模型。声明了推理等级的模型还会出现 推理等级 菜单。",
+          "tip": "如果默认值指向已删除的提供商，输入框会要求先重新选择模型。"
+        },
+        {
+          "title": "修复网关兼容性",
+          "body": "密钥和地址都对、网关却拒绝每个请求时，多半是请求形状不同：推理模型的系统提示词以 developer 角色发出，输出上限写作 max_completion_tokens。在 $DSH_HOME/profiles/web/cordis.patch.yml 的路由上改 compat。",
+          "code": {
+            "lang": "yaml",
+            "content": "- id: llm-pi-ai\n  config:\n    providers:\n      my-gateway:\n        apiKeyEnv: GATEWAY_API_KEY\n        api: openai-completions\n        baseURL: https://gateway.example/v1\n        compat:\n          supportsDeveloperRole: false\n          maxTokensField: max_tokens\n        models:\n          - id: my-model"
+          },
+          "tip": "适配器在下一次请求时重新读取这份文件，不需要重启。patch 会替换整条 config，改已有条目时要保留其他字段。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "会话报 MISSING_CREDENTIAL",
+          "fix": "到 设置 → 模型 保存对应提供商的密钥，或提供被引用的环境变量。保存后下一次请求即生效。"
+        },
+        {
+          "problem": "获取可用模型返回 401",
+          "fix": "检查密钥本身；模型发现调用的是 OpenAI 兼容的 GET /models，不提供该端点的服务直接手动输入模型 ID。"
+        },
+        {
+          "problem": "密钥与地址都正确，网关仍拒绝每个请求",
+          "fix": "先在路由上设 compat.supportsDeveloperRole: false 与 compat.maxTokensField: max_tokens，再逐个模型收窄。"
+        },
+        {
+          "problem": "自定义提供商保存后模型仍然不可用",
+          "fix": "确认协议与网关实际使用的协议一致，基础 URL 带对路径前缀，并且模型列表非空。"
+        }
+      ],
+      "checklist": [
+        "设置 → 模型 中至少一个提供商显示已配置",
+        "能成功发送一次模型请求，没有 401 或 MISSING_CREDENTIAL",
+        "自定义提供商填了 Provider ID、地址、协议和至少一个模型",
+        "知道 compat 开关写在哪份 cordis.patch.yml 里",
+        "密钥只存在于凭据文件或环境变量，没有写进仓库"
+      ],
+      "links": [
+        {"label": "官方文档：配置模型", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.html"},
+        {"label": "官方文档：用户凭据", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.html"},
+        {"label": "官方文档：插件配置目录", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.html"}
+      ]
+    },
+    {
+      "slug": "sessions-context",
+      "order": 3,
+      "title": "会话、上下文与目标",
+      "subtitle": "压缩历史，用目标驱动长任务",
+      "level": "进阶",
+      "duration": 25,
+      "tags": ["会话", "上下文", "目标"],
+      "summary": "理解 DSH 的会话日志、上下文压缩和同会话目标，让长任务跑得久而不跑偏。学完你能在上下文快满时正确压缩，并用 /goal 让 agent 自动续跑。",
+      "objectives": [
+        "说清会话日志与模型历史的关系，知道压缩不会删除日志",
+        "在合适时机用 /compact 或自动压缩控制上下文",
+        "用 /goal 创建、暂停、恢复目标，并处理恢复会话后的重新武装"
+      ],
+      "steps": [
+        {
+          "title": "把会话当成事件日志",
+          "body": "Session 是一份只追加的类型化事件日志，是交互历史的唯一真源；模型看到的消息历史从日志派生，不单独存储。关闭页面不会丢历史，重新打开即可继续。",
+          "tip": "日志里既有模型可见消息，也有审批、压缩等仅记录日志的事件，所以日志比模型看到的更长。"
+        },
+        {
+          "title": "用工作区固定文件边界",
+          "body": "会话的 cwd 是不可变的，它同时决定文件边界、项目技能的发现范围和 workspace-write 的写入根。换项目就新建会话并重新选工作区，不要在一个会话里跨项目改文件。",
+          "code": {
+            "lang": "text",
+            "content": "选择工作区 → 新建会话 → 再发任务"
+          }
+        },
+        {
+          "title": "上下文满了就压缩",
+          "body": "接近上下文窗口时，自动压缩会在压力或确认溢出时运行；也可以输入 /compact 主动压缩。它把较早的一段历史替换成一条摘要，最近历史保留，命令本身不消耗模型轮次。",
+          "code": {
+            "lang": "text",
+            "content": "/compact"
+          },
+          "tip": "/compact 不接受参数，且只在会话空闲时可用；正在跑轮次或已有压缩在运行时它会明确拒绝。"
+        },
+        {
+          "title": "压缩后核对约束",
+          "body": "压缩只替换模型可见的旧历史，日志仍保留原文。摘要可能丢掉细节，重要约束要在压缩后用一句话重新确认，或写进 AGENTS.md 这类项目文件。",
+          "tip": "一个超大的工具输出可能压不动；重跑命令时限制输出，或把结果写进文件只读关键片段。"
+        },
+        {
+          "title": "用 /goal 设定完成目标",
+          "body": "长任务用 /goal 创建目标：它会被持久记录，并在后续轮次自动续跑，直到完成、阻塞或用完轮次上限。不带参数执行 /goal 可查看目标、阶段、轮次和可用命令。",
+          "code": {
+            "lang": "text",
+            "content": "/goal 为 packages/cli 的启动路径补集成测试，并让 pnpm test 全绿\n/goal"
+          }
+        },
+        {
+          "title": "恢复会话后重新武装目标",
+          "body": "目标在会话恢复或 fork 后会解除武装，自动续跑停止。确认目标仍然有效后执行 /goal resume 重新启用；目标过期就 /goal clear，换方向就 /goal edit。",
+          "code": {
+            "lang": "text",
+            "content": "/goal resume\n/goal pause"
+          }
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "以为 /compact 删除了历史，不敢用",
+          "fix": "压缩只做 surface 替换，原始事件仍在日志里；它影响的是后续请求的上下文，不是持久记录的完整性。"
+        },
+        {
+          "problem": "恢复会话后目标不再自动推进",
+          "fix": "这是设计行为：恢复或 fork 会解除目标的续跑授权，确认目标仍有效后执行 /goal resume。"
+        },
+        {
+          "problem": "长会话里模型引用了过期的文件内容",
+          "fix": "让 agent 重新读取文件，或新开会话；压缩摘要不保证保留每个文件的最新内容。"
+        },
+        {
+          "problem": "在错误的目录里改文件",
+          "fix": "检查会话工作区，必要时新建会话并选中正确目录；工作区在会话创建后不可变。"
+        }
+      ],
+      "checklist": [
+        "能解释会话日志与模型历史是派生关系",
+        "成功执行过一次 /compact 并看到压缩条数与节省 token",
+        "知道 /compact 只在空闲时可用",
+        "用 /goal 创建过一个可验收的目标",
+        "恢复会话后会用 /goal resume 重新启用目标"
+      ],
+      "links": [
+        {"label": "官方文档：会话", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.html"},
+        {"label": "官方文档：上下文压缩", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.html"},
+        {"label": "官方文档：目标", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/goal.html"}
+      ]
+    },
+    {
+      "slug": "tools-permissions",
+      "order": 4,
+      "title": "工具、审批与沙箱",
+      "subtitle": "让 agent 能干活，但不越界",
+      "level": "进阶",
+      "duration": 20,
+      "tags": ["权限", "审批", "沙箱"],
+      "summary": "搞清沙箱模式与审批策略这两个独立旋钮，给 agent 刚好够用的权限。学完你能处理写入被拒、审批不弹窗，并为 CI 收紧权限。",
+      "objectives": [
+        "区分 sandbox mode 与 approval policy，并会切换权限预设",
+        "在工作区内完成写入，在工作区外正确触发一次性提权",
+        "为无人值守场景选择 fail-closed 的权限组合"
+      ],
+      "steps": [
+        {
+          "title": "认识两个独立旋钮",
+          "body": "权限由沙箱模式与审批策略组合而成，客户端把它们包装成一个 Permissions 选择器。默认预设 workspace-write 是 workspace-write + ask；danger-full-access 是 danger-full-access + never；custom 只是派生显示值，不能主动选。",
+          "tip": "沙箱只管控文件效果，网络与进程可见性不在这个词汇范围内。"
+        },
+        {
+          "title": "用 workspace-write 起步",
+          "body": "workspace-write 允许在会话工作区根目录及后端承诺的临时区域写入，其余路径拒绝写。read-only 只允许 /dev/null 这类必要接收器，danger-full-access 直接绕过隔离。",
+          "code": {
+            "lang": "text",
+            "content": "Permissions → workspace-write"
+          }
+        },
+        {
+          "title": "处理审批请求",
+          "body": "策略为 ask 时，需要审批的操作会先询问你；只有 allowed-once 才放行，而且只授权当前这一个操作。rejected、cancelled、unavailable 一律按拒绝处理，无人应答不会默认通过。",
+          "tip": "审批事件只写入日志，不进入模型 transcript；模型看到的是工具结果。"
+        },
+        {
+          "title": "越界时申请一次性提权",
+          "body": "确实需要写工作区外时，让 agent 在工具调用上带 sandbox_permissions 与 justification 发起一次性、严格更宽松的重试；这次重试仍要经过审批。不要为了省事把整个会话切成 danger-full-access。",
+          "code": {
+            "lang": "text",
+            "content": "工具调用参数：sandbox_permissions = workspace-write | danger-full-access\njustification = 为什么这次操作需要更宽权限"
+          }
+        },
+        {
+          "title": "为无人值守收紧",
+          "body": "CI 或无人值守运行用 never 审批策略，任何需要审批的操作都会确定性地被拒绝；再配合 read-only 沙箱，任务只能读和计算。默认预设表只有 workspace-write 与 danger-full-access，需要 read-only + never 时在 permission-presets 配置里新增预设，而不是手改两个旋钮。",
+          "code": {
+            "lang": "yaml",
+            "content": "presets:\n  read-only-never:\n    sandbox: read-only\n    approval: never\n    name: 只读无人值守"
+          }
+        },
+        {
+          "title": "验收边界",
+          "body": "在工作区内写一个文件应当成功，往工作区外写应当被拒，审批记录里能看到 asked/decided 成对事件。三者都符合，权限配置才算可用。",
+          "code": {
+            "lang": "powershell",
+            "content": "Set-Content .\\sandbox-probe.txt ok\nGet-Content .\\sandbox-probe.txt"
+          }
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "read-only 模式下构建或安装依赖失败",
+          "fix": "构建需要写 node_modules 和缓存，切到 workspace-write 并把项目放在工作区内；read-only 只适合只读审计。"
+        },
+        {
+          "problem": "批准过一次，后续同样的操作还是被拒",
+          "fix": "审批是 allowed-once，只对当次调用有效；每次都需要重新决策，或调整权限预设。"
+        },
+        {
+          "problem": "需要审批的操作没有弹窗，直接失败",
+          "fix": "检查会话是否为 never 策略，以及 Web UI 是否在前台且连接正常；无应答者会以 unavailable 失败关闭。"
+        },
+        {
+          "problem": "在 Windows 上沙箱只报告部分强制执行",
+          "fix": "Windows ACL runner 对硬链接等边界只能部分执行，别把它当成绝对隔离；敏感任务降低权限或换到隔离环境。"
+        }
+      ],
+      "checklist": [
+        "能说出 workspace-write 与 read-only 的文件效果差异",
+        "工作区内写入成功，工作区外写入被拒",
+        "见过一次审批弹窗并理解 allowed-once 的含义",
+        "知道 never 策略下所有审批请求都会被拒绝",
+        "不会把 danger-full-access 当作日常默认"
+      ],
+      "links": [
+        {"label": "官方文档：沙箱", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html"},
+        {"label": "官方文档：审批", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html"},
+        {"label": "官方文档：权限预设", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html"}
+      ]
+    },
+    {
+      "slug": "skills",
+      "order": 5,
+      "title": "技能：把 SOP 变成能力",
+      "subtitle": "一份 SKILL.md，按需加载",
+      "level": "进阶",
+      "duration": 20,
+      "tags": ["技能", "SOP", "上下文"],
+      "summary": "把团队重复执行的流程写成技能，让模型在需要时按需加载，而不是塞进系统提示词。学完你能写出可被正确发现和调用的 SKILL.md。",
+      "objectives": [
+        "按目录约定创建技能并理解本地发现优先级",
+        "写出能被模型正确路由的 name 与 description",
+        "验证技能被加载，并控制模型或用户是否可调用"
+      ],
+      "steps": [
+        {
+          "title": "选对技能根目录",
+          "body": "项目级技能放在 <project>/.dsh/skills，优先级最高；用户级放在 <dshHome>/skills，跨项目可用。项目根是包含 .git 的最近祖先目录，找不到时用当前 cwd。",
+          "code": {
+            "lang": "powershell",
+            "content": "New-Item -ItemType Directory -Force .dsh\\skills\\weekly-report"
+          },
+          "tip": "本地提供方支持目录包 <name>/SKILL.md 和扁平文件 <name>.md；嵌套的 **/SKILL.md 不会被发现。"
+        },
+        {
+          "title": "写 frontmatter 与流程正文",
+          "body": "文件名和目录名用 kebab-case。frontmatter 至少写 name 与 description；正文写清输入、步骤、验收和常见坑，正文只在技能被加载时进入上下文。",
+          "code": {
+            "lang": "markdown",
+            "content": "---\nname: weekly-report\ndescription: 汇总本周提交、CI 失败与待办，生成周报草稿。当用户要求写周报或总结本周进展时使用。\n---\n\n# 周报流程\n1. 读取本周 git log 与 CI 结果。\n2. 按「完成 / 风险 / 下周计划」三段整理。\n3. 输出 Markdown 草稿，不直接发布。"
+          }
+        },
+        {
+          "title": "控制谁能调用",
+          "body": "frontmatter 的 disable-model-invocation 与 user-invocable 默认都为 true。只给模型用时把 user-invocable 设为 false；只给用户手动用时把 disable-model-invocation 设为 true。",
+          "code": {
+            "lang": "markdown",
+            "content": "---\nname: release-checklist\ndescription: 发布前的检查清单。仅在用户明确要求发布时使用。\nuser-invocable: false\n---"
+          }
+        },
+        {
+          "title": "让模型加载并执行",
+          "body": "会话目录只注入已排序的 name 和 description，不包含正文与路径；模型判断相关后调用 skill 工具按名称加载完整正文。因此 description 要写触发场景，而不是写口号。",
+          "code": {
+            "lang": "text",
+            "content": "skill({ name: 'weekly-report' })"
+          }
+        },
+        {
+          "title": "验证与迭代",
+          "body": "新开会话，确认可用技能目录里出现你的条目；让模型执行一次，检查它是否按步骤走、是否漏掉验收。只改正文会立即影响后续加载，不会重发目录消息。",
+          "code": {
+            "lang": "powershell",
+            "content": "Get-ChildItem .dsh\\skills -Recurse -Filter SKILL.md | Select-Object FullName"
+          }
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "写了 SKILL.md，但技能目录里没有",
+          "fix": "检查是否嵌套在更深的子目录、目录名是否 kebab-case、是否放在 .dsh/skills 或用户技能根下；项目根按 .git 定位。"
+        },
+        {
+          "problem": "技能存在，模型却从不调用",
+          "fix": "description 写得太泛或没有写触发条件；改成具体任务与场景，并确认没有设置 disable-model-invocation。"
+        },
+        {
+          "problem": "同名技能行为跟预期不一样",
+          "fix": "项目级技能会覆盖用户级同名项；检查优先级链，删除或重命名低优先级副本。"
+        },
+        {
+          "problem": "frontmatter 格式错误导致技能加载失败",
+          "fix": "确认文件以 --- 开头和结束，YAML 缩进正确；name 必须匹配 kebab-case 正则。"
+        }
+      ],
+      "checklist": [
+        "技能位于 .dsh/skills/<name>/SKILL.md 或用户技能根下",
+        "name 是 kebab-case，description 写清触发场景",
+        "新会话的可用技能目录里能看到该条目",
+        "模型能用 skill 工具加载并返回完整正文",
+        "知道如何用 frontmatter 关闭模型或用户调用"
+      ],
+      "links": [
+        {"label": "官方文档：技能", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.html"},
+        {"label": "官方文档：使用 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html"}
+      ]
+    },
+    {
+      "slug": "plugin-development",
+      "order": 6,
+      "title": "插件开发：一切皆插件",
+      "subtitle": "从 apply 函数到可安装组合包",
+      "level": "实战",
+      "duration": 40,
+      "tags": ["插件", "TypeScript", "Cordis"],
+      "summary": "写一个能被 Web UI 加载的插件，注册工具、接受配置，再打包成可安装的 bundle。学完你能判断插件为什么没加载、配置为什么没生效。",
+      "objectives": [
+        "写最小插件并用 --patch overlay 加载到 Web UI",
+        "用 defineTool 注册一个模型可调用的工具",
+        "打包成声明 dsh.bundle 的包并安装进 profile"
+      ],
+      "steps": [
+        {
+          "title": "准备源码检出",
+          "body": "教程以源码检出的仓库为工作目录：先克隆、安装依赖并构建。pnpm run build 准备产物，pnpm dsh web 直接使用这些产物，不会重新构建。",
+          "code": {
+            "lang": "sh",
+            "content": "git clone https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness\npnpm install\npnpm run build"
+          }
+        },
+        {
+          "title": "写最小插件并加载",
+          "body": "插件就是一个导出 apply(ctx) 的 TypeScript 模块。把它放进临时项目，用只含 insert 的 overlay 指向绝对路径，再启动 Web UI。",
+          "code": {
+            "lang": "ts",
+            "content": "import type { Context } from '@deepseek-ai/cordis'\n\nexport const name = 'hello-plugin'\n\nexport function apply(ctx: Context) {\n  console.log('[hello-plugin] plugin loaded!')\n}"
+          },
+          "tip": "插件路径必须写绝对路径；patch 只贡献配置，不改变 loader 解析模块路径时使用的 profile 目录。"
+        },
+        {
+          "title": "创建 overlay",
+          "body": "在临时项目里写 cordis.yml，把 id 与绝对路径填进去，然后用 --patch 启动。终端打印 [hello-plugin] plugin loaded! 就说明加载成功。",
+          "code": {
+            "lang": "yaml",
+            "content": "- insert:\n    - id: hello\n      name: '/absolute/path/to/deepseek-harness/scratch-plugin/src/my-plugin.ts'"
+          }
+        },
+        {
+          "title": "注册一个工具",
+          "body": "声明 inject = ['tools'] 让 Cordis 等工具注册表就绪，再用 defineTool 定义参数、输出 schema 与执行逻辑。模型就能在对话里调用这个工具。",
+          "code": {
+            "lang": "ts",
+            "content": "import type { Context } from '@deepseek-ai/cordis'\nimport { defineTool } from '@deepseek-ai/dsh-tools'\n\nexport const name = 'greet-tool'\nexport const inject = ['tools']\n\nexport function apply(ctx: Context) {\n  ctx.tools.register(defineTool({\n    name: 'greet',\n    description: 'Greet someone by name.',\n    parameters: {\n      name: { type: 'string', required: true, description: 'The name to greet' },\n    },\n    output: {\n      schema: { type: 'string' },\n      render: (_args, value) => [{ type: 'text', text: value }],\n    },\n    async execute(args) {\n      return `Hello, ${args.name}!`\n    },\n  }))\n}"
+          }
+        },
+        {
+          "title": "让插件接受配置",
+          "body": "导出 Config 类型和同名 Schemastery schema，默认值写在 schema 里；apply 的第二个参数就是校验后的配置。配置变更会触发插件热替换，旧注册会被自动清理。",
+          "code": {
+            "lang": "ts",
+            "content": "import Schema from '@deepseek-ai/schemastery'\n\nexport interface Config {\n  greeting: string\n}\n\nexport const Config: Schema<Config> = Schema.object({\n  greeting: Schema.string().default('Hello'),\n})"
+          }
+        },
+        {
+          "title": "打包成组合包并安装",
+          "body": "组合包是一个声明 dsh.bundle 的 npm 包，patch 里按包名引用插件。用 dsh plugin 安装进 profile，再启动同一个 profile；--dump-config 可以确认该层已生效。",
+          "code": {
+            "lang": "sh",
+            "content": "dsh plugin --profile demo add ./hello-plugin\ndsh --profile demo --dump-config\ndsh --profile demo"
+          },
+          "tip": "在 package.json 里用 engines.dsh 声明支持的版本范围；不满足时安装会直接拒绝，而不是带病启动。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "overlay 加载后没有任何输出",
+          "fix": "检查插件路径是否为绝对路径、文件是否真的被 Node 加载；patch 的相对路径解析基准不是插件文件所在目录。"
+        },
+        {
+          "problem": "apply 里 ctx.tools 是 undefined",
+          "fix": "忘了 export const inject = ['tools']；Cordis 只有在声明依赖后才保证对应服务就绪。"
+        },
+        {
+          "problem": "改了配置但行为没变",
+          "fix": "patch 会替换目标行的整个 config，而不是深合并；改已有条目时要重述该行需要的每个键。"
+        },
+        {
+          "problem": "从 GitHub 安装后插件加载失败",
+          "fix": "git 安装拉的是源码，不会自动构建；作者要提供自包含的 prepare 脚本，用户还要按提示在 pnpm-workspace.yaml 里授权 allowBuilds。"
+        }
+      ],
+      "checklist": [
+        "最小插件能在启动日志里打印加载信息",
+        "模型能成功调用你注册的 greet 工具",
+        "配置项有默认值且能通过 cordis.yml 覆盖",
+        "组合包声明了 dsh.bundle 并成功装进 profile",
+        "dsh --profile <name> --dump-config 能看到你的层"
+      ],
+      "links": [
+        {"label": "官方文档：第一个 Harness 插件", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.html"},
+        {"label": "官方文档：开发一个 Tool", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool.html"},
+        {"label": "官方文档：插件配置", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.html"},
+        {"label": "官方文档：打包与安装插件", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.html"}
+      ]
+    },
+    {
+      "slug": "subagents-workflows",
+      "order": 7,
+      "title": "子智能体与工作流",
+      "subtitle": "把大任务拆成可并行的单元",
+      "level": "实战",
+      "duration": 35,
+      "tags": ["子代理", "工作流", "并行"],
+      "summary": "用子智能体隔离上下文，用工作流脚本把几十个独立任务并行跑完。学完你能判断什么时候该委派、什么时候该自己干。",
+      "objectives": [
+        "区分 spawn 与 fork，按上下文需求选择委派方式",
+        "用 list_agents、send_message、interrupt_agent 管理子代理",
+        "写一个带阶段和并行分支的工作流脚本并汇总结构化结果"
+      ],
+      "steps": [
+        {
+          "title": "先判断该不该委派",
+          "body": "子代理适合边界清楚、可独立验收、上下文可隔离的任务，例如逐包审计、并行调研。需要频繁来回确认或共享大量隐式上下文的任务，自己做完更快。",
+          "tip": "委派不是免费扩容：每个子代理都要重新建立上下文，任务描述必须自包含。"
+        },
+        {
+          "title": "选择 spawn 还是 fork",
+          "body": "spawn 创建全新子代理，不继承父会话历史；fork 用父会话已完成的轮次作为种子，适合接着当前讨论往下做。两者都受委派深度限制，子代理也能再委派。",
+          "code": {
+            "lang": "text",
+            "content": "subagent      → 全新上下文，任务自包含\nsubagent_fork → 继承父会话已完成轮次"
+          }
+        },
+        {
+          "title": "管理和继续子代理",
+          "body": "list_agents 列出直接子级及其 running/inactive 状态；send_message 给运行中的子代理补充指令，或唤醒可继续的子代理；interrupt_agent 只停止当前工作，之后仍可继续对话。",
+          "code": {
+            "lang": "text",
+            "content": "list_agents()\nsend_message(agent_id, '补充要求：只读，不改文件')\ninterrupt_agent(agent_id)"
+          },
+          "tip": "外部执行（如 ACP 后端）完成后不可继续对话；只有本地可继续子代理支持 send_message。"
+        },
+        {
+          "title": "写工作流脚本",
+          "body": "工作流是一段模型编写的 JS 脚本，用 agent() 启动子代理，用 parallel() 或 pipeline() 组织并发，用 phase() 和 log() 汇报进度，最后 return 一个 JSON 值。",
+          "code": {
+            "lang": "js",
+            "content": "const pkgs = args.packages\nphase('audit')\nconst reports = await parallel(\n  pkgs.map((p) => () =>\n    agent(`审计 ${p} 的依赖与许可证风险，只读`, { label: p, phase: 'audit' })\n  )\n)\nreturn reports.filter(Boolean)"
+          }
+        },
+        {
+          "title": "控制规模并汇总",
+          "body": "给脚本传 meta（name、description、phases）和 args，用 maxTotalAgents 限制子代理总数。结果要自己过滤 null、去重、按证据排序，不要把原始输出直接交给用户。",
+          "code": {
+            "lang": "text",
+            "content": "workflow({ script, meta: { name: 'pkg-audit', description: '逐包审计依赖风险' }, args: { packages } })"
+          },
+          "tip": "钩子参数写错会抛 fatal 错误并终止整个脚本，而不是默默变成 null；先小规模试跑。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "子代理反复问同样的问题",
+          "fix": "任务描述缺少自包含上下文；把路径、验收标准、禁止事项一次写全，或改用 fork 继承父会话。"
+        },
+        {
+          "problem": "子代理看不到 schedule 等工具",
+          "fix": "委派行默认 deny 了这些工具，子代理无法创建定时提醒；定时任务应由父会话或人创建。"
+        },
+        {
+          "problem": "多个子代理并行改同一批文件，产生冲突",
+          "fix": "只让子代理读和产出建议，写操作由父代理串行执行；或按目录切分互不重叠的写范围。"
+        },
+        {
+          "problem": "工作流脚本报 fatal，整次运行失败",
+          "fix": "检查 agent() 的选项名、schema 是否在支持子集内、是否超过并发上限；fatal 是设计上的响亮失败。"
+        }
+      ],
+      "checklist": [
+        "能说出一个适合委派和一个不适合委派的任务",
+        "成功用 spawn 或 fork 启动过子代理并拿到结果",
+        "用 list_agents 看过子代理状态",
+        "跑通过一个带 phase 与 parallel 的工作流",
+        "对工作流结果做过过滤与去重再汇报"
+      ],
+      "links": [
+        {"label": "官方文档：子智能体", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.html"},
+        {"label": "官方文档：工作流", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workflow.html"},
+        {"label": "官方文档：工具执行", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-execution-pipeline.html"}
+      ]
+    },
+    {
+      "slug": "automation-deploy",
+      "order": 8,
+      "title": "自动化、定时任务与上线",
+      "subtitle": "从提醒到反向代理公开部署",
+      "level": "实战",
+      "duration": 40,
+      "tags": ["定时任务", "部署", "反向代理"],
+      "summary": "让 DSH 按计划自动干活，并把它安全地放到反向代理后面。学完你能配置定时任务、排查公开部署的 403 和 WebSocket 问题。",
+      "objectives": [
+        "创建带 IANA 时区的定时任务并理解投递与补投规则",
+        "按反向代理要求配置 --public-url 与 --trusted-host",
+        "完成一次公开部署的上线验收与回滚检查"
+      ],
+      "steps": [
+        {
+          "title": "创建定时任务",
+          "body": "在对话里让模型创建提醒，或从侧栏的自动化任务页面新建。规则要写清频率与时区，例如“每天 Asia/Shanghai 09:00 汇总昨天的 CI 失败”。",
+          "code": {
+            "lang": "text",
+            "content": "每天 Asia/Shanghai 09:00 汇总昨天的 CI 失败，并给出修复建议"
+          },
+          "tip": "支持一次性延迟、绝对时间、固定间隔、带 IANA 时区的每日/每周规则和五字段 cron；子代理看不到这些工具。"
+        },
+        {
+          "title": "理解投递与补投",
+          "body": "宿主运行期间，到期的提醒会恢复原会话并排入 follow-up，不打断当前工作。重启后只补投逾期的一次性任务，或每条重复任务最近错过的一次；宿主关闭期间调度停止。",
+          "tip": "保存的发送记录只证明消息已进入对话收件箱，不代表模型完成了所请求的工作。"
+        },
+        {
+          "title": "准备反向代理",
+          "body": "代理必须保留浏览器可见的 Host、剥离挂载前缀、转发 Upgrade 与 Connection 头，并把 cookie 的 Path 改写到挂载路径。对 /ui 的请求必须以 /ui/ 抵达，否则拿不到会话 cookie。",
+          "code": {
+            "lang": "text",
+            "content": "浏览器 → https://app.example/ui/ → 代理剥离 /ui → 监听器 /api/..."
+          }
+        },
+        {
+          "title": "启动公开部署",
+          "body": "用 --public-url 公告浏览器实际访问的地址，用 --trusted-host 点名浏览器使用的 authority。前者只影响打印与运行时上下文，不授予信任；后者才决定 API 是否被放行。",
+          "code": {
+            "lang": "sh",
+            "content": "dsh --profile web --public-url https://app.example/ui/ --trusted-host app.example"
+          }
+        },
+        {
+          "title": "处理 TLS 与 cookie",
+          "body": "可以在代理处或监听器上终止 TLS。监听器自己终止时传 --tls-cert 与 --tls-key，文件相对进程工作目录解析，缺失或无效会启动失败而不是回退 HTTP。",
+          "code": {
+            "lang": "sh",
+            "content": "dsh --profile web --tls-cert ./cert.pem --tls-key ./key.pem --public-url https://app.example/ --trusted-host app.example"
+          },
+          "tip": "TLS 监听器会给会话 cookie 加 Secure；浏览器侧链路应保持 HTTPS，否则 cookie 不会回传。"
+        },
+        {
+          "title": "上线验收与限制暴露面",
+          "body": "从外网打开 /ui/，确认页面、API 与 WebSocket 都正常；检查 403、登录跳转和 cookie 作用域。把监听端口限制在可信代理或内网，打印的 URL 带启动 token，只发给预期用户。",
+          "code": {
+            "lang": "sh",
+            "content": "curl.exe -I https://app.example/ui/"
+          }
+        }
+      ],
+      "pitfalls": [
+        {
+          "problem": "只配了 --public-url 或代理改写了 Host，所有 API 返回 403",
+          "fix": "--public-url 只是公告；浏览器使用的 authority 必须用 --trusted-host 点名，同时让代理原样转发浏览器可见的 Host。"
+        },
+        {
+          "problem": "页面能开，但流式输出和状态不更新",
+          "fix": "代理没有转发 WebSocket 升级；确保 Upgrade 与 Connection 头到达监听器。"
+        },
+        {
+          "problem": "宿主重启后定时任务没有按预期补跑",
+          "fix": "重复任务只补最近错过的一次，一次性任务才补逾期；需要严格一次性的调度请放到外部调度器。"
+        },
+        {
+          "problem": "把带 token 的启动 URL 发到了公开渠道",
+          "fix": "该 URL 携带进程凭据，只能发给预期用户；泄露后重启进程更换 token，并检查访问日志。"
+        }
+      ],
+      "checklist": [
+        "定时任务的频率与时区在自动化任务页面显示正确",
+        "知道宿主关闭期间不会投递，重启只补最近一次",
+        "外网访问 /ui/ 返回 200，API 没有 403",
+        "WebSocket 正常，HTTPS 下 cookie 带 Secure 且 Path 指向挂载前缀",
+        "监听端口只对可信代理或内网开放，带 token 的 URL 没有外泄"
+      ],
+      "links": [
+        {"label": "官方文档：在反向代理之后发布 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.html"},
+        {"label": "官方文档：会话内提醒", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.html"},
+        {"label": "官方文档：HTTP 服务器", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.html"},
+        {"label": "官方文档：网络代理", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.html"}
+      ]
+    }
+  ]
+}

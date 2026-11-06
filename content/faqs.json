@@ -1,0 +1,419 @@
+{
+  "version": 1,
+  "faqs": [
+    {
+      "id": "port-3080",
+      "question": "端口 3080 被占用 / 页面打不开怎么办？",
+      "answer": "换一个空闲端口启动，或先停掉占用 3080 的旧进程，再打开终端打印的新地址。",
+      "tags": ["安装", "Web UI"],
+      "symptoms": [
+        "启动日志出现 EADDRINUSE 或直接退出",
+        "浏览器打开 127.0.0.1:3080 显示拒绝连接",
+        "页面一直转圈，终端却没有任何请求日志"
+      ],
+      "cause": "另一个 DSH 实例或其他服务占用了 3080；也可能你把端口换成了 3081，却仍在打开旧地址。监听失败会让启动进程报告失败的 fiber，而不是自动换端口。",
+      "fix": [
+        "在 Windows 上查 3080 的监听进程，确认 PID 归属后再决定是否结束",
+        "用 --port 指定其他端口重新启动，并打开终端新打印的 URL",
+        "如果改过 --host，确认访问的地址与绑定地址一致",
+        "仍不通时检查本机防火墙与代理设置，不要只怀疑 DSH"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "Get-NetTCPConnection -LocalPort 3080 -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess"},
+        {"lang": "sh", "content": "npx @deepseek-ai/dsh web --no-open --port 3081"}
+      ],
+      "links": [
+        {"label": "官方文档：使用 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html"},
+        {"label": "官方文档：HTTP 服务器", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.html"}
+      ],
+      "source": "官方文档",
+      "hot": true
+    },
+    {
+      "id": "api-key",
+      "question": "模型报 MISSING_CREDENTIAL 或 401，密钥应该配在哪？",
+      "answer": "在 设置 → 模型 中保存对应提供商的密钥；保存后下一次请求生效，不需要重启。",
+      "tags": ["模型", "凭据"],
+      "symptoms": [
+        "发送消息立刻报 MISSING_CREDENTIAL",
+        "获取可用模型返回 401",
+        "模型选择器为空或所选模型不可用",
+        "昨天还能用，今天所有请求都失败"
+      ],
+      "cause": "密钥没有保存、保存到了错误的提供商，或环境变量后备没有被检测到；也可能是密钥被撤销、额度耗尽，或自定义端点的地址与协议不匹配。",
+      "fix": [
+        "打开 设置 → 模型，在 DeepSeek 卡片输入密钥并保存",
+        "第三方提供商先选提供商 id，再填它自己的密钥",
+        "自定义端点核对基础 URL、API 协议和模型列表，协议只能选网关实际使用的一种",
+        "用 获取可用模型 验证；失败就手动填模型 ID，探测只是便利手段",
+        "确认凭据文件存在且当前用户可读，不要把密钥贴进仓库或聊天记录"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "Test-Path \"$env:USERPROFILE\\.dsh\\.credentials.yaml\""},
+        {"lang": "sh", "content": "npx @deepseek-ai/dsh web"}
+      ],
+      "links": [
+        {"label": "官方文档：配置模型", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.html"},
+        {"label": "官方文档：用户凭据", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.html"}
+      ],
+      "source": "官方文档",
+      "hot": true
+    },
+    {
+      "id": "node-version",
+      "question": "启动提示 Node 版本不满足，或 npx 直接失败？",
+      "answer": "当前 0.2.2-rc.1 的 dsh 包声明 Node >= 24.9.0，先升级 Node 并重开终端。",
+      "tags": ["安装", "Node.js"],
+      "symptoms": [
+        "安装或启动时报 engines 不满足",
+        "npx 下载后立刻退出",
+        "提示语法错误或缺少新 API",
+        "IDE 终端能跑，系统终端不能（或相反）"
+      ],
+      "cause": "系统 Node 太旧；多版本管理器切换到了旧版本；IDE 内置终端与系统终端使用的 Node 不是同一个。",
+      "fix": [
+        "用 node -v 确认实际版本，满足 >= 24.9.0 再启动",
+        "用 nvm-windows 或 fnm 安装并切换到 24.9.0 以上版本",
+        "重开终端，确认 which node 与 npm 指向同一套安装",
+        "清理 npx 缓存后重试，避免命中旧的 dsh 包"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "node -v\nnpm -v"},
+        {"lang": "powershell", "content": "nvm install 24.9.0\nnvm use 24.9.0\nnode -v"}
+      ],
+      "links": [
+        {"label": "官方文档：使用 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html"},
+        {"label": "npm：@deepseek-ai/dsh", "url": "https://www.npmjs.com/package/@deepseek-ai/dsh"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "plugin-install",
+      "question": "插件装不上，或装了却没有生效？",
+      "answer": "用 dsh plugin --profile <name> add 安装声明了 dsh.bundle 的组合包，并用同一个 profile 启动。",
+      "tags": ["插件", "安装"],
+      "symptoms": [
+        "dsh plugin add 报错退出",
+        "安装成功，但插件页或模型工具里看不到",
+        "启动时没有加载该插件的层",
+        "提示包不是组合包，只作为普通依赖安装"
+      ],
+      "cause": "包没有声明 dsh.bundle；装进了另一个 profile；engines.dsh 或 peer 依赖不满足；从 git 安装时没有构建产物或未授权 prepare 脚本。",
+      "fix": [
+        "检查包内 package.json 是否有 dsh.bundle.patch",
+        "确认安装与启动使用同一个 profile，例如都用 --profile web",
+        "用 --dump-config 确认组合包里出现该层",
+        "git 安装失败时按提示把包键写进该 profile 的 pnpm-workspace.yaml allowBuilds，再重试",
+        "不想让用户授权构建就改用 npm 预构建包或 tarball"
+      ],
+      "commands": [
+        {"lang": "sh", "content": "dsh plugin --profile web add dsh-hello-plugin"},
+        {"lang": "sh", "content": "dsh --profile web --dump-config"}
+      ],
+      "links": [
+        {"label": "官方文档：打包与安装插件", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.html"},
+        {"label": "官方文档：插件市场", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "sandbox-denied",
+      "question": "命令报文件写入被拒 / sandbox denied，怎么办？",
+      "answer": "当前沙箱模式不允许写这个路径；把目标移到工作区内，或在明确风险后走一次性提权。",
+      "tags": ["权限", "沙箱"],
+      "symptoms": [
+        "写文件、删文件报 EACCES 或 EPERM",
+        "构建在 read-only 模式下失败",
+        "工具结果里出现沙箱拒绝或 SANDBOX_UNAVAILABLE",
+        "同样的命令在系统终端能跑，在 DSH 里不能"
+      ],
+      "cause": "read-only 模式只允许必要接收器；workspace-write 只允许会话工作区根与后端承诺的临时区域；会话 cwd 可能不是你以为什么目录。Windows ACL runner 还可能在硬链接等边界上只做到部分强制执行。",
+      "fix": [
+        "先用 Get-Location 确认会话工作区，再把输出改到工作区内",
+        "构建、安装依赖这类需要写盘的任务切到 workspace-write",
+        "确实要越界时，让工具调用带 sandbox_permissions 与 justification 发起一次性重试，并完成审批",
+        "不要把整个会话长期切成 danger-full-access 来绕过问题",
+        "sandbox unavailable 说明没有可用后端，属于环境故障，不是命令写错"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "Get-Location\nSet-Content .\\sandbox-probe.txt ok\nGet-Content .\\sandbox-probe.txt"},
+        {"lang": "sh", "content": "pwd"}
+      ],
+      "links": [
+        {"label": "官方文档：沙箱", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html"},
+        {"label": "官方文档：权限预设", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html"},
+        {"label": "官方文档：审批", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html"}
+      ],
+      "source": "官方文档",
+      "hot": true
+    },
+    {
+      "id": "approvals",
+      "question": "操作一直被拒绝，或审批弹窗根本不出现？",
+      "answer": "ask 策略下只有 allowed-once 会放行；never 策略或没有可用应答者时，请求一律失败关闭。",
+      "tags": ["审批", "权限"],
+      "symptoms": [
+        "工具结果显示 rejected 或 unavailable",
+        "需要确认的操作没有任何弹窗",
+        "点过允许，下一次同样操作又被拒",
+        "无人值守任务全部卡在审批"
+      ],
+      "cause": "会话权限预设是 danger-full-access + never；Web UI 不在前台或连接断开，没有应答者；请求被取消或超时；被委派的子代理使用固定的 never 策略。",
+      "fix": [
+        "检查 Permissions 选择器当前是哪个预设",
+        "交互开发切到 workspace-write（workspace-write + ask）",
+        "在前台确认审批弹窗并选择允许一次",
+        "无人值守场景不要依赖审批，改设计成只读或预授权操作",
+        "被拒绝后重新发起操作，旧请求不会复活"
+      ],
+      "commands": [
+        {"lang": "text", "content": "# 审批是 Web UI 交互，没有对应的 dsh 子命令\n# 在会话顶部的 Permissions 选择器中切换预设"}
+      ],
+      "links": [
+        {"label": "官方文档：审批", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html"},
+        {"label": "官方文档：权限预设", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "context-compaction",
+      "question": "上下文快满了、模型开始忘事，怎么压缩？",
+      "answer": "空闲时输入 /compact 手动压缩，或让自动压缩在压力或溢出时接管；压缩只替换模型可见的旧历史，日志不丢。",
+      "tags": ["上下文", "压缩"],
+      "symptoms": [
+        "请求接近模型上下文窗口",
+        "模型重复询问已经说过的信息",
+        "出现 context-overflow 相关失败",
+        "输入 /compact 提示当前不可用"
+      ],
+      "cause": "长会话累积了大量工具输出；自动压缩阈值还没到，或单个超大结果无法通过压缩修复；会话正在跑轮次或已有压缩在运行。",
+      "fix": [
+        "等当前轮次结束再执行 /compact，它只在空闲时可用",
+        "压缩后重新确认关键约束，摘要不保证保留每个细节",
+        "把无关任务拆到新会话，别让一个会话承担所有历史",
+        "重跑大输出命令时限制输出，或写入文件只读关键片段",
+        "/compact 不接受参数，也不要指望它压缩单个超大工具结果"
+      ],
+      "commands": [
+        {"lang": "text", "content": "# 在 DSH 会话输入框执行（不是 shell）\n/compact"}
+      ],
+      "links": [
+        {"label": "官方文档：上下文压缩", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.html"},
+        {"label": "官方文档：会话", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.html"}
+      ],
+      "source": "官方文档",
+      "hot": true
+    },
+    {
+      "id": "powershell-policy",
+      "question": "PowerShell 在沙箱里报「仅核心类型」或 cmdlet 不可用？",
+      "answer": "只读沙箱下 PowerShell 可能以 ConstrainedLanguage 运行，.NET 静态调用、Add-Type、COM 会被拒绝；改用 cmdlet 或切到 workspace-write。",
+      "tags": ["Windows", "PowerShell", "沙箱"],
+      "symptoms": [
+        "报错提到 only core types",
+        "[System.IO.File] 之类的静态调用失败",
+        "Add-Type 或 COM 对象创建被拒绝",
+        "脚本在普通终端能跑，在 agent 里不能"
+      ],
+      "cause": "沙箱策略限制了 PowerShell 语言模式；这是策略拒绝，不是命令语法错误。只读模式还会拒绝任何写入，即使语言模式允许。",
+      "fix": [
+        "优先用 Get-ChildItem、Get-Content、Select-String 等 cmdlet 完成同样的事",
+        "需要 .NET 或写盘时切到 workspace-write，并确认操作发生在工作区内",
+        "不要反复换写法试图绕过策略；被拒绝是预期边界",
+        "必须用完整 .NET 能力时，由人手动在沙箱外执行"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "Get-ChildItem -File | Select-Object -First 10"},
+        {"lang": "powershell", "content": "Get-Content .\\package.json -Raw"}
+      ],
+      "links": [
+        {"label": "官方文档：沙箱", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html"},
+        {"label": "官方文档：Bash 执行", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "public-deploy-403",
+      "question": "反向代理之后页面能开，但所有 API 都返回 403？",
+      "answer": "浏览器使用的 authority 没有被 --trusted-host 接纳；补上它，并让代理保留原始 Host。",
+      "tags": ["部署", "反向代理"],
+      "symptoms": [
+        "页面壳能加载，接口全部 403",
+        "WebSocket 连不上或状态不更新",
+        "本机访问正常，换域名就失败",
+        "代理日志里请求路径少了挂载前缀"
+      ],
+      "cause": "栅栏只接受 loopback、监听器自身绑定地址和 --trusted-host 点名的 authority；--public-url 只是公告，不授予信任。代理改写 Host 也会导致 403。",
+      "fix": [
+        "用 --trusted-host 点名浏览器可见的 authority，可带端口",
+        "让代理原样转发浏览器可见的 Host，不要改写成监听器地址",
+        "确保代理剥离挂载前缀，/ui/api/... 以 /api/... 抵达监听器",
+        "转发 Upgrade 与 Connection 头，保证 WebSocket 能升级",
+        "把 cookie 的 Path 改写到挂载前缀，HTTPS 链路上加 Secure"
+      ],
+      "commands": [
+        {"lang": "sh", "content": "dsh --profile web --public-url https://app.example/ui/ --trusted-host app.example"},
+        {"lang": "sh", "content": "curl.exe -I https://app.example/ui/"}
+      ],
+      "links": [
+        {"label": "官方文档：在反向代理之后发布 Web UI", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.html"},
+        {"label": "官方文档：HTTP 服务器", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.html"}
+      ],
+      "source": "官方文档",
+      "hot": true
+    },
+    {
+      "id": "schedule-timezone",
+      "question": "定时任务按什么时区触发？为什么没在预期时间跑？",
+      "answer": "每日和每周规则按保存的 IANA 时区与本地钟点触发；宿主没运行就不会投递。",
+      "tags": ["定时任务", "时区"],
+      "symptoms": [
+        "到点没有触发",
+        "实际触发时间比预期早或晚 8 小时",
+        "宿主重启后只补跑了一次",
+        "夏令时切换当天任务被跳过"
+      ],
+      "cause": "保存的时区与预期不符；自然语言请求使用的是浏览器时区；宿主关闭期间调度停止；不存在的本地时间会被跳过；一次性任务只保存 UTC 时点。",
+      "fix": [
+        "创建时显式写时区，例如 每天 Asia/Shanghai 09:00",
+        "在自动化任务页面核对频率、时区与下次运行时间",
+        "需要准点就保持宿主常驻，或把关键调度放到外部调度器",
+        "跨夏令时使用 IANA 时区，不要用固定偏移",
+        "重启后重复任务只补最近错过的一次，别期待补齐全部"
+      ],
+      "commands": [
+        {"lang": "text", "content": "# 在对话中创建（示例）\n每天 Asia/Shanghai 09:00 汇总昨天的 CI 失败并给出修复建议"}
+      ],
+      "links": [
+        {"label": "官方文档：会话内提醒", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.html"},
+        {"label": "官方文档：定时提醒", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "plugin-incompat",
+      "question": "安装插件提示 DSH 版本不兼容？",
+      "answer": "插件的 engines.dsh 或 dsh peer 依赖与当前 0.2.2-rc.1 不匹配；装兼容版本或升级 DSH，不要靠版本豁免硬上。",
+      "tags": ["插件", "版本"],
+      "symptoms": [
+        "安装被直接拒绝",
+        "安装成功但启动时插件不激活",
+        "报错点名 engines.dsh 或 peer dependency",
+        "升级 DSH 后原有插件突然加载失败"
+      ],
+      "cause": "插件要求更高或更低的 DSH 版本；开发者预览阶段破坏性变更频繁；版本豁免会跳过检查，但运行时仍可能崩溃。",
+      "fix": [
+        "用 dsh --version 确认当前版本",
+        "查看插件 package.json 的 engines.dsh 或 @deepseek-ai/dsh* peer 范围",
+        "选一个满足范围的插件版本，或升级 DSH 到插件要求的版本",
+        "确需豁免时只在隔离环境试用，并明确可能崩溃或丢数据",
+        "把可用版本写进项目文档，避免团队成员各自装不同版本"
+      ],
+      "commands": [
+        {"lang": "sh", "content": "dsh --version"},
+        {"lang": "sh", "content": "npm view dsh-hello-plugin engines --json"}
+      ],
+      "links": [
+        {"label": "官方文档：打包与安装插件", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.html"},
+        {"label": "官方文档：插件市场", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "skill-not-loaded",
+      "question": "写了 SKILL.md，但模型看不到或不调用？",
+      "answer": "检查目录位置、kebab-case 名称和 description；嵌套的 SKILL.md 不会被发现。",
+      "tags": ["技能", "排查"],
+      "symptoms": [
+        "会话可用技能目录里没有该条目",
+        "skill 工具报未知或不可用",
+        "模型从不主动加载这个技能",
+        "同名技能的行为与预期不一致"
+      ],
+      "cause": "放错根目录或嵌套过深；名称不是 kebab-case；description 太泛；设置了 disable-model-invocation；项目根不是你以为的目录。",
+      "fix": [
+        "放到 <project>/.dsh/skills/<name>/SKILL.md 或用户技能根 <dshHome>/skills/<name>/SKILL.md",
+        "名称只用小写字母、数字和连字符",
+        "description 写清触发场景与任务类型，不要写口号",
+        "确认 frontmatter 以 --- 开头和结束，YAML 缩进正确",
+        "项目根是最近的 .git 祖先；找不到时用当前 cwd，必要时新开会话让目录刷新"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "New-Item -ItemType Directory -Force .dsh\\skills\\weekly-report"},
+        {"lang": "powershell", "content": "Get-Content .dsh\\skills\\weekly-report\\SKILL.md -TotalCount 10"}
+      ],
+      "links": [
+        {"label": "官方文档：技能", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.html"},
+        {"label": "官方文档：第一个 Harness 插件", "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "long-command-timeout",
+      "question": "长命令跑到一半被杀，或提示超时？",
+      "answer": "前台命令有超时上限；把长任务放后台运行，或显式提高 timeoutMs。",
+      "tags": ["工具", "超时", "后台任务"],
+      "symptoms": [
+        "构建或测试中途被终止",
+        "工具结果标记 timedOut",
+        "输出被截断，只剩尾部",
+        "退出码为空或显示被信号终止"
+      ],
+      "cause": "执行器按 timeoutMs 杀掉超时命令，实现还会给它设上限；输出超过捕获预算时只保留尾部；会话取消也会终止命令。",
+      "fix": [
+        "用 run_in_background 启动长任务，再用 job_output 轮询，不要在前台干等",
+        "给足 timeoutMs，并知道实现可能封顶",
+        "把输出重定向到文件，只读尾部做判断",
+        "把大任务拆成可增量验证的步骤，避免一次跑几十分钟",
+        "不要用 sleep 轮询，后台任务完成会通知"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "pnpm run build *> build.log"},
+        {"lang": "powershell", "content": "Get-Content .\\build.log -Tail 50 -Wait"}
+      ],
+      "links": [
+        {"label": "官方文档：Bash 执行", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.html"},
+        {"label": "官方文档：后台任务", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    },
+    {
+      "id": "credentials-location",
+      "question": "API 密钥存在哪里？怎么备份或迁移？",
+      "answer": "在 $DSH_HOME/.credentials.yaml，Windows 默认 C:\\Users\\<you>\\.dsh\\.credentials.yaml；settings 只保存对它的引用。",
+      "tags": ["凭据", "迁移"],
+      "symptoms": [
+        "换机器后所有模型都要重配",
+        "想确认密钥是否已经落盘",
+        "担心密钥被提交进 git",
+        "改过 DSH_HOME 后找不到原来的凭据"
+      ],
+      "cause": "凭据由本地 provider 管理，DSH_HOME 可以被环境变量改写；settings 与 cordis.yml 里只有引用，没有明文值。",
+      "fix": [
+        "先确认 DSH_HOME 实际指向哪里",
+        "备份 .credentials.yaml 到受控的加密位置，并限制文件权限",
+        "迁移时只复制该文件，不要把整个 .dsh 提交到仓库",
+        "轮换密钥后在 设置 → 模型 重新保存，下一次请求即生效",
+        "环境变量后备仍然可用，但显式保存的值优先"
+      ],
+      "commands": [
+        {"lang": "powershell", "content": "$env:DSH_HOME"},
+        {"lang": "powershell", "content": "Get-Item \"$env:USERPROFILE\\.dsh\\.credentials.yaml\" | Select-Object FullName, Length, LastWriteTime"}
+      ],
+      "links": [
+        {"label": "官方文档：用户凭据", "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.html"},
+        {"label": "官方文档：配置模型", "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.html"}
+      ],
+      "source": "官方文档",
+      "hot": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.video-work/
+scripts/video-assets/
+msyh.ttc
+deploy/serve-hidden.vbs
+data/server.pid
+reports/task-*.log
+*.log
+.DS_Store
+Thumbs.db
+.env
+.github-token
+*.token

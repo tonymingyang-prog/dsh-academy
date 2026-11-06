@@ -1,0 +1,7 @@
+node_modules
+dist
+.video-work
+.git
+reports/task-*.log
+data/server.pid
+*.zip

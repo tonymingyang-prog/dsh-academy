@@ -1,0 +1,480 @@
+{
+  "updatedAt": "2026-11-05T23:21:57.492Z",
+  "pages": [
+    {
+      "title": "定时提醒",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "计划模式",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "命令",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/commands.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "目标",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/goal.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "权限预设",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "沙箱",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "审批",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "用户交互",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md",
+      "category": "策略与交互"
+    },
+    {
+      "title": "架构",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/index.md",
+      "category": "概念"
+    },
+    {
+      "title": "能力服务",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/capability-seams.md",
+      "category": "概念"
+    },
+    {
+      "title": "Agent 生命周期",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md",
+      "category": "概念"
+    },
+    {
+      "title": "API Gateway",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/api-gateway.md",
+      "category": "概念"
+    },
+    {
+      "title": "Cordis 入门",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-primer.md",
+      "category": "概念"
+    },
+    {
+      "title": "Tool 执行",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-execution-pipeline.md",
+      "category": "概念"
+    },
+    {
+      "title": "会话",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "会话标题",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "会话查询",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "会话持久化",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "会话投影",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "会话引用",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "遥测",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "Spill 存储",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md",
+      "category": "会话与持久化"
+    },
+    {
+      "title": "插件配置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md",
+      "category": "基础"
+    },
+    {
+      "title": "打包与安装插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md",
+      "category": "基础"
+    },
+    {
+      "title": "第一个 Harness 插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md",
+      "category": "基础"
+    },
+    {
+      "title": "开发一个 Tool",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool.md",
+      "category": "基础"
+    },
+    {
+      "title": "插件市场",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md",
+      "category": "集成"
+    },
+    {
+      "title": "记忆 MCP",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/mcp-memory.md",
+      "category": "集成"
+    },
+    {
+      "title": "扩展模式",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md",
+      "category": "开发手册"
+    },
+    {
+      "title": "新增 LLM Adapter",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-an-llm-adapter.md",
+      "category": "开发手册"
+    },
+    {
+      "title": "新增 Package",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-package.md",
+      "category": "开发手册"
+    },
+    {
+      "title": "新增 Tool",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md",
+      "category": "开发手册"
+    },
+    {
+      "title": "新增设置页",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md",
+      "category": "开发手册"
+    },
+    {
+      "title": "插件与生命周期",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md",
+      "category": "框架能力"
+    },
+    {
+      "title": "服务与依赖",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/service.md",
+      "category": "框架能力"
+    },
+    {
+      "title": "事件系统",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md",
+      "category": "框架能力"
+    },
+    {
+      "title": "上下文压缩",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.md",
+      "category": "模型与上下文"
+    },
+    {
+      "title": "系统提示词",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/system-prompt.md",
+      "category": "模型与上下文"
+    },
+    {
+      "title": "LLM 流式响应",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md",
+      "category": "模型与上下文"
+    },
+    {
+      "title": "Token 计量",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md",
+      "category": "模型与上下文"
+    },
+    {
+      "title": "核心",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md",
+      "category": "内核与作用域"
+    },
+    {
+      "title": "作用域",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md",
+      "category": "内核与作用域"
+    },
+    {
+      "title": "存储",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "工作区",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workspace.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "客户端 Slots",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/slots.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "客户端模块",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "客户端资源",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-resources.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "用户凭据",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "用户设置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/settings.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "右侧 Sidebar",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "Conversation 组装",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "HTTP 服务器",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "Typert",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/typert.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "Web Client 架构",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md",
+      "category": "平台与接入"
+    },
+    {
+      "title": "公开部署",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.md",
+      "category": "入门"
+    },
+    {
+      "title": "配置模型",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.md",
+      "category": "入门"
+    },
+    {
+      "title": "使用 Web UI",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md",
+      "category": "入门"
+    },
+    {
+      "title": "网络代理",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md",
+      "category": "入门"
+    },
+    {
+      "title": "插件配置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md",
+      "category": "生成参考"
+    },
+    {
+      "title": "持久化事件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md",
+      "category": "生成参考"
+    },
+    {
+      "title": "实验性持久化记录",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md",
+      "category": "生成参考"
+    },
+    {
+      "title": "Tool Schema",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md",
+      "category": "生成参考"
+    },
+    {
+      "title": "持久化 Harness 插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/dynamic-cordis.md",
+      "category": "实战"
+    },
+    {
+      "title": "能力的三层拆分",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/index.md",
+      "category": "实战"
+    },
+    {
+      "title": "LLM 适配器",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/llm-adapter.md",
+      "category": "实战"
+    },
+    {
+      "title": "工具",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "工作流",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workflow.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "后台任务",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "技能",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "文件系统",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/filesystem.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "子进程",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "子智能体",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "Bash 执行",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "LSP 导航",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "PTC 运行时",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "PTY 会话",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/terminal.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "Web 访问",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web.md",
+      "category": "执行与工具"
+    },
+    {
+      "title": "会话内提醒",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md",
+      "category": "自动化"
+    },
+    {
+      "title": "GitHub 评审会话",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/github-review.md",
+      "category": "自动化"
+    },
+    {
+      "title": "子系统",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md",
+      "category": "总览"
+    },
+    {
+      "title": "1. 第一个插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "2. 生命周期与副作用",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "3. 服务",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "4. 事件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "5. 配置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/05-config.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "6. 组合与热重载",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "7. 进入 Harness",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "总览",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md",
+      "category": "Cordis 框架教程"
+    },
+    {
+      "title": "继承接口面",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/inherited.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Context",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/context.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Events",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/events.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Fiber",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Plugin Registry",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Service",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md",
+      "category": "Cordis API"
+    },
+    {
+      "title": "Python",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md",
+      "category": "SDK"
+    }
+  ]
+}
