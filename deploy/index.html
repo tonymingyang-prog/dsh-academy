@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>部署控制台 · DSH Academy</title>
+<meta name="description" content="DeepSeek Harness 教学平台的自动化部署：本机、GitHub Pages、Docker、Netlify，以及每 3 天自动巡检的 Windows 计划任务与 GitHub Actions。">
+<meta property="og:title" content="部署控制台 · DSH Academy">
+<meta property="og:description" content="DeepSeek Harness 教学平台的自动化部署：本机、GitHub Pages、Docker、Netlify，以及每 3 天自动巡检的 Windows 计划任务与 GitHub Actions。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/assets/img/tour-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="DSH Academy · 更新雷达" href="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/feed.xml">
+<meta name="theme-color" content="#05080f">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%235b8cff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M9%2022V10h5.2a6%206%200%200%201%200%2012H9Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M22%2010v12M22%2016h-3%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="/dsh-academy/assets/css/main.css?v=670709547e">
+<noscript><style>
+  .nav-links{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap;padding:0!important;background:none!important;border:0!important;margin-left:6px!important}
+  .search-btn,.menu-btn{display:none!important}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    try {
+      var t = localStorage.getItem('dsh-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var done = JSON.parse(localStorage.getItem('dsh-progress') || '[]');
+      window.__DSH_PROGRESS__ = Array.isArray(done) ? done : [];
+    } catch (e) { window.__DSH_PROGRESS__ = []; }
+  })();
+</script>
+</head>
+<body class="" data-base="/dsh-academy">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/dsh-academy/" aria-label="DSH Academy 首页">
+      <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+      <span class="brand-name">DSH<span> Academy</span><span class="brand-sub">DeepSeek Harness</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="主导航"><a class="nav-link" href="/dsh-academy/">首页</a><a class="nav-link" href="/dsh-academy/courses/">课程</a><a class="nav-link" href="/dsh-academy/scenarios/">场景</a><a class="nav-link" href="/dsh-academy/updates/">更新</a><a class="nav-link" href="/dsh-academy/faq/">FAQ</a><a class="nav-link is-active" href="/dsh-academy/deploy/">部署</a></nav>
+    <div class="nav-actions">
+      <span class="nav-version" title="当前 DSH 版本">v0.2.2-rc.1 <span class="dot"></span></span>
+      <button class="search-btn" type="button" data-search-open aria-label="搜索（Ctrl K）"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>搜索</span><kbd>Ctrl K</kbd></button>
+      <a class="icon-btn" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切换主题"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/dsh-academy/">首页</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>部署</span></div>
+      <div class="eyebrow">Deploy console</div>
+      <h1>把教学站，变成你的站</h1>
+      <p class="lead">不是一份「部署说明」，而是一条已经跑通的流水线：巡检 → 构建 → 验收 → 发布。本机、GitHub Pages、Docker、Netlify 四条路径任选。</p>
+      <div class="page-stats">
+        <div class="page-stat"><b>1</b>条命令发布</div>
+        <div class="page-stat"><b>3 天</b>自动巡检</div>
+        <div class="page-stat"><b>0</b>运行时依赖</div>
+        <div class="page-stat"><b>4</b>种部署目标</div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="panel" style="padding:26px">
+        <div class="eyebrow" style="margin-bottom:12px">Pipeline</div>
+        <h2 style="font-size:22px;margin-bottom:14px">一条流水线，五个阶段</h2>
+        <div class="pipeline-map">
+          <div class="pm-node"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg><b>巡检</b><span>crawl.mjs</span></div>
+          <div class="pm-node"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><b>归一化</b><span>data/*.json</span></div>
+          <div class="pm-node"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg><b>构建</b><span>build.mjs</span></div>
+          <div class="pm-node"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><b>验收</b><span>verify.mjs</span></div>
+          <div class="pm-node"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3-.2Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.9 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.5-2.8 2-4c1.5-1.2 4 0 4 0"/><path d="M12 15v5s2.8-.5 4-2c1.2-1.5 0-4 0-4"/></svg><b>发布</b><span>deploy.mjs</span></div>
+        </div>
+        <p class="dim" style="font-size:12.5px">静态产物零运行时依赖；巡检失败时保留上一次可用数据，构建与发布互不阻塞。</p>
+      </div>
+      <div class="section-head" style="margin-top:46px">
+        <div class="lead"><div class="eyebrow">Wizard</div><h2 class="section-title">生成你的部署命令</h2><p class="section-sub">选择目标、填入参数，右侧实时生成可直接粘贴的命令。密钥只作为环境变量示例，不会写入站点。</p></div>
+      </div>
+      <div class="target-grid" data-targets>
+        <button class="target-card is-active" type="button" data-target="local"><span class="t-icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></span><b>本机 / 内网</b><span>零配置，计划任务常驻</span></button>
+        <button class="target-card" type="button" data-target="github"><span class="t-icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></span><b>GitHub Pages</b><span>免费、可绑定域名</span></button>
+        <button class="target-card" type="button" data-target="docker"><span class="t-icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5"/><path d="M12 12v10"/></svg></span><b>Docker</b><span>任意云主机 / NAS</span></button>
+        <button class="target-card" type="button" data-target="netlify"><span class="t-icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6 19h11.5Z"/></svg></span><b>Netlify</b><span>拖拽或 API 发布</span></button>
+      </div>
+      <div class="wizard-grid">
+        <div class="panel" style="padding:22px">
+          <div class="field"><label for="w-port">监听端口</label><input id="w-port" data-field="port" value="4173" inputmode="numeric"><span class="hint">本机与 Docker 共用，避免与 DSH 的 3080 冲突</span></div>
+          <div class="field" data-show-for="github"><label for="w-repo">GitHub 仓库</label><input id="w-repo" data-field="repo" placeholder="your-name/dsh-academy"><span class="hint">需要 repo 权限的 GITHUB_TOKEN</span></div>
+          <div class="field" data-show-for="github"><label for="w-branch">发布分支</label><input id="w-branch" data-field="branch" value="gh-pages"><span class="hint">用户主页仓库可改成 main</span></div>
+          <div class="field" data-show-for="netlify"><label for="w-site">Netlify Site ID</label><input id="w-site" data-field="site" placeholder="xxxxxxxx-xxxx-xxxx"><span class="hint">站点设置 → Site ID</span></div>
+          <div class="field" data-show-for="docker"><label for="w-image">镜像名</label><input id="w-image" data-field="image" value="dsh-academy"><span class="hint">构建后可直接推到镜像仓库</span></div>
+          <div class="field" data-show-for="local"><label for="w-interval">巡检周期</label><input id="w-interval" value="每 3 天 03:00" disabled><span class="hint">Windows 计划任务 DSHAcademy-Refresh</span></div>
+          <p class="dim" style="font-size:11px;line-height:1.7;margin-top:6px">在项目根目录执行。首次部署前先运行一次 <span class="mono">npm run build</span>。</p>
+        </div>
+        <div class="output">
+          <div class="out-head"><span>PowerShell · 生成结果</span><button class="copy-btn" type="button" data-copy-output><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+          <pre id="deploy-output"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight" id="automation">
+    <div class="container">
+      <div class="section-head">
+        <div class="lead"><div class="eyebrow">Automation</div><h2 class="section-title">每 3 天，自动巡检与发布</h2><p class="section-sub">两条互相独立的自动化链路：本机计划任务负责开发机上的刷新，GitHub Actions 负责公网仓库的定时构建。任一条都能单独工作。</p></div>
+      </div>
+      <div class="deploy-grid">
+        <div class="deploy-card">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Windows 计划任务</h3>
+          <p>注册 <b>DSHAcademy-Refresh</b> 每 3 天 03:00 巡检并构建；登录启动项会在后台拉起 <b>4173</b> 预览服务。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>powershell -ExecutionPolicy Bypass -File deploy\register-tasks.ps1
+schtasks /Query /TN &quot;DSHAcademy-Refresh&quot; /V /FO LIST</code></pre>
+  </div>
+        </div>
+        <div class="deploy-card">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> GitHub Actions</h3>
+          <p>仓库内置 <span class="mono">.github/workflows/update-and-deploy.yml</span>：cron 每 3 天抓取、构建并发布到 Pages，push 时也会跑一次。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">yaml</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>on:
+  schedule:
+    - cron: &quot;0 3 */3 * *&quot;
+  workflow_dispatch:
+  push:
+    branches: [main]</code></pre>
+  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head">
+        <div class="lead"><div class="eyebrow">Guides</div><h2 class="section-title">四条部署路径</h2><p class="section-sub">所有命令都在 Windows PowerShell 下验证过；Linux/macOS 去掉 <span class="mono">$env:</span> 前缀即可。</p></div>
+      </div>
+      <div class="deploy-grid">
+        <div class="deploy-card" id="local">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg> 本机 / 内网</h3>
+          <p>构建后以零依赖静态服务器托管，后台启动并写入 PID。适合团队内网、演示与离线环境。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npm run build
+npm run deploy -- --target local --port 4173
+<span class="c-comment"># 打开 http://127.0.0.1:4173</span></code></pre>
+  </div>
+        </div>
+        <div class="deploy-card" id="github">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg> GitHub Pages</h3>
+          <p>通过 Git Data API 把 <span class="mono">dist/</span> 写成一次提交，不需要本地 git。推送到 gh-pages 后在仓库设置里启用 Pages。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>$env:GITHUB_TOKEN = &quot;ghp_xxx&quot;
+$env:GITHUB_REPO = &quot;your-name/dsh-academy&quot;
+npm run build
+node scripts/deploy.mjs --target github --branch gh-pages</code></pre>
+  </div>
+        </div>
+        <div class="deploy-card" id="docker">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5"/><path d="M12 12v10"/></svg> Docker</h3>
+          <p>多阶段构建：Node 里生成静态产物，Nginx 托管。镜像不包含源码与爬虫，体积小、重启即恢复。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npm run build
+docker build -t dsh-academy .
+docker run -d --name dsh-academy -p 8080:80 --restart unless-stopped dsh-academy</code></pre>
+  </div>
+        </div>
+        <div class="deploy-card" id="netlify">
+          <h3><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6 19h11.5Z"/></svg> Netlify</h3>
+          <p>打包 <span class="mono">dist/</span> 后调用 Deploy API，适合已有 Netlify 站点或需要预览环境。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>$env:NETLIFY_AUTH_TOKEN = &quot;xxx&quot;
+$env:NETLIFY_SITE_ID = &quot;xxxxxxxx-xxxx&quot;
+npm run build
+node scripts/deploy.mjs --target netlify</code></pre>
+  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="wizard-grid">
+        <div class="panel">
+          <h4>环境变量</h4>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">GITHUB_TOKEN</span><span class="val">GitHub PAT（repo）</span></div>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">GITHUB_REPO</span><span class="val">owner/name</span></div>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">NETLIFY_AUTH_TOKEN</span><span class="val">个人访问令牌</span></div>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">NETLIFY_SITE_ID</span><span class="val">站点 ID</span></div>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">SITE_BASE_PATH</span><span class="val">子路径，如 /dsh-academy/</span></div>
+          <div class="live-row"><span class="grow mono" style="font-size:12px">PORT</span><span class="val">本地服务端口</span></div>
+        </div>
+        <div class="panel">
+          <h4>发布前验收</h4>
+          <div class="live-row"><span class="dot"></span><span class="grow">巡检数据完整（npm / releases / docs）</span><span class="val">必过</span></div>
+          <div class="live-row"><span class="dot"></span><span class="grow">构建退出码为 0，search-index 可解析</span><span class="val">必过</span></div>
+          <div class="live-row"><span class="dot"></span><span class="grow">首页 / 课程 / FAQ / 更新 四页可访问</span><span class="val">必过</span></div>
+          <div class="live-row"><span class="dot"></span><span class="grow">移动端 390px 无横向滚动</span><span class="val">建议</span></div>
+          <div class="live-row"><span class="dot"></span><span class="grow">视频与字体本地化，无外部 CDN</span><span class="val">已内置</span></div>
+        </div>
+      </div>
+      <div class="tip" style="margin-top:18px"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>密钥只放在环境变量或 CI Secrets 中。部署脚本不会把 token 写入任何文件；构建产物里也不包含凭据。</span></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/dsh-academy/">
+          <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+          <span class="brand-name">DSH<span> Academy</span></span>
+        </a>
+        <p>一座会自己更新的 DeepSeek Harness 中文教学站：课程、场景、社区雷达与一键部署流水线。</p>
+      </div>
+      <div>
+        <h5>学习</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/courses/">全部课程</a>
+          <a href="/dsh-academy/scenarios/">实战场景</a>
+          <a href="/dsh-academy/faq/">常见问题</a>
+        </div>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/">更新雷达</a>
+          <a href="/dsh-academy/deploy/">部署指南</a>
+          <a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">GitHub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>自动巡检</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/#sources">数据源与健康状态</a>
+          <a href="/dsh-academy/deploy/#automation">每 3 天自动更新</a>
+          <a href="https://www.deepseek.com/harness/" target="_blank" rel="noreferrer">DeepSeek Harness 官网 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DSH Academy · 教学站由 DeepSeek Harness 驱动构建</span>
+      <span class="footer-status"><span class="dot"></span>巡检正常 · 最近巡检 2026/11/6 07:21:57</span>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" type="button" data-scroll-top aria-label="回到顶部"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span></span></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="全站搜索">
+  <div class="palette-backdrop" data-search-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-wrap"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palette-input" type="search" placeholder="搜索课程、场景、FAQ、更新…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="palette-results" id="palette-results"></div>
+    <div class="palette-foot"><span>↑↓ 选择</span><span>↵ 打开</span><span>Esc 关闭</span></div>
+  </div>
+</div>
+<script src="/dsh-academy/assets/js/app.js?v=670709547e" defer></script>
+</body>
+</html>

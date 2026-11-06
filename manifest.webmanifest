@@ -1,0 +1,16 @@
+{
+  "name": "DSH Academy",
+  "short_name": "DSH Academy",
+  "description": "DeepSeek Harness 中文教学平台：8 门系统课程、6 个实战场景、14 个常见问题、每 3 天自动巡检的更新雷达，以及本机 / GitHub Pages / Docker / Netlify 一键部署流水线。",
+  "start_url": "/dsh-academy/",
+  "display": "standalone",
+  "background_color": "#05080f",
+  "theme_color": "#5b8cff",
+  "icons": [
+    {
+      "src": "/dsh-academy/assets/img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

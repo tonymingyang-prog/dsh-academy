@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工具、审批与沙箱 · 第 4 课 · DSH Academy</title>
+<meta name="description" content="搞清沙箱模式与审批策略这两个独立旋钮，给 agent 刚好够用的权限。学完你能处理写入被拒、审批不弹窗，并为 CI 收紧权限。">
+<meta property="og:title" content="工具、审批与沙箱 · 第 4 课 · DSH Academy">
+<meta property="og:description" content="搞清沙箱模式与审批策略这两个独立旋钮，给 agent 刚好够用的权限。学完你能处理写入被拒、审批不弹窗，并为 CI 收紧权限。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/assets/img/tour-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="DSH Academy · 更新雷达" href="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/feed.xml">
+<meta name="theme-color" content="#05080f">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%235b8cff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M9%2022V10h5.2a6%206%200%200%201%200%2012H9Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M22%2010v12M22%2016h-3%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="/dsh-academy/assets/css/main.css?v=670709547e">
+<noscript><style>
+  .nav-links{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap;padding:0!important;background:none!important;border:0!important;margin-left:6px!important}
+  .search-btn,.menu-btn{display:none!important}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    try {
+      var t = localStorage.getItem('dsh-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var done = JSON.parse(localStorage.getItem('dsh-progress') || '[]');
+      window.__DSH_PROGRESS__ = Array.isArray(done) ? done : [];
+    } catch (e) { window.__DSH_PROGRESS__ = []; }
+  })();
+</script>
+</head>
+<body class="lesson" data-base="/dsh-academy">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/dsh-academy/" aria-label="DSH Academy 首页">
+      <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+      <span class="brand-name">DSH<span> Academy</span><span class="brand-sub">DeepSeek Harness</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="主导航"><a class="nav-link" href="/dsh-academy/">首页</a><a class="nav-link is-active" href="/dsh-academy/courses/">课程</a><a class="nav-link" href="/dsh-academy/scenarios/">场景</a><a class="nav-link" href="/dsh-academy/updates/">更新</a><a class="nav-link" href="/dsh-academy/faq/">FAQ</a><a class="nav-link" href="/dsh-academy/deploy/">部署</a></nav>
+    <div class="nav-actions">
+      <span class="nav-version" title="当前 DSH 版本">v0.2.2-rc.1 <span class="dot"></span></span>
+      <button class="search-btn" type="button" data-search-open aria-label="搜索（Ctrl K）"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>搜索</span><kbd>Ctrl K</kbd></button>
+      <a class="icon-btn" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切换主题"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <div class="container">
+    <div class="lesson-grid">
+      <aside class="lesson-aside">
+        <div class="aside-title">课程目录</div>
+        <nav class="aside-list">
+          <a class="aside-item" href="/dsh-academy/courses/install-first-run/">
+            <span class="n">01</span><span>安装与首次启动</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/configure-models/">
+            <span class="n">02</span><span>模型与凭据配置</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/sessions-context/">
+            <span class="n">03</span><span>会话、上下文与目标</span>
+          </a><a class="aside-item is-active" href="/dsh-academy/courses/tools-permissions/">
+            <span class="n">04</span><span>工具、审批与沙箱</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/skills/">
+            <span class="n">05</span><span>技能：把 SOP 变成能力</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/plugin-development/">
+            <span class="n">06</span><span>插件开发：一切皆插件</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/subagents-workflows/">
+            <span class="n">07</span><span>子智能体与工作流</span>
+          </a><a class="aside-item" href="/dsh-academy/courses/automation-deploy/">
+            <span class="n">08</span><span>自动化、定时任务与上线</span>
+          </a>
+        </nav>
+        <div class="lesson-progress">
+          <div class="lp-head"><span>本课进度</span><span data-lesson-progress-label>0%</span></div>
+          <div class="progress" style="width:100%"><span data-lesson-progress style="width:0%"></span></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="breadcrumb"><a href="/dsh-academy/">首页</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="/dsh-academy/courses/">课程</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>工具、审批与沙箱</span></div>
+        <div class="course-top" style="justify-content:flex-start;gap:10px">
+          <span class="course-num">LESSON 04</span>
+          <span class="badge" data-tone="blue">进阶</span>
+        </div>
+        <h1>工具、审批与沙箱</h1>
+        <p class="lesson-lead">搞清沙箱模式与审批策略这两个独立旋钮，给 agent 刚好够用的权限。学完你能处理写入被拒、审批不弹窗，并为 CI 收紧权限。</p>
+        <div class="lesson-meta">
+          <span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 20 分钟</span>
+          <span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> 6 个步骤</span>
+          <span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg> 进阶</span>
+        </div>
+        <div class="objectives"><h3>学完你能</h3><ul><li>区分 sandbox mode 与 approval policy，并会切换权限预设</li><li>在工作区内完成写入，在工作区外正确触发一次性提权</li><li>为无人值守场景选择 fail-closed 的权限组合</li></ul></div>
+        <section class="step">
+          <div class="step-head"><span class="step-num">STEP 01</span><h2>认识两个独立旋钮</h2></div>
+          <p>权限由沙箱模式与审批策略组合而成，客户端把它们包装成一个 Permissions 选择器。默认预设 workspace-write 是 workspace-write + ask；danger-full-access 是 danger-full-access + never；custom 只是派生显示值，不能主动选。</p>
+          <div class="tip"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg><span>沙箱只管控文件效果，网络与进程可见性不在这个词汇范围内。</span></div>
+        </section><section class="step">
+          <div class="step-head"><span class="step-num">STEP 02</span><h2>用 workspace-write 起步</h2></div>
+          <p>workspace-write 允许在会话工作区根目录及后端承诺的临时区域写入，其余路径拒绝写。read-only 只允许 /dev/null 这类必要接收器，danger-full-access 直接绕过隔离。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Permissions → workspace-write</code></pre>
+  </div>
+        </section><section class="step">
+          <div class="step-head"><span class="step-num">STEP 03</span><h2>处理审批请求</h2></div>
+          <p>策略为 ask 时，需要审批的操作会先询问你；只有 allowed-once 才放行，而且只授权当前这一个操作。rejected、cancelled、unavailable 一律按拒绝处理，无人应答不会默认通过。</p>
+          <div class="tip"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg><span>审批事件只写入日志，不进入模型 transcript；模型看到的是工具结果。</span></div>
+        </section><section class="step">
+          <div class="step-head"><span class="step-num">STEP 04</span><h2>越界时申请一次性提权</h2></div>
+          <p>确实需要写工作区外时，让 agent 在工具调用上带 sandbox_permissions 与 justification 发起一次性、严格更宽松的重试；这次重试仍要经过审批。不要为了省事把整个会话切成 danger-full-access。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>工具调用参数：sandbox_permissions = workspace-write | danger-full-access
+justification = 为什么这次操作需要更宽权限</code></pre>
+  </div>
+        </section><section class="step">
+          <div class="step-head"><span class="step-num">STEP 05</span><h2>为无人值守收紧</h2></div>
+          <p>CI 或无人值守运行用 never 审批策略，任何需要审批的操作都会确定性地被拒绝；再配合 read-only 沙箱，任务只能读和计算。默认预设表只有 workspace-write 与 danger-full-access，需要 read-only + never 时在 permission-presets 配置里新增预设，而不是手改两个旋钮。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">yaml</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>presets:
+  read-only-never:
+    sandbox: read-only
+    approval: never
+    name: 只读无人值守</code></pre>
+  </div>
+        </section><section class="step">
+          <div class="step-head"><span class="step-num">STEP 06</span><h2>验收边界</h2></div>
+          <p>在工作区内写一个文件应当成功，往工作区外写应当被拒，审批记录里能看到 asked/decided 成对事件。三者都符合，权限配置才算可用。</p>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Set-Content .\sandbox-probe.txt ok
+Get-Content .\sandbox-probe.txt</code></pre>
+  </div>
+        </section>
+        <section class="step"><div class="step-head"><span class="step-num">PITFALLS</span><h2>常见坑</h2></div>
+          <div class="pitfalls"><div class="pitfall"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><div><b>read-only 模式下构建或安装依赖失败</b><span>构建需要写 node_modules 和缓存，切到 workspace-write 并把项目放在工作区内；read-only 只适合只读审计。</span></div></div><div class="pitfall"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><div><b>批准过一次，后续同样的操作还是被拒</b><span>审批是 allowed-once，只对当次调用有效；每次都需要重新决策，或调整权限预设。</span></div></div><div class="pitfall"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><div><b>需要审批的操作没有弹窗，直接失败</b><span>检查会话是否为 never 策略，以及 Web UI 是否在前台且连接正常；无应答者会以 unavailable 失败关闭。</span></div></div><div class="pitfall"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><div><b>在 Windows 上沙箱只报告部分强制执行</b><span>Windows ACL runner 对硬链接等边界只能部分执行，别把它当成绝对隔离；敏感任务降低权限或换到隔离环境。</span></div></div></div></section>
+        <div class="checklist"><h3>验收清单</h3><ul><li>能说出 workspace-write 与 read-only 的文件效果差异</li><li>工作区内写入成功，工作区外写入被拒</li><li>见过一次审批弹窗并理解 allowed-once 的含义</li><li>知道 never 策略下所有审批请求都会被拒绝</li><li>不会把 danger-full-access 当作日常默认</li></ul></div>
+        <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html" target="_blank" rel="noreferrer">官方文档：沙箱 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html" target="_blank" rel="noreferrer">官方文档：审批 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html" target="_blank" rel="noreferrer">官方文档：权限预设 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        <div class="lesson-actions">
+          <button class="btn btn-ghost complete-btn" type="button" data-complete="tools-permissions"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg> 标记本课完成</button>
+          <a class="btn btn-ghost btn-sm" href="/dsh-academy/courses/">返回课程列表</a>
+        </div>
+        <nav class="lesson-nav">
+          <a href="/dsh-academy/courses/sessions-context/"><div class="ln-label">上一课</div><div class="ln-title">会话、上下文与目标</div></a>
+          <a class="next" href="/dsh-academy/courses/skills/"><div class="ln-label">下一课</div><div class="ln-title">技能：把 SOP 变成能力</div></a>
+        </nav>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/dsh-academy/">
+          <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+          <span class="brand-name">DSH<span> Academy</span></span>
+        </a>
+        <p>一座会自己更新的 DeepSeek Harness 中文教学站：课程、场景、社区雷达与一键部署流水线。</p>
+      </div>
+      <div>
+        <h5>学习</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/courses/">全部课程</a>
+          <a href="/dsh-academy/scenarios/">实战场景</a>
+          <a href="/dsh-academy/faq/">常见问题</a>
+        </div>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/">更新雷达</a>
+          <a href="/dsh-academy/deploy/">部署指南</a>
+          <a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">GitHub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>自动巡检</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/#sources">数据源与健康状态</a>
+          <a href="/dsh-academy/deploy/#automation">每 3 天自动更新</a>
+          <a href="https://www.deepseek.com/harness/" target="_blank" rel="noreferrer">DeepSeek Harness 官网 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DSH Academy · 教学站由 DeepSeek Harness 驱动构建</span>
+      <span class="footer-status"><span class="dot"></span>巡检正常 · 最近巡检 2026/11/6 07:21:57</span>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" type="button" data-scroll-top aria-label="回到顶部"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span></span></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="全站搜索">
+  <div class="palette-backdrop" data-search-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-wrap"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palette-input" type="search" placeholder="搜索课程、场景、FAQ、更新…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="palette-results" id="palette-results"></div>
+    <div class="palette-foot"><span>↑↓ 选择</span><span>↵ 打开</span><span>Esc 关闭</span></div>
+  </div>
+</div>
+<script src="/dsh-academy/assets/js/app.js?v=670709547e" defer></script>
+</body>
+</html>

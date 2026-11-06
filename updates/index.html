@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>更新雷达 · DSH Academy</title>
+<meta name="description" content="DeepSeek Harness 更新雷达：npm 版本、GitHub Releases、官方文档与社区插件，每 3 天自动巡检。">
+<meta property="og:title" content="更新雷达 · DSH Academy">
+<meta property="og:description" content="DeepSeek Harness 更新雷达：npm 版本、GitHub Releases、官方文档与社区插件，每 3 天自动巡检。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/assets/img/tour-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="DSH Academy · 更新雷达" href="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/feed.xml">
+<meta name="theme-color" content="#05080f">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%235b8cff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M9%2022V10h5.2a6%206%200%200%201%200%2012H9Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M22%2010v12M22%2016h-3%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="/dsh-academy/assets/css/main.css?v=670709547e">
+<noscript><style>
+  .nav-links{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap;padding:0!important;background:none!important;border:0!important;margin-left:6px!important}
+  .search-btn,.menu-btn{display:none!important}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    try {
+      var t = localStorage.getItem('dsh-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var done = JSON.parse(localStorage.getItem('dsh-progress') || '[]');
+      window.__DSH_PROGRESS__ = Array.isArray(done) ? done : [];
+    } catch (e) { window.__DSH_PROGRESS__ = []; }
+  })();
+</script>
+</head>
+<body class="" data-base="/dsh-academy">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/dsh-academy/" aria-label="DSH Academy 首页">
+      <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+      <span class="brand-name">DSH<span> Academy</span><span class="brand-sub">DeepSeek Harness</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="主导航"><a class="nav-link" href="/dsh-academy/">首页</a><a class="nav-link" href="/dsh-academy/courses/">课程</a><a class="nav-link" href="/dsh-academy/scenarios/">场景</a><a class="nav-link is-active" href="/dsh-academy/updates/">更新</a><a class="nav-link" href="/dsh-academy/faq/">FAQ</a><a class="nav-link" href="/dsh-academy/deploy/">部署</a></nav>
+    <div class="nav-actions">
+      <span class="nav-version" title="当前 DSH 版本">v0.2.2-rc.1 <span class="dot"></span></span>
+      <button class="search-btn" type="button" data-search-open aria-label="搜索（Ctrl K）"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>搜索</span><kbd>Ctrl K</kbd></button>
+      <a class="icon-btn" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切换主题"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/dsh-academy/">首页</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>更新雷达</span></div>
+      <div class="eyebrow">Live radar</div>
+      <h1>更新雷达</h1>
+      <p class="lead">npm 版本、GitHub Releases、95 页官方文档指纹与社区插件，每 3 天自动巡检一次。只记录真正的变化，不制造噪音。</p>
+      <div class="page-stats">
+        <div class="page-stat"><b>13</b>条时间线事件</div>
+        <div class="page-stat"><b>95</b>页文档覆盖</div>
+        <div class="page-stat"><b>27,292</b>个社区插件</div>
+        <div class="page-stat"><b>v0.2.2-rc.1</b>当前版本</div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight" id="sources">
+    <div class="container">
+      <div class="update-grid">
+        <div>
+          <div class="faq-tools">
+            <div class="filter-chips" data-update-filters>
+              <button class="filter-chip is-active" data-type="all">全部</button><button class="filter-chip" data-type="release">版本发布</button><button class="filter-chip" data-type="docs">文档变动</button><button class="filter-chip" data-type="community">社区动态</button>
+            </div>
+            <span class="dim" style="font-size:12px;margin-left:auto" data-update-count>13 条</span>
+          </div>
+          <div class="timeline" data-update-timeline>
+            <article class="event" data-type="community">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/11/6 <span class="badge" data-tone="violet">社区</span></div>
+  <h3><a href="https://github.com/topics/dsh-plugin" target="_blank" rel="noreferrer">社区插件雷达：2 个新项目</a></h3>
+  <p>strukto-ai/mirage、hiJoeLee/dsh-suggest-actions</p>
+  <div class="event-tags"><span class="chip">社区</span><span class="chip">插件</span></div>
+</article><article class="event" data-type="docs">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/11/6 <span class="badge" data-tone="cyan">文档</span></div>
+  <h3><a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">文档基线建立：95 个页面</a></h3>
+  <p>巡检器已为官方中文文档建立内容指纹，之后每 3 天只报告真正发生变化的页面。</p>
+  <div class="event-tags"><span class="chip">文档</span><span class="chip">基线</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/11/6 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://www.npmjs.com/package/@deepseek-ai/dsh/v/0.2.2-rc.1" target="_blank" rel="noreferrer">npm 发布 @deepseek-ai/dsh 0.2.2-rc.1</a></h3>
+  <p>dsh CLI: profile launch, plugin management, and configuration inspection</p>
+  <div class="event-tags"><span class="chip">npm</span><span class="chip">latest</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/11/4 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.1" target="_blank" rel="noreferrer">GitHub Release · v0.2.2-rc.1</a></h3>
+  <p>中文 | English 作为 0.2.2 系列的首个候选版本，本版本汇总了自 v0.2.1-rc.5 以来的主要用户和开发者相关变更。 新增功能 完善手机和平板适配，优化软键盘交互、导航与窄屏布局，保持菜单和操作入口可用。 @Stevring , @turtle2099 , @LegGasai , @EricMoin , @Saafo 支持将聊天文本作为引用插入输入框，并在发送后显示紧凑预览。 @lsdsjy , @imccyu 支持将完整历史会话复制为 Markdown，包含可用的原始日志路径。 @tianyi</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/11/3 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-alpha.3" target="_blank" rel="noreferrer">GitHub Release · v0.2.2-alpha.3</a></h3>
+  <p>中文 | English 新增功能 支持统一右键与键盘菜单，覆盖会话、工作区和侧边栏，并支持开发者扩展 @std4453 文件预览支持常驻目录树和文件定位功能。 @yudshj 实验性「变更请求与工作树」统一代码审查与工作树入口，支持通过可搜索文件树和逐文件导航查看本地及 PR 差异，将选中代码和评论交给 Agent，并跟踪检查与评审状态。 @LegGasai 体验优化 改善手机端侧栏导航与窄屏布局，保持会话标题稳定，并让模型目录输入和插件发现页操作完整可见。 @Stevring @Saafo @EricMoin </p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/30 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.5" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-rc.5</a></h3>
+  <p>中文 | English 体验优化 优化对话中思考内容的展示效果。 @LegGasai Improvements Improve how thinking content is displayed in conversations. by @LegGasai Full Changelog: dsh-v0.2.1-rc.4...dsh-v0.2.1-rc.5</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/28 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-alpha.2" target="_blank" rel="noreferrer">GitHub Release · v0.2.2-alpha.2</a></h3>
+  <p>中文 | English 新增功能 插件管理页支持展示富文本详情，并改善页面布局和导航行为。 @turtle1999 , @turtle2099 插件管理支持更新第三方插件包；热更新失败时会尝试恢复旧版本。 @turtle1999 , @turtle2099 支持将聊天文本作为引用插入输入框，并在发送后显示紧凑预览。 @lsdsjy , @imccyu 支持将完整历史交会话复制为 Markdown，包含可用的原始日志路径。 @tianyicui 工作步骤收起后保留全部助手文字回复，可切换为仅最终回答。 @imccy</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/28 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.4" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-rc.4</a></h3>
+  <p>中文 | English 问题修复 修复 ACP 模式下诊断输出混入 stdout 的问题。 @LegGasai , @tianyicui Bug Fixes Fix diagnostics leaking into stdout in ACP mode. by @LegGasai , @tianyicui Full Changelog: dsh-v0.2.1-rc.3...dsh-v0.2.1-rc.4</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/23 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.3" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-rc.3</a></h3>
+  <p>中文 | English 体验优化 新增左侧栏、会话视图和右侧栏的「更多」菜单，方便浏览和创建插件。 @Yifffan , @imccyu 修复切换会话后，点击「新会话」找不回未发送草稿的问题。 @imccyu 其他变更 DeepSeek API Key 适配器的模型列表更新方式与账号登录模式保持一致。 @LegGasai Improvements Add More menus to the left sidebar, conversation views, and right sidebar for browsi</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/17 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.2" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-rc.2</a></h3>
+  <p>中文 | English 新增功能 适配 DeepSeek-V4.1-Flash-1017 上线 @LegGasai 适配 DeepSeek Search 与 Fetch API，可在网页搜索设置中开启 @yudshj , @LegGasai New Features Add support for DeepSeek-V4.1-Flash-1017. by @LegGasai Add support for DeepSeek Search and Fetch APIs, which can be enabled i</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/17 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.1" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-rc.1</a></h3>
+  <p>中文 | English 作为 0.2.1 系列的首个候选版本，本版本汇总了自 v0.2.0-rc.2 以来的主要用户和开发者相关变更。 新增功能 允许用户从“自定义插件索引源”中发现和安装插件。 @turtle1999 插件管理页新增「让 Agent 创建插件」入口，可保留草稿进入创造模式；发送需求后才开始执行。 @ZiyaZhang 支持插件启用、停用、卸载及更新后的依赖同步；启用热重载时，更新或重新安装的可替换插件直接生效，无法热重载时提示重启。 @imccyu , @turtle1999 可选插件支持极简模</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/16 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.5" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-alpha.5</a></h3>
+  <p>中文 | English 问题修复 修复在插件页启用或停用插件后，已打开会话的 / 菜单未更新技能列表的问题。 @grllll 减少新建与恢复多个终端时的重复查询，并避免失效终端在切换面板后反复重试。 @LegGasai 改善 PTC Mode 中缺失的部分指引，并统一 SDK、Web 和 headless 的模型身份说明。 @koalazf99 修复 Windows 和 Linux 下右侧栏收起时，在输入框按 Page Up 导致整个界面向左偏移的问题。 @imccyu 其他变更 新增 conversation.</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article><article class="event" data-type="release">
+  <span class="event-dot" aria-hidden="true"></span>
+  <div class="event-date">2026/10/15 <span class="badge" data-tone="blue">版本</span></div>
+  <h3><a href="https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.4" target="_blank" rel="noreferrer">GitHub Release · v0.2.1-alpha.4</a></h3>
+  <p>中文 | English 中文 新增功能 自定义模型 API 支持通过UI中配置各模型的推理等级，无需手动修改配置文件。 by @LegGasai 允许用户从“自定义插件索引源”中发现和安装插件。 by @turtle1999 问题修复 修复命令与参数交界处输入异常的问题。支持整体选中/删除，并在撤销或刷新页面后恢复。 by @LegGasai 改进 Office 文件交付：避免在回复中引用已删除的预览图，减少 PDF 导出后不必要的工具查找和额外检查。 by @yudshj 修复启用开发者工具后，仍需刷新页面才能</p>
+  <div class="event-tags"><span class="chip">release</span><span class="chip">预发布</span></div>
+</article>
+          </div>
+        </div>
+        <aside>
+          <div class="panel" style="margin-bottom:16px">
+            <h4>巡检状态 <span class="badge" data-tone="green">正常</span></h4>
+            <div class="live-row"><span class="dot"></span><span class="grow">最近巡检</span><span class="val">2026/11/6 07:21:57</span></div>
+            <div class="live-row"><span class="dot"></span><span class="grow">下次巡检</span><span class="val countdown" data-countdown="2026-11-08T19:00:00.000Z">—</span></div>
+            <div class="live-row"><span class="dot"></span><span class="grow">本轮耗时</span><span class="val">8.1s</span></div>
+            <div class="live-row"><span class="dot"></span><span class="grow">巡检周期</span><span class="val">每 3 天 03:00</span></div>
+          </div>
+          <div class="panel">
+            <h4>数据源健康</h4>
+            <div class="live-row">
+              <span class="dot "></span>
+              <span class="grow">npm Registry</span>
+              <span class="val">OK · 720ms</span>
+            </div><div class="live-row">
+              <span class="dot "></span>
+              <span class="grow">GitHub Releases</span>
+              <span class="val">OK · 865ms</span>
+            </div><div class="live-row">
+              <span class="dot "></span>
+              <span class="grow">官方文档</span>
+              <span class="val">OK · 5873ms</span>
+            </div><div class="live-row">
+              <span class="dot "></span>
+              <span class="grow">社区议题</span>
+              <span class="val">OK · 247ms</span>
+            </div><div class="live-row">
+              <span class="dot "></span>
+              <span class="grow">社区插件</span>
+              <span class="val">OK · 334ms</span>
+            </div>
+          </div>
+          <div class="panel" style="margin-top:16px">
+            <h4>文档覆盖</h4>
+            <p class="dim" style="font-size:12px;margin-bottom:8px">按官方文档分区统计，共 95 页。</p>
+            <div class="doc-cats"><span class="chip">策略与交互 · 8</span><span class="chip">概念 · 6</span><span class="chip">会话与持久化 · 8</span><span class="chip">基础 · 4</span><span class="chip">集成 · 2</span><span class="chip">开发手册 · 5</span><span class="chip">框架能力 · 3</span><span class="chip">模型与上下文 · 4</span><span class="chip">内核与作用域 · 2</span><span class="chip">平台与接入 · 12</span><span class="chip">入门 · 4</span><span class="chip">生成参考 · 4</span><span class="chip">实战 · 3</span><span class="chip">执行与工具 · 12</span><span class="chip">自动化 · 2</span><span class="chip">总览 · 1</span><span class="chip">Cordis 框架教程 · 8</span><span class="chip">Cordis API · 6</span><span class="chip">SDK · 1</span></div>
+            <a class="course-link" style="margin-top:14px" href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">打开官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head">
+        <div class="lead">
+          <div class="eyebrow">Docs map</div>
+          <h2 class="section-title">文档地图</h2>
+          <p class="section-sub">巡检器为每个页面建立了内容指纹。下面是当前索引到的页面，点击直达官方原文。</p>
+        </div>
+      </div>
+      <details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">策略与交互</span><span class="badge" data-tone="gray">8 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.md" target="_blank" rel="noreferrer">定时提醒 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md" target="_blank" rel="noreferrer">计划模式 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/commands.md" target="_blank" rel="noreferrer">命令 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/goal.md" target="_blank" rel="noreferrer">目标 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.md" target="_blank" rel="noreferrer">权限预设 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md" target="_blank" rel="noreferrer">沙箱 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.md" target="_blank" rel="noreferrer">审批 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md" target="_blank" rel="noreferrer">用户交互 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">概念</span><span class="badge" data-tone="gray">6 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/index.md" target="_blank" rel="noreferrer">架构 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/capability-seams.md" target="_blank" rel="noreferrer">能力服务 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md" target="_blank" rel="noreferrer">Agent 生命周期 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/api-gateway.md" target="_blank" rel="noreferrer">API Gateway <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-primer.md" target="_blank" rel="noreferrer">Cordis 入门 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/tool-execution-pipeline.md" target="_blank" rel="noreferrer">Tool 执行 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">会话与持久化</span><span class="badge" data-tone="gray">8 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md" target="_blank" rel="noreferrer">会话 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md" target="_blank" rel="noreferrer">会话标题 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md" target="_blank" rel="noreferrer">会话查询 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md" target="_blank" rel="noreferrer">会话持久化 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md" target="_blank" rel="noreferrer">会话投影 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md" target="_blank" rel="noreferrer">会话引用 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md" target="_blank" rel="noreferrer">遥测 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md" target="_blank" rel="noreferrer">Spill 存储 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">基础</span><span class="badge" data-tone="gray">4 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md" target="_blank" rel="noreferrer">插件配置 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md" target="_blank" rel="noreferrer">打包与安装插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md" target="_blank" rel="noreferrer">第一个 Harness 插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool.md" target="_blank" rel="noreferrer">开发一个 Tool <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">集成</span><span class="badge" data-tone="gray">2 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md" target="_blank" rel="noreferrer">插件市场 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/mcp-memory.md" target="_blank" rel="noreferrer">记忆 MCP <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">开发手册</span><span class="badge" data-tone="gray">5 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md" target="_blank" rel="noreferrer">扩展模式 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-an-llm-adapter.md" target="_blank" rel="noreferrer">新增 LLM Adapter <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-package.md" target="_blank" rel="noreferrer">新增 Package <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md" target="_blank" rel="noreferrer">新增 Tool <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md" target="_blank" rel="noreferrer">新增设置页 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">框架能力</span><span class="badge" data-tone="gray">3 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md" target="_blank" rel="noreferrer">插件与生命周期 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/framework/service.md" target="_blank" rel="noreferrer">服务与依赖 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md" target="_blank" rel="noreferrer">事件系统 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">模型与上下文</span><span class="badge" data-tone="gray">4 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.md" target="_blank" rel="noreferrer">上下文压缩 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/system-prompt.md" target="_blank" rel="noreferrer">系统提示词 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md" target="_blank" rel="noreferrer">LLM 流式响应 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md" target="_blank" rel="noreferrer">Token 计量 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">内核与作用域</span><span class="badge" data-tone="gray">2 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md" target="_blank" rel="noreferrer">核心 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md" target="_blank" rel="noreferrer">作用域 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">平台与接入</span><span class="badge" data-tone="gray">12 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md" target="_blank" rel="noreferrer">存储 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workspace.md" target="_blank" rel="noreferrer">工作区 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/slots.md" target="_blank" rel="noreferrer">客户端 Slots <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md" target="_blank" rel="noreferrer">客户端模块 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-resources.md" target="_blank" rel="noreferrer">客户端资源 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.md" target="_blank" rel="noreferrer">用户凭据 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/settings.md" target="_blank" rel="noreferrer">用户设置 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md" target="_blank" rel="noreferrer">右侧 Sidebar <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md" target="_blank" rel="noreferrer">Conversation 组装 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md" target="_blank" rel="noreferrer">HTTP 服务器 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/typert.md" target="_blank" rel="noreferrer">Typert <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md" target="_blank" rel="noreferrer">Web Client 架构 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">入门</span><span class="badge" data-tone="gray">4 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.md" target="_blank" rel="noreferrer">公开部署 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/providers.md" target="_blank" rel="noreferrer">配置模型 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md" target="_blank" rel="noreferrer">使用 Web UI <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md" target="_blank" rel="noreferrer">网络代理 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">生成参考</span><span class="badge" data-tone="gray">4 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md" target="_blank" rel="noreferrer">插件配置 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md" target="_blank" rel="noreferrer">持久化事件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md" target="_blank" rel="noreferrer">实验性持久化记录 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md" target="_blank" rel="noreferrer">Tool Schema <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">实战</span><span class="badge" data-tone="gray">3 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/practice/dynamic-cordis.md" target="_blank" rel="noreferrer">持久化 Harness 插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/practice/index.md" target="_blank" rel="noreferrer">能力的三层拆分 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/practice/llm-adapter.md" target="_blank" rel="noreferrer">LLM 适配器 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">执行与工具</span><span class="badge" data-tone="gray">12 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md" target="_blank" rel="noreferrer">工具 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workflow.md" target="_blank" rel="noreferrer">工作流 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md" target="_blank" rel="noreferrer">后台任务 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.md" target="_blank" rel="noreferrer">技能 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/filesystem.md" target="_blank" rel="noreferrer">文件系统 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md" target="_blank" rel="noreferrer">子进程 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md" target="_blank" rel="noreferrer">子智能体 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.md" target="_blank" rel="noreferrer">Bash 执行 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md" target="_blank" rel="noreferrer">LSP 导航 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md" target="_blank" rel="noreferrer">PTC 运行时 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/terminal.md" target="_blank" rel="noreferrer">PTY 会话 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web.md" target="_blank" rel="noreferrer">Web 访问 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">自动化</span><span class="badge" data-tone="gray">2 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md" target="_blank" rel="noreferrer">会话内提醒 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/github-review.md" target="_blank" rel="noreferrer">GitHub 评审会话 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">总览</span><span class="badge" data-tone="gray">1 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md" target="_blank" rel="noreferrer">子系统 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">Cordis 框架教程</span><span class="badge" data-tone="gray">8 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md" target="_blank" rel="noreferrer">1. 第一个插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md" target="_blank" rel="noreferrer">2. 生命周期与副作用 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md" target="_blank" rel="noreferrer">3. 服务 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md" target="_blank" rel="noreferrer">4. 事件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/05-config.md" target="_blank" rel="noreferrer">5. 配置 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr.md" target="_blank" rel="noreferrer">6. 组合与热重载 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md" target="_blank" rel="noreferrer">7. 进入 Harness <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md" target="_blank" rel="noreferrer">总览 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">Cordis API</span><span class="badge" data-tone="gray">6 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/inherited.md" target="_blank" rel="noreferrer">继承接口面 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/context.md" target="_blank" rel="noreferrer">Context <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/events.md" target="_blank" rel="noreferrer">Events <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md" target="_blank" rel="noreferrer">Fiber <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md" target="_blank" rel="noreferrer">Plugin Registry <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md" target="_blank" rel="noreferrer">Service <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details><details class="faq-item" style="margin-bottom:10px">
+        <summary><span class="faq-q">SDK</span><span class="badge" data-tone="gray">1 页</span><span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="faq-body" style="padding-left:20px">
+          <div class="footer-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md" target="_blank" rel="noreferrer">Python <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+        </div>
+      </details>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head">
+        <div class="lead"><div class="eyebrow">Ecosystem</div><h2 class="section-title">最近活跃的社区插件</h2><p class="section-sub">按 GitHub Topics 最近更新时间排序。插件会以你的权限运行，安装前请阅读源码。</p></div>
+        <a class="btn btn-ghost btn-sm" href="https://github.com/topics/dsh-plugin" target="_blank" rel="noreferrer">全部 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+      <div class="scenario-grid">
+        <a class="scenario-card" href="https://github.com/Icather/dsh-clean-desktop-shell" target="_blank" rel="noreferrer" data-reveal data-delay="1">
+          <div class="course-top"><span class="course-num">JavaScript</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">dsh-clean-desktop-shell</h3>
+          <p class="scenario-tagline">DSH 纯净桌面壳：双击像普通软件一样一键启动，后端活性实时监测 + 托盘快捷启停，零视觉改造。Clean desktop shell for DSH — one-click launch like a normal app, live backend monitoring with quick tray start/stop, zero visual changes.</p>
+          <div class="scenario-foot"><span class="course-link">Icather/dsh-clean-desktop-shell <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a><a class="scenario-card" href="https://github.com/KCNyu/clawock" target="_blank" rel="noreferrer" data-reveal data-delay="2">
+          <div class="course-top"><span class="course-num">Python</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">clawock</h3>
+          <p class="scenario-tagline">Stock investment and portfolio decision workflows for AI agents: Claude Code, Codex, OpenClaw, DeepSeek Harness (dsh plugin) or your own script. Agents argue bull vs bear on HK and US stocks; Python reconciles the book, gates risk and scores each trading call against market prices. Pluggable quant strategies, live real-money track record.</p>
+          <div class="scenario-foot"><span class="course-link">KCNyu/clawock <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a><a class="scenario-card" href="https://github.com/riverzhou/dsh-gitbash-new" target="_blank" rel="noreferrer" data-reveal data-delay="3">
+          <div class="course-top"><span class="course-num">TypeScript</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">dsh-gitbash-new</h3>
+          <p class="scenario-tagline">Windows bash tool for DeepSeek Harness: replaces the preset&#39;s pwsh with Git for Windows or MSYS2 bash while keeping the official terminal contract (cwd, background jobs, timeout promotion, result markers, terminal cards).</p>
+          <div class="scenario-foot"><span class="course-link">riverzhou/dsh-gitbash-new <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a><a class="scenario-card" href="https://github.com/sergey-akhalkov/dsh-setup" target="_blank" rel="noreferrer" data-reveal data-delay="1">
+          <div class="course-top"><span class="course-num">TypeScript</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">dsh-setup</h3>
+          <p class="scenario-tagline">A portable DeepSeek Harness setup: sixteen plugins that make an agent work in small verified steps (second-model review, loop recovery, lazy MCP, local memory), plus a one-command installer.</p>
+          <div class="scenario-foot"><span class="course-link">sergey-akhalkov/dsh-setup <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a><a class="scenario-card" href="https://github.com/elysia395/dsh-wallpaper-engine" target="_blank" rel="noreferrer" data-reveal data-delay="2">
+          <div class="course-top"><span class="course-num">JavaScript</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">dsh-wallpaper-engine</h3>
+          <p class="scenario-tagline">把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、系统音频频谱与 Now Playing、自定义上传与自动轮播；设置存宿主端，对 agent 零 token 开销。Windows / macOS / Linux 三平台原生（同一个包、同一条命令）。</p>
+          <div class="scenario-foot"><span class="course-link">elysia395/dsh-wallpaper-engine <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a><a class="scenario-card" href="https://github.com/BuvkB/dsh-vaultwarden" target="_blank" rel="noreferrer" data-reveal data-delay="3">
+          <div class="course-top"><span class="course-num">JavaScript</span><span class="badge" data-tone="gray">2026-11-05</span></div>
+          <h3 style="margin-top:8px">dsh-vaultwarden</h3>
+          <p class="scenario-tagline">Vaultwarden/Bitwarden real-time sync for DeepSeek Harness: WebSocket push, incremental sync, read/write tools and an entry browser panel.</p>
+          <div class="scenario-foot"><span class="course-link">BuvkB/dsh-vaultwarden <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="cta-band">
+        <div class="eyebrow">Automation</div>
+        <h2>让巡检自己跑起来</h2>
+        <p>注册 Windows 计划任务，或把仓库推到 GitHub 用 Actions 托管。两种方式都是每 3 天一轮，失败会保留上一份可用数据。</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="/dsh-academy/deploy/#automation"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg> 配置自动巡检</a>
+          <a class="btn btn-ghost" href="/dsh-academy/deploy/"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> 阅读部署手册</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/dsh-academy/">
+          <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+          <span class="brand-name">DSH<span> Academy</span></span>
+        </a>
+        <p>一座会自己更新的 DeepSeek Harness 中文教学站：课程、场景、社区雷达与一键部署流水线。</p>
+      </div>
+      <div>
+        <h5>学习</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/courses/">全部课程</a>
+          <a href="/dsh-academy/scenarios/">实战场景</a>
+          <a href="/dsh-academy/faq/">常见问题</a>
+        </div>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/">更新雷达</a>
+          <a href="/dsh-academy/deploy/">部署指南</a>
+          <a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">GitHub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>自动巡检</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/#sources">数据源与健康状态</a>
+          <a href="/dsh-academy/deploy/#automation">每 3 天自动更新</a>
+          <a href="https://www.deepseek.com/harness/" target="_blank" rel="noreferrer">DeepSeek Harness 官网 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DSH Academy · 教学站由 DeepSeek Harness 驱动构建</span>
+      <span class="footer-status"><span class="dot"></span>巡检正常 · 最近巡检 2026/11/6 07:21:57</span>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" type="button" data-scroll-top aria-label="回到顶部"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span></span></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="全站搜索">
+  <div class="palette-backdrop" data-search-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-wrap"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palette-input" type="search" placeholder="搜索课程、场景、FAQ、更新…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="palette-results" id="palette-results"></div>
+    <div class="palette-foot"><span>↑↓ 选择</span><span>↵ 打开</span><span>Esc 关闭</span></div>
+  </div>
+</div>
+<script src="/dsh-academy/assets/js/app.js?v=670709547e" defer></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>DSH Academy · 更新雷达</title>
+    <link>https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/updates/</link>
+    <description>DeepSeek Harness 中文教学平台：8 门系统课程、6 个实战场景、14 个常见问题、每 3 天自动巡检的更新雷达，以及本机 / GitHub Pages / Docker / Netlify 一键部署流水线。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 05 Nov 2026 23:21:57 GMT</lastBuildDate>
+    <item>
+      <title>社区插件雷达：2 个新项目</title>
+      <link>https://github.com/topics/dsh-plugin</link>
+      <guid isPermaLink="false">plugins-2026-11-05-bdf6ff</guid>
+      <pubDate>Thu, 05 Nov 2026 23:15:39 GMT</pubDate>
+      <description>strukto-ai/mirage、hiJoeLee/dsh-suggest-actions</description>
+    </item>
+    <item>
+      <title>文档基线建立：95 个页面</title>
+      <link>https://deepseek-harness.github.io/deepseek-harness/</link>
+      <guid isPermaLink="false">docs-baseline-2026-11-05</guid>
+      <pubDate>Thu, 05 Nov 2026 22:58:39 GMT</pubDate>
+      <description>巡检器已为官方中文文档建立内容指纹，之后每 3 天只报告真正发生变化的页面。</description>
+    </item>
+    <item>
+      <title>npm 发布 @deepseek-ai/dsh 0.2.2-rc.1</title>
+      <link>https://www.npmjs.com/package/@deepseek-ai/dsh/v/0.2.2-rc.1</link>
+      <guid isPermaLink="false">npm-0.2.2-rc.1</guid>
+      <pubDate>Thu, 05 Nov 2026 22:58:39 GMT</pubDate>
+      <description>dsh CLI: profile launch, plugin management, and configuration inspection</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.2-rc.1</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.1</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.1</guid>
+      <pubDate>Wed, 04 Nov 2026 13:07:14 GMT</pubDate>
+      <description>中文 | English 作为 0.2.2 系列的首个候选版本，本版本汇总了自 v0.2.1-rc.5 以来的主要用户和开发者相关变更。 新增功能 完善手机和平板适配，优化软键盘交互、导航与窄屏布局，保持菜单和操作入口可用。 @Stevring , @turtle2099 , @LegGasai , @EricMoin , @Saafo 支持将聊天文本作为引用插入输入框，并在发送后显示紧凑预览。 @lsdsjy , @imccyu 支持将完整历史会话复制为 Markdown，包含可用的原始日志路径。 @tianyi</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.2-alpha.3</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-alpha.3</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-alpha.3</guid>
+      <pubDate>Tue, 03 Nov 2026 08:27:26 GMT</pubDate>
+      <description>中文 | English 新增功能 支持统一右键与键盘菜单，覆盖会话、工作区和侧边栏，并支持开发者扩展 @std4453 文件预览支持常驻目录树和文件定位功能。 @yudshj 实验性「变更请求与工作树」统一代码审查与工作树入口，支持通过可搜索文件树和逐文件导航查看本地及 PR 差异，将选中代码和评论交给 Agent，并跟踪检查与评审状态。 @LegGasai 体验优化 改善手机端侧栏导航与窄屏布局，保持会话标题稳定，并让模型目录输入和插件发现页操作完整可见。 @Stevring @Saafo @EricMoin </description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-rc.5</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.5</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.5</guid>
+      <pubDate>Fri, 30 Oct 2026 02:12:26 GMT</pubDate>
+      <description>中文 | English 体验优化 优化对话中思考内容的展示效果。 @LegGasai Improvements Improve how thinking content is displayed in conversations. by @LegGasai Full Changelog: dsh-v0.2.1-rc.4...dsh-v0.2.1-rc.5</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.2-alpha.2</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-alpha.2</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-alpha.2</guid>
+      <pubDate>Wed, 28 Oct 2026 07:00:42 GMT</pubDate>
+      <description>中文 | English 新增功能 插件管理页支持展示富文本详情，并改善页面布局和导航行为。 @turtle1999 , @turtle2099 插件管理支持更新第三方插件包；热更新失败时会尝试恢复旧版本。 @turtle1999 , @turtle2099 支持将聊天文本作为引用插入输入框，并在发送后显示紧凑预览。 @lsdsjy , @imccyu 支持将完整历史交会话复制为 Markdown，包含可用的原始日志路径。 @tianyicui 工作步骤收起后保留全部助手文字回复，可切换为仅最终回答。 @imccy</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-rc.4</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.4</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.4</guid>
+      <pubDate>Wed, 28 Oct 2026 03:08:57 GMT</pubDate>
+      <description>中文 | English 问题修复 修复 ACP 模式下诊断输出混入 stdout 的问题。 @LegGasai , @tianyicui Bug Fixes Fix diagnostics leaking into stdout in ACP mode. by @LegGasai , @tianyicui Full Changelog: dsh-v0.2.1-rc.3...dsh-v0.2.1-rc.4</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-rc.3</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.3</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.3</guid>
+      <pubDate>Fri, 23 Oct 2026 15:26:39 GMT</pubDate>
+      <description>中文 | English 体验优化 新增左侧栏、会话视图和右侧栏的「更多」菜单，方便浏览和创建插件。 @Yifffan , @imccyu 修复切换会话后，点击「新会话」找不回未发送草稿的问题。 @imccyu 其他变更 DeepSeek API Key 适配器的模型列表更新方式与账号登录模式保持一致。 @LegGasai Improvements Add More menus to the left sidebar, conversation views, and right sidebar for browsi</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-rc.2</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.2</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.2</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:33 GMT</pubDate>
+      <description>中文 | English 新增功能 适配 DeepSeek-V4.1-Flash-1017 上线 @LegGasai 适配 DeepSeek Search 与 Fetch API，可在网页搜索设置中开启 @yudshj , @LegGasai New Features Add support for DeepSeek-V4.1-Flash-1017. by @LegGasai Add support for DeepSeek Search and Fetch APIs, which can be enabled i</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-rc.1</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.1</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.1</guid>
+      <pubDate>Sat, 17 Oct 2026 05:22:10 GMT</pubDate>
+      <description>中文 | English 作为 0.2.1 系列的首个候选版本，本版本汇总了自 v0.2.0-rc.2 以来的主要用户和开发者相关变更。 新增功能 允许用户从“自定义插件索引源”中发现和安装插件。 @turtle1999 插件管理页新增「让 Agent 创建插件」入口，可保留草稿进入创造模式；发送需求后才开始执行。 @ZiyaZhang 支持插件启用、停用、卸载及更新后的依赖同步；启用热重载时，更新或重新安装的可替换插件直接生效，无法热重载时提示重启。 @imccyu , @turtle1999 可选插件支持极简模</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-alpha.5</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.5</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-alpha.5</guid>
+      <pubDate>Fri, 16 Oct 2026 12:23:28 GMT</pubDate>
+      <description>中文 | English 问题修复 修复在插件页启用或停用插件后，已打开会话的 / 菜单未更新技能列表的问题。 @grllll 减少新建与恢复多个终端时的重复查询，并避免失效终端在切换面板后反复重试。 @LegGasai 改善 PTC Mode 中缺失的部分指引，并统一 SDK、Web 和 headless 的模型身份说明。 @koalazf99 修复 Windows 和 Linux 下右侧栏收起时，在输入框按 Page Up 导致整个界面向左偏移的问题。 @imccyu 其他变更 新增 conversation.</description>
+    </item>
+    <item>
+      <title>GitHub Release · v0.2.1-alpha.4</title>
+      <link>https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.4</link>
+      <guid isPermaLink="false">gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-alpha.4</guid>
+      <pubDate>Thu, 15 Oct 2026 13:40:02 GMT</pubDate>
+      <description>中文 | English 中文 新增功能 自定义模型 API 支持通过UI中配置各模型的推理等级，无需手动修改配置文件。 by @LegGasai 允许用户从“自定义插件索引源”中发现和安装插件。 by @turtle1999 问题修复 修复命令与参数交界处输入异常的问题。支持整体选中/删除，并在撤销或刷新页面后恢复。 by @LegGasai 改进 Office 文件交付：避免在回复中引用已删除的预览图，减少 PDF 导出后不必要的工具查找和额外检查。 by @yudshj 修复启用开发者工具后，仍需刷新页面才能</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实战场景 · DSH Academy</title>
+<meta name="description" content="六个 DeepSeek Harness 实战场景：自动巡检部署、目标驱动重构、工作流审计、技能周报、Web UI 上线与 MCP 记忆。">
+<meta property="og:title" content="实战场景 · DSH Academy">
+<meta property="og:description" content="六个 DeepSeek Harness 实战场景：自动巡检部署、目标驱动重构、工作流审计、技能周报、Web UI 上线与 MCP 记忆。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/assets/img/tour-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="DSH Academy · 更新雷达" href="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/feed.xml">
+<meta name="theme-color" content="#05080f">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%235b8cff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M9%2022V10h5.2a6%206%200%200%201%200%2012H9Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M22%2010v12M22%2016h-3%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="/dsh-academy/assets/css/main.css?v=670709547e">
+<noscript><style>
+  .nav-links{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap;padding:0!important;background:none!important;border:0!important;margin-left:6px!important}
+  .search-btn,.menu-btn{display:none!important}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    try {
+      var t = localStorage.getItem('dsh-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var done = JSON.parse(localStorage.getItem('dsh-progress') || '[]');
+      window.__DSH_PROGRESS__ = Array.isArray(done) ? done : [];
+    } catch (e) { window.__DSH_PROGRESS__ = []; }
+  })();
+</script>
+</head>
+<body class="" data-base="/dsh-academy">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/dsh-academy/" aria-label="DSH Academy 首页">
+      <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+      <span class="brand-name">DSH<span> Academy</span><span class="brand-sub">DeepSeek Harness</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="主导航"><a class="nav-link" href="/dsh-academy/">首页</a><a class="nav-link" href="/dsh-academy/courses/">课程</a><a class="nav-link is-active" href="/dsh-academy/scenarios/">场景</a><a class="nav-link" href="/dsh-academy/updates/">更新</a><a class="nav-link" href="/dsh-academy/faq/">FAQ</a><a class="nav-link" href="/dsh-academy/deploy/">部署</a></nav>
+    <div class="nav-actions">
+      <span class="nav-version" title="当前 DSH 版本">v0.2.2-rc.1 <span class="dot"></span></span>
+      <button class="search-btn" type="button" data-search-open aria-label="搜索（Ctrl K）"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>搜索</span><kbd>Ctrl K</kbd></button>
+      <a class="icon-btn" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切换主题"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/dsh-academy/">首页</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>场景</span></div>
+      <div class="eyebrow">Scenarios</div>
+      <h1>把能力装进真实流程</h1>
+      <p class="lead">六个可以直接复用的场景：每个都写明业务目标、技术栈、执行步骤与最终交付物。第一个场景就是这座教学站自己的自动更新流水线。</p>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="course-grid">
+        <article class="course-card" id="auto-refresh-site" data-reveal data-delay="1">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg> SCENARIO 01</span>
+            <span class="badge" data-tone="violet">实战</span>
+          </div>
+          <h3>每 3 天自动巡检并更新教学站</h3>
+          <p class="course-desc">每 3 天检查教学站的死链与构建状态，发现问题就修复并重新部署。</p>
+          <div class="scenario-stack"><span class="chip">DSH Schedule</span><span class="chip">Node.js</span><span class="chip">GitHub Actions</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>把巡检与构建写成可重复执行的 npm 脚本，先在本地跑通，确保退出码能表达成功或失败。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 /goal 定义验收标准：死链为 0、构建通过、部署后首页返回 200。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>让模型创建定时任务，明确频率与 IANA 时区，例如 每 3 天 Asia/Shanghai 09:00。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>任务运行时先只读巡检，发现死链再改内容；写操作仍受工作区沙箱约束。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>宿主需要常驻才能按时投递；不想常驻就改由 GitHub Actions 的 cron 触发同一套脚本。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npm run check:links
+npm run build</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh --profile web --no-open</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">每 3 天自动得到一份巡检结论；有死链或构建失败时被修复并重新部署，没有问题时只留一条简短记录。</span>
+          </div>
+        </article><article class="course-card" id="goal-driven-refactor" data-reveal data-delay="2">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg> SCENARIO 02</span>
+            <span class="badge" data-tone="blue">进阶</span>
+          </div>
+          <h3>用目标驱动跨文件重构</h3>
+          <p class="course-desc">在不改变公开 API 的前提下，把认证模块拆成可测试的小单元并补齐测试。</p>
+          <div class="scenario-stack"><span class="chip">DSH Goal</span><span class="chip">TypeScript</span><span class="chip">Vitest</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>先跑基线：记录现有测试结果与公开导出，作为重构不能破坏的边界。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 /goal 写清目标、验收命令和禁止事项，例如 不新增运行时依赖。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>第一轮只让 agent 输出拆分方案与影响面，不改代码；确认后再进入实现。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>每轮结束检查 diff 与测试结果，发现方向偏了就 /goal edit 修正目标。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>需要人工评审时 /goal pause 暂停自动续跑，恢复后 /goal resume 继续。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>目标完成后让 agent 标记完成；不要用 /goal clear 代替验收。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>/goal 拆分认证模块并补齐测试，保持公开 API 不变，pnpm test 全绿</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>pnpm test
+pnpm run build</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>/goal
+/goal pause</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">重构分多轮推进，每轮都有测试与 diff 证据；目标完成时公开 API 未变，测试覆盖新增单元。</span>
+          </div>
+        </article><article class="course-card" id="workflow-code-audit" data-reveal data-delay="1">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/><path d="m14 10 3-3 3 3"/></svg> SCENARIO 03</span>
+            <span class="badge" data-tone="violet">实战</span>
+          </div>
+          <h3>工作流并行审计整个 monorepo</h3>
+          <p class="course-desc">对仓库内所有包做依赖、许可证与过时 API 的只读审计，产出去重后的风险清单。</p>
+          <div class="scenario-stack"><span class="chip">DSH Workflow</span><span class="chip">Subagent</span><span class="chip">pnpm</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>先用一条命令列出所有包名，作为工作流的 args 输入。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>写工作流脚本：按包并行启动只读审计子代理，每个子代理返回结构化结论。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 phase 标记阶段、log 汇报进度，让长任务在 UI 里可观察。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>汇总时过滤 null、按风险等级排序、合并重复问题，再抽样核对证据。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 maxTotalAgents 限制并发规模，先拿 3 个包试跑再全量。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>pnpm -r list --depth -1</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">js</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>phase(&#39;audit&#39;)
+const reports = await parallel(
+  args.packages.map((p) =&gt; () =&gt;
+    agent(`只读审计 ${p}：依赖风险、许可证、过时 API`, { label: p, phase: &#39;audit&#39; })
+  )
+)
+return reports.filter(Boolean)</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">一次运行覆盖全部包，得到按风险排序、带文件证据的清单；失败项单独列出，不伪装成成功。</span>
+          </div>
+        </article><article class="course-card" id="skill-weekly-report" data-reveal data-delay="2">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.8 4.9L19 9.7l-4.4 3.1L15.8 18 12 15.3 8.2 18l1.2-5.2L5 9.7l5.2-1.8L12 3Z"/><path d="M19 3v3M20.5 4.5h-3"/><path d="M5 17v2M6 18H4"/></svg> SCENARIO 04</span>
+            <span class="badge" data-tone="green">入门</span>
+          </div>
+          <h3>把周报 SOP 变成技能</h3>
+          <p class="course-desc">让 agent 按团队固定格式生成周报草稿，而不是每次临时发挥。</p>
+          <div class="scenario-stack"><span class="chip">DSH Skills</span><span class="chip">Markdown</span><span class="chip">Git</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>在项目里创建 .dsh/skills/weekly-report/SKILL.md，跟着仓库一起版本化。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>frontmatter 写 kebab-case 的 name 和具体的 description，正文写输入、步骤、输出格式与验收。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>把最容易被忽略的规则写进正文，例如 不直接发布、必须列出风险项。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>新开会话确认技能出现在目录中，让模型执行一次并按反馈修订正文。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>团队需要统一行为时，把技能提交进仓库；只给用户手动调用时设 disable-model-invocation。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>New-Item -ItemType Directory -Force .dsh\skills\weekly-report</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-ChildItem .dsh\skills -Recurse -Filter SKILL.md | Select-Object FullName</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">任何人在该仓库开新会话都能触发同一套周报流程，输出格式稳定，修改流程只需改 Markdown。</span>
+          </div>
+        </article><article class="course-card" id="deploy-web-ui" data-reveal data-delay="1">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3-.2Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.9 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.5-2.8 2-4c1.5-1.2 4 0 4 0"/><path d="M12 15v5s2.8-.5 4-2c1.2-1.5 0-4 0-4"/></svg> SCENARIO 05</span>
+            <span class="badge" data-tone="violet">实战</span>
+          </div>
+          <h3>把 DSH Web UI 发布到公网</h3>
+          <p class="course-desc">在自有域名下安全提供 DSH Web UI，外部浏览器可访问且不被 403 拦住。</p>
+          <div class="scenario-stack"><span class="chip">Nginx</span><span class="chip">TLS</span><span class="chip">DSH Web</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>先在本机确认 dsh web 正常，再决定挂载路径，例如 https://app.example/ui/。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>配置代理：保留 Host、剥离 /ui 前缀、转发 Upgrade 与 Connection、改写 cookie Path。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 --public-url 公告外部地址，用 --trusted-host 点名浏览器使用的 authority。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>TLS 在代理或监听器上终止；监听器自签终止时传 --tls-cert 与 --tls-key。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>上线验收：首页 200、API 无 403、WebSocket 正常、HTTPS 下 cookie 带 Secure。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>把监听端口限制在代理或内网，启动 URL 含 token，只发给预期用户。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh --profile web --public-url https://app.example/ui/ --trusted-host app.example</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>curl.exe -I https://app.example/ui/</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>nginx -t</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">团队成员通过 https://app.example/ui/ 正常使用，接口与流式输出都工作，未授权来源仍被栅栏拒绝。</span>
+          </div>
+        </article><article class="course-card" id="mcp-memory" data-reveal data-delay="2">
+          <div class="course-top">
+            <span class="course-num"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-4"/><path d="M8 8V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/><path d="M9 14v4M15 14v4"/></svg> SCENARIO 06</span>
+            <span class="badge" data-tone="blue">进阶</span>
+          </div>
+          <h3>接一个记忆 MCP，让 agent 记住团队约定</h3>
+          <p class="course-desc">让 DSH 在新会话里召回团队的技术选型与命名约定，而不是每次重复交代。</p>
+          <div class="scenario-stack"><span class="chip">MCP</span><span class="chip">Memorix</span><span class="chip">DSH</span></div>
+          <div class="step" style="margin-top:20px;padding-top:18px">
+            <h4 style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px">执行步骤</h4>
+            <ol style="display:grid;gap:7px;list-style:none;counter-reset:sc">
+              <li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>选一个记忆服务并安装，例如 Memorix 或 MCP Reference Memory，确认它能独立启动。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>用 --patch 加载对应的记忆配置 overlay；交付组合默认不包含任何记忆服务器。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>在会话 A 明确写入一条唯一可验证的记忆，确认写入工具返回成功。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>在同一个宿主里新开会话 B，不复制会话 A 的对话，要求它检索这条记忆。</li><li style="position:relative;padding-left:24px;font-size:12.8px;color:var(--muted);counter-increment:sc">
+                <span style="position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--brand)">00</span>确认召回后再让它用该偏好完成一个小任务；需要长期生效就把 overlay 合并进 profile 的 patch 层。</li>
+            </ol>
+          </div>
+          <div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npm install --global memorix@1.3.0</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh web --patch &quot;$PWD/apps/cli/config/examples/mcp-memory/memorix.cordis.yml&quot;</code></pre>
+  </div>
+          <div class="course-foot" style="margin-top:16px">
+            <span class="dim" style="font-size:12px">新会话无需重复交代就能召回团队约定；记忆内容由提供方管理，DSH 只负责启动与工具暴露。</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/dsh-academy/">
+          <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+          <span class="brand-name">DSH<span> Academy</span></span>
+        </a>
+        <p>一座会自己更新的 DeepSeek Harness 中文教学站：课程、场景、社区雷达与一键部署流水线。</p>
+      </div>
+      <div>
+        <h5>学习</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/courses/">全部课程</a>
+          <a href="/dsh-academy/scenarios/">实战场景</a>
+          <a href="/dsh-academy/faq/">常见问题</a>
+        </div>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/">更新雷达</a>
+          <a href="/dsh-academy/deploy/">部署指南</a>
+          <a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">GitHub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>自动巡检</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/#sources">数据源与健康状态</a>
+          <a href="/dsh-academy/deploy/#automation">每 3 天自动更新</a>
+          <a href="https://www.deepseek.com/harness/" target="_blank" rel="noreferrer">DeepSeek Harness 官网 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DSH Academy · 教学站由 DeepSeek Harness 驱动构建</span>
+      <span class="footer-status"><span class="dot"></span>巡检正常 · 最近巡检 2026/11/6 07:21:57</span>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" type="button" data-scroll-top aria-label="回到顶部"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span></span></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="全站搜索">
+  <div class="palette-backdrop" data-search-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-wrap"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palette-input" type="search" placeholder="搜索课程、场景、FAQ、更新…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="palette-results" id="palette-results"></div>
+    <div class="palette-foot"><span>↑↓ 选择</span><span>↵ 打开</span><span>Esc 关闭</span></div>
+  </div>
+</div>
+<script src="/dsh-academy/assets/js/app.js?v=670709547e" defer></script>
+</body>
+</html>

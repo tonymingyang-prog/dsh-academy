@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>常见问题 · DSH Academy</title>
+<meta name="description" content="DeepSeek Harness 常见问题：端口占用、API Key、Node 版本、插件安装、沙箱拒绝、审批、上下文压缩、反向代理 403 等。">
+<meta property="og:title" content="常见问题 · DSH Academy">
+<meta property="og:description" content="DeepSeek Harness 常见问题：端口占用、API Key、Node 版本、插件安装、沙箱拒绝、审批、上下文压缩、反向代理 403 等。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/assets/img/tour-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="DSH Academy · 更新雷达" href="https://tonymingyang-prog.github.io/dsh-academy/dsh-academy/feed.xml">
+<meta name="theme-color" content="#05080f">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%235b8cff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M9%2022V10h5.2a6%206%200%200%201%200%2012H9Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M22%2010v12M22%2016h-3%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="/dsh-academy/assets/css/main.css?v=670709547e">
+<noscript><style>
+  .nav-links{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap;padding:0!important;background:none!important;border:0!important;margin-left:6px!important}
+  .search-btn,.menu-btn{display:none!important}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    try {
+      var t = localStorage.getItem('dsh-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var done = JSON.parse(localStorage.getItem('dsh-progress') || '[]');
+      window.__DSH_PROGRESS__ = Array.isArray(done) ? done : [];
+    } catch (e) { window.__DSH_PROGRESS__ = []; }
+  })();
+</script>
+</head>
+<body class="" data-base="/dsh-academy">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/dsh-academy/" aria-label="DSH Academy 首页">
+      <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+      <span class="brand-name">DSH<span> Academy</span><span class="brand-sub">DeepSeek Harness</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="主导航"><a class="nav-link" href="/dsh-academy/">首页</a><a class="nav-link" href="/dsh-academy/courses/">课程</a><a class="nav-link" href="/dsh-academy/scenarios/">场景</a><a class="nav-link" href="/dsh-academy/updates/">更新</a><a class="nav-link is-active" href="/dsh-academy/faq/">FAQ</a><a class="nav-link" href="/dsh-academy/deploy/">部署</a></nav>
+    <div class="nav-actions">
+      <span class="nav-version" title="当前 DSH 版本">v0.2.2-rc.1 <span class="dot"></span></span>
+      <button class="search-btn" type="button" data-search-open aria-label="搜索（Ctrl K）"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>搜索</span><kbd>Ctrl K</kbd></button>
+      <a class="icon-btn" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg></a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="切换主题"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/dsh-academy/">首页</a><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>常见问题</span></div>
+      <div class="eyebrow">Troubleshooting</div>
+      <h1>常见问题与修复手册</h1>
+      <p class="lead">来自官方文档、社区讨论与本机实测的高频问题。每条都按「症状 → 原因 → 处理」组织，命令可直接复制。</p>
+      <div class="page-stats">
+        <div class="page-stat"><b>14</b>个问题</div>
+        <div class="page-stat"><b>9</b>个分类</div>
+        <div class="page-stat"><b>Windows</b>优先覆盖</div>
+      </div>
+    </div>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      <div class="faq-tools">
+        <div class="search-field">
+          <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="搜索问题、报错或命令…" data-faq-search aria-label="搜索常见问题">
+        </div>
+        <div class="filter-chips" data-faq-filters>
+          <button class="filter-chip is-active" data-tag="all">全部</button>
+          <button class="filter-chip" data-tag="安装">安装</button><button class="filter-chip" data-tag="凭据">凭据</button><button class="filter-chip" data-tag="插件">插件</button><button class="filter-chip" data-tag="权限">权限</button><button class="filter-chip" data-tag="沙箱">沙箱</button><button class="filter-chip" data-tag="Web UI">Web UI</button><button class="filter-chip" data-tag="模型">模型</button><button class="filter-chip" data-tag="Node.js">Node.js</button><button class="filter-chip" data-tag="审批">审批</button>
+        </div>
+        <span class="dim" style="font-size:12px;margin-left:auto" data-faq-count>14 条</span>
+      </div>
+      <div class="faq-list" data-faq-list>
+        <details class="faq-item" id="faq-port-3080" data-tags="安装,Web UI" data-text="端口 3080 被占用 / 页面打不开怎么办？ 换一个空闲端口启动，或先停掉占用 3080 的旧进程，再打开终端打印的新地址。 安装 Web UI" data-reveal>
+  <summary>
+    <span class="faq-index">01</span>
+    <span class="faq-q">端口 3080 被占用 / 页面打不开怎么办？</span>
+    <span class="badge" data-tone="amber">高频</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">换一个空闲端口启动，或先停掉占用 3080 的旧进程，再打开终端打印的新地址。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>另一个 DSH 实例或其他服务占用了 3080；也可能你把端口换成了 3081，却仍在打开旧地址。监听失败会让启动进程报告失败的 fiber，而不是自动换端口。</p></div>
+      <div><h5>处理步骤</h5><ol><li>在 Windows 上查 3080 的监听进程，确认 PID 归属后再决定是否结束</li><li>用 --port 指定其他端口重新启动，并打开终端新打印的 URL</li><li>如果改过 --host，确认访问的地址与绑定地址一致</li><li>仍不通时检查本机防火墙与代理设置，不要只怀疑 DSH</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-NetTCPConnection -LocalPort 3080 -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npx @deepseek-ai/dsh web --no-open --port 3081</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">安装</span><span class="chip">Web UI</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html" target="_blank" rel="noreferrer">官方文档：使用 Web UI <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.html" target="_blank" rel="noreferrer">官方文档：HTTP 服务器 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-api-key" data-tags="模型,凭据" data-text="模型报 MISSING_CREDENTIAL 或 401，密钥应该配在哪？ 在 设置 → 模型 中保存对应提供商的密钥；保存后下一次请求生效，不需要重启。 模型 凭据" data-reveal>
+  <summary>
+    <span class="faq-index">02</span>
+    <span class="faq-q">模型报 MISSING_CREDENTIAL 或 401，密钥应该配在哪？</span>
+    <span class="badge" data-tone="amber">高频</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">在 设置 → 模型 中保存对应提供商的密钥；保存后下一次请求生效，不需要重启。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>密钥没有保存、保存到了错误的提供商，或环境变量后备没有被检测到；也可能是密钥被撤销、额度耗尽，或自定义端点的地址与协议不匹配。</p></div>
+      <div><h5>处理步骤</h5><ol><li>打开 设置 → 模型，在 DeepSeek 卡片输入密钥并保存</li><li>第三方提供商先选提供商 id，再填它自己的密钥</li><li>自定义端点核对基础 URL、API 协议和模型列表，协议只能选网关实际使用的一种</li><li>用 获取可用模型 验证；失败就手动填模型 ID，探测只是便利手段</li><li>确认凭据文件存在且当前用户可读，不要把密钥贴进仓库或聊天记录</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Test-Path &quot;$env:USERPROFILE\.dsh\.credentials.yaml&quot;</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npx @deepseek-ai/dsh web</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">模型</span><span class="chip">凭据</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/providers.html" target="_blank" rel="noreferrer">官方文档：配置模型 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.html" target="_blank" rel="noreferrer">官方文档：用户凭据 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-node-version" data-tags="安装,Node.js" data-text="启动提示 Node 版本不满足，或 npx 直接失败？ 当前 0.2.2-rc.1 的 dsh 包声明 Node &gt;= 24.9.0，先升级 Node 并重开终端。 安装 Node.js" data-reveal>
+  <summary>
+    <span class="faq-index">03</span>
+    <span class="faq-q">启动提示 Node 版本不满足，或 npx 直接失败？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">当前 0.2.2-rc.1 的 dsh 包声明 Node &gt;= 24.9.0，先升级 Node 并重开终端。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>系统 Node 太旧；多版本管理器切换到了旧版本；IDE 内置终端与系统终端使用的 Node 不是同一个。</p></div>
+      <div><h5>处理步骤</h5><ol><li>用 node -v 确认实际版本，满足 &gt;= 24.9.0 再启动</li><li>用 nvm-windows 或 fnm 安装并切换到 24.9.0 以上版本</li><li>重开终端，确认 which node 与 npm 指向同一套安装</li><li>清理 npx 缓存后重试，避免命中旧的 dsh 包</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>node -v
+npm -v</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>nvm install 24.9.0
+nvm use 24.9.0
+node -v</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">安装</span><span class="chip">Node.js</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.html" target="_blank" rel="noreferrer">官方文档：使用 Web UI <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://www.npmjs.com/package/@deepseek-ai/dsh" target="_blank" rel="noreferrer">npm：@deepseek-ai/dsh <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-plugin-install" data-tags="插件,安装" data-text="插件装不上，或装了却没有生效？ 用 dsh plugin --profile &lt;name&gt; add 安装声明了 dsh.bundle 的组合包，并用同一个 profile 启动。 插件 安装" data-reveal>
+  <summary>
+    <span class="faq-index">04</span>
+    <span class="faq-q">插件装不上，或装了却没有生效？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">用 dsh plugin --profile &lt;name&gt; add 安装声明了 dsh.bundle 的组合包，并用同一个 profile 启动。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>包没有声明 dsh.bundle；装进了另一个 profile；engines.dsh 或 peer 依赖不满足；从 git 安装时没有构建产物或未授权 prepare 脚本。</p></div>
+      <div><h5>处理步骤</h5><ol><li>检查包内 package.json 是否有 dsh.bundle.patch</li><li>确认安装与启动使用同一个 profile，例如都用 --profile web</li><li>用 --dump-config 确认组合包里出现该层</li><li>git 安装失败时按提示把包键写进该 profile 的 pnpm-workspace.yaml allowBuilds，再重试</li><li>不想让用户授权构建就改用 npm 预构建包或 tarball</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh plugin --profile web add dsh-hello-plugin</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh --profile web --dump-config</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">插件</span><span class="chip">安装</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.html" target="_blank" rel="noreferrer">官方文档：打包与安装插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.html" target="_blank" rel="noreferrer">官方文档：插件市场 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-sandbox-denied" data-tags="权限,沙箱" data-text="命令报文件写入被拒 / sandbox denied，怎么办？ 当前沙箱模式不允许写这个路径；把目标移到工作区内，或在明确风险后走一次性提权。 权限 沙箱" data-reveal>
+  <summary>
+    <span class="faq-index">05</span>
+    <span class="faq-q">命令报文件写入被拒 / sandbox denied，怎么办？</span>
+    <span class="badge" data-tone="amber">高频</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">当前沙箱模式不允许写这个路径；把目标移到工作区内，或在明确风险后走一次性提权。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>read-only 模式只允许必要接收器；workspace-write 只允许会话工作区根与后端承诺的临时区域；会话 cwd 可能不是你以为什么目录。Windows ACL runner 还可能在硬链接等边界上只做到部分强制执行。</p></div>
+      <div><h5>处理步骤</h5><ol><li>先用 Get-Location 确认会话工作区，再把输出改到工作区内</li><li>构建、安装依赖这类需要写盘的任务切到 workspace-write</li><li>确实要越界时，让工具调用带 sandbox_permissions 与 justification 发起一次性重试，并完成审批</li><li>不要把整个会话长期切成 danger-full-access 来绕过问题</li><li>sandbox unavailable 说明没有可用后端，属于环境故障，不是命令写错</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-Location
+Set-Content .\sandbox-probe.txt ok
+Get-Content .\sandbox-probe.txt</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>pwd</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">权限</span><span class="chip">沙箱</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html" target="_blank" rel="noreferrer">官方文档：沙箱 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html" target="_blank" rel="noreferrer">官方文档：权限预设 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html" target="_blank" rel="noreferrer">官方文档：审批 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-approvals" data-tags="审批,权限" data-text="操作一直被拒绝，或审批弹窗根本不出现？ ask 策略下只有 allowed-once 会放行；never 策略或没有可用应答者时，请求一律失败关闭。 审批 权限" data-reveal>
+  <summary>
+    <span class="faq-index">06</span>
+    <span class="faq-q">操作一直被拒绝，或审批弹窗根本不出现？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">ask 策略下只有 allowed-once 会放行；never 策略或没有可用应答者时，请求一律失败关闭。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>会话权限预设是 danger-full-access + never；Web UI 不在前台或连接断开，没有应答者；请求被取消或超时；被委派的子代理使用固定的 never 策略。</p></div>
+      <div><h5>处理步骤</h5><ol><li>检查 Permissions 选择器当前是哪个预设</li><li>交互开发切到 workspace-write（workspace-write + ask）</li><li>在前台确认审批弹窗并选择允许一次</li><li>无人值守场景不要依赖审批，改设计成只读或预授权操作</li><li>被拒绝后重新发起操作，旧请求不会复活</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code><span class="c-comment"># 审批是 Web UI 交互，没有对应的 dsh 子命令</span>
+<span class="c-comment"># 在会话顶部的 Permissions 选择器中切换预设</span></code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">审批</span><span class="chip">权限</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.html" target="_blank" rel="noreferrer">官方文档：审批 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.html" target="_blank" rel="noreferrer">官方文档：权限预设 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-context-compaction" data-tags="上下文,压缩" data-text="上下文快满了、模型开始忘事，怎么压缩？ 空闲时输入 /compact 手动压缩，或让自动压缩在压力或溢出时接管；压缩只替换模型可见的旧历史，日志不丢。 上下文 压缩" data-reveal>
+  <summary>
+    <span class="faq-index">07</span>
+    <span class="faq-q">上下文快满了、模型开始忘事，怎么压缩？</span>
+    <span class="badge" data-tone="amber">高频</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">空闲时输入 /compact 手动压缩，或让自动压缩在压力或溢出时接管；压缩只替换模型可见的旧历史，日志不丢。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>长会话累积了大量工具输出；自动压缩阈值还没到，或单个超大结果无法通过压缩修复；会话正在跑轮次或已有压缩在运行。</p></div>
+      <div><h5>处理步骤</h5><ol><li>等当前轮次结束再执行 /compact，它只在空闲时可用</li><li>压缩后重新确认关键约束，摘要不保证保留每个细节</li><li>把无关任务拆到新会话，别让一个会话承担所有历史</li><li>重跑大输出命令时限制输出，或写入文件只读关键片段</li><li>/compact 不接受参数，也不要指望它压缩单个超大工具结果</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code><span class="c-comment"># 在 DSH 会话输入框执行（不是 shell）</span>
+/compact</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">上下文</span><span class="chip">压缩</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.html" target="_blank" rel="noreferrer">官方文档：上下文压缩 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.html" target="_blank" rel="noreferrer">官方文档：会话 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-powershell-policy" data-tags="Windows,PowerShell,沙箱" data-text="PowerShell 在沙箱里报「仅核心类型」或 cmdlet 不可用？ 只读沙箱下 PowerShell 可能以 ConstrainedLanguage 运行，.NET 静态调用、Add-Type、COM 会被拒绝；改用 cmdlet 或切到 workspace-write。 Windows PowerShell 沙箱" data-reveal>
+  <summary>
+    <span class="faq-index">08</span>
+    <span class="faq-q">PowerShell 在沙箱里报「仅核心类型」或 cmdlet 不可用？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">只读沙箱下 PowerShell 可能以 ConstrainedLanguage 运行，.NET 静态调用、Add-Type、COM 会被拒绝；改用 cmdlet 或切到 workspace-write。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>沙箱策略限制了 PowerShell 语言模式；这是策略拒绝，不是命令语法错误。只读模式还会拒绝任何写入，即使语言模式允许。</p></div>
+      <div><h5>处理步骤</h5><ol><li>优先用 Get-ChildItem、Get-Content、Select-String 等 cmdlet 完成同样的事</li><li>需要 .NET 或写盘时切到 workspace-write，并确认操作发生在工作区内</li><li>不要反复换写法试图绕过策略；被拒绝是预期边界</li><li>必须用完整 .NET 能力时，由人手动在沙箱外执行</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-ChildItem -File | Select-Object -First 10</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-Content .\package.json -Raw</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">Windows</span><span class="chip">PowerShell</span><span class="chip">沙箱</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.html" target="_blank" rel="noreferrer">官方文档：沙箱 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.html" target="_blank" rel="noreferrer">官方文档：Bash 执行 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-public-deploy-403" data-tags="部署,反向代理" data-text="反向代理之后页面能开，但所有 API 都返回 403？ 浏览器使用的 authority 没有被 --trusted-host 接纳；补上它，并让代理保留原始 Host。 部署 反向代理" data-reveal>
+  <summary>
+    <span class="faq-index">09</span>
+    <span class="faq-q">反向代理之后页面能开，但所有 API 都返回 403？</span>
+    <span class="badge" data-tone="amber">高频</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">浏览器使用的 authority 没有被 --trusted-host 接纳；补上它，并让代理保留原始 Host。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>栅栏只接受 loopback、监听器自身绑定地址和 --trusted-host 点名的 authority；--public-url 只是公告，不授予信任。代理改写 Host 也会导致 403。</p></div>
+      <div><h5>处理步骤</h5><ol><li>用 --trusted-host 点名浏览器可见的 authority，可带端口</li><li>让代理原样转发浏览器可见的 Host，不要改写成监听器地址</li><li>确保代理剥离挂载前缀，/ui/api/... 以 /api/... 抵达监听器</li><li>转发 Upgrade 与 Connection 头，保证 WebSocket 能升级</li><li>把 cookie 的 Path 改写到挂载前缀，HTTPS 链路上加 Secure</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh --profile web --public-url https://app.example/ui/ --trusted-host app.example</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>curl.exe -I https://app.example/ui/</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">部署</span><span class="chip">反向代理</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.html" target="_blank" rel="noreferrer">官方文档：在反向代理之后发布 Web UI <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.html" target="_blank" rel="noreferrer">官方文档：HTTP 服务器 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-schedule-timezone" data-tags="定时任务,时区" data-text="定时任务按什么时区触发？为什么没在预期时间跑？ 每日和每周规则按保存的 IANA 时区与本地钟点触发；宿主没运行就不会投递。 定时任务 时区" data-reveal>
+  <summary>
+    <span class="faq-index">10</span>
+    <span class="faq-q">定时任务按什么时区触发？为什么没在预期时间跑？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">每日和每周规则按保存的 IANA 时区与本地钟点触发；宿主没运行就不会投递。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>保存的时区与预期不符；自然语言请求使用的是浏览器时区；宿主关闭期间调度停止；不存在的本地时间会被跳过；一次性任务只保存 UTC 时点。</p></div>
+      <div><h5>处理步骤</h5><ol><li>创建时显式写时区，例如 每天 Asia/Shanghai 09:00</li><li>在自动化任务页面核对频率、时区与下次运行时间</li><li>需要准点就保持宿主常驻，或把关键调度放到外部调度器</li><li>跨夏令时使用 IANA 时区，不要用固定偏移</li><li>重启后重复任务只补最近错过的一次，别期待补齐全部</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">text</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code><span class="c-comment"># 在对话中创建（示例）</span>
+每天 Asia/Shanghai 09:00 汇总昨天的 CI 失败并给出修复建议</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">定时任务</span><span class="chip">时区</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/guide/schedule.html" target="_blank" rel="noreferrer">官方文档：会话内提醒 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.html" target="_blank" rel="noreferrer">官方文档：定时提醒 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-plugin-incompat" data-tags="插件,版本" data-text="安装插件提示 DSH 版本不兼容？ 插件的 engines.dsh 或 dsh peer 依赖与当前 0.2.2-rc.1 不匹配；装兼容版本或升级 DSH，不要靠版本豁免硬上。 插件 版本" data-reveal>
+  <summary>
+    <span class="faq-index">11</span>
+    <span class="faq-q">安装插件提示 DSH 版本不兼容？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">插件的 engines.dsh 或 dsh peer 依赖与当前 0.2.2-rc.1 不匹配；装兼容版本或升级 DSH，不要靠版本豁免硬上。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>插件要求更高或更低的 DSH 版本；开发者预览阶段破坏性变更频繁；版本豁免会跳过检查，但运行时仍可能崩溃。</p></div>
+      <div><h5>处理步骤</h5><ol><li>用 dsh --version 确认当前版本</li><li>查看插件 package.json 的 engines.dsh 或 @deepseek-ai/dsh* peer 范围</li><li>选一个满足范围的插件版本，或升级 DSH 到插件要求的版本</li><li>确需豁免时只在隔离环境试用，并明确可能崩溃或丢数据</li><li>把可用版本写进项目文档，避免团队成员各自装不同版本</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>dsh --version</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">sh</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>npm view dsh-hello-plugin engines --json</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">插件</span><span class="chip">版本</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.html" target="_blank" rel="noreferrer">官方文档：打包与安装插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.html" target="_blank" rel="noreferrer">官方文档：插件市场 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-skill-not-loaded" data-tags="技能,排查" data-text="写了 SKILL.md，但模型看不到或不调用？ 检查目录位置、kebab-case 名称和 description；嵌套的 SKILL.md 不会被发现。 技能 排查" data-reveal>
+  <summary>
+    <span class="faq-index">12</span>
+    <span class="faq-q">写了 SKILL.md，但模型看不到或不调用？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">检查目录位置、kebab-case 名称和 description；嵌套的 SKILL.md 不会被发现。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>放错根目录或嵌套过深；名称不是 kebab-case；description 太泛；设置了 disable-model-invocation；项目根不是你以为的目录。</p></div>
+      <div><h5>处理步骤</h5><ol><li>放到 &lt;project&gt;/.dsh/skills/&lt;name&gt;/SKILL.md 或用户技能根 &lt;dshHome&gt;/skills/&lt;name&gt;/SKILL.md</li><li>名称只用小写字母、数字和连字符</li><li>description 写清触发场景与任务类型，不要写口号</li><li>确认 frontmatter 以 --- 开头和结束，YAML 缩进正确</li><li>项目根是最近的 .git 祖先；找不到时用当前 cwd，必要时新开会话让目录刷新</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>New-Item -ItemType Directory -Force .dsh\skills\weekly-report</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-Content .dsh\skills\weekly-report\SKILL.md -TotalCount 10</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">技能</span><span class="chip">排查</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.html" target="_blank" rel="noreferrer">官方文档：技能 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.html" target="_blank" rel="noreferrer">官方文档：第一个 Harness 插件 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-long-command-timeout" data-tags="工具,超时,后台任务" data-text="长命令跑到一半被杀，或提示超时？ 前台命令有超时上限；把长任务放后台运行，或显式提高 timeoutMs。 工具 超时 后台任务" data-reveal>
+  <summary>
+    <span class="faq-index">13</span>
+    <span class="faq-q">长命令跑到一半被杀，或提示超时？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">前台命令有超时上限；把长任务放后台运行，或显式提高 timeoutMs。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>执行器按 timeoutMs 杀掉超时命令，实现还会给它设上限；输出超过捕获预算时只保留尾部；会话取消也会终止命令。</p></div>
+      <div><h5>处理步骤</h5><ol><li>用 run_in_background 启动长任务，再用 job_output 轮询，不要在前台干等</li><li>给足 timeoutMs，并知道实现可能封顶</li><li>把输出重定向到文件，只读尾部做判断</li><li>把大任务拆成可增量验证的步骤，避免一次跑几十分钟</li><li>不要用 sleep 轮询，后台任务完成会通知</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>pnpm run build *&gt; build.log</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-Content .\build.log -Tail 50 -Wait</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">工具</span><span class="chip">超时</span><span class="chip">后台任务</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.html" target="_blank" rel="noreferrer">官方文档：Bash 执行 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.html" target="_blank" rel="noreferrer">官方文档：后台任务 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details><details class="faq-item" id="faq-credentials-location" data-tags="凭据,迁移" data-text="API 密钥存在哪里？怎么备份或迁移？ 在 $DSH_HOME/.credentials.yaml，Windows 默认 C:\Users\&lt;you&gt;\.dsh\.credentials.yaml；settings 只保存对它的引用。 凭据 迁移" data-reveal>
+  <summary>
+    <span class="faq-index">14</span>
+    <span class="faq-q">API 密钥存在哪里？怎么备份或迁移？</span>
+    <span class="faq-chev"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="faq-body">
+    <p class="faq-answer">在 $DSH_HOME/.credentials.yaml，Windows 默认 C:\Users\&lt;you&gt;\.dsh\.credentials.yaml；settings 只保存对它的引用。</p>
+    <div class="faq-sub">
+      <div><h5>原因</h5><p>凭据由本地 provider 管理，DSH_HOME 可以被环境变量改写；settings 与 cordis.yml 里只有引用，没有明文值。</p></div>
+      <div><h5>处理步骤</h5><ol><li>先确认 DSH_HOME 实际指向哪里</li><li>备份 .credentials.yaml 到受控的加密位置，并限制文件权限</li><li>迁移时只复制该文件，不要把整个 .dsh 提交到仓库</li><li>轮换密钥后在 设置 → 模型 重新保存，下一次请求即生效</li><li>环境变量后备仍然可用，但显式保存的值优先</li></ol></div>
+      <div class="faq-commands"><h5>命令</h5><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>$env:DSH_HOME</code></pre>
+  </div><div class="codeblock">
+    <div class="code-head"><span class="code-lang">powershell</span><button class="copy-btn" type="button" data-copy aria-label="复制代码"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>复制</span></button></div>
+    <pre><code>Get-Item &quot;$env:USERPROFILE\.dsh\.credentials.yaml&quot; | Select-Object FullName, Length, LastWriteTime</code></pre>
+  </div></div>
+      <div class="faq-sub"><h5>标签</h5><div class="scenario-stack"><span class="chip">凭据</span><span class="chip">迁移</span></div></div>
+    </div>
+    <div class="faq-links"><a href="https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.html" target="_blank" rel="noreferrer">官方文档：用户凭据 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a href="https://deepseek-harness.github.io/deepseek-harness/guide/providers.html" target="_blank" rel="noreferrer">官方文档：配置模型 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
+  </div>
+</details>
+      </div>
+      <div class="empty-state" data-faq-empty style="display:none">没有匹配的问题。试试「端口」「密钥」「沙箱」或直接看官方文档。</div>
+      <div class="cta-band" style="margin-top:36px">
+        <div class="eyebrow">Still stuck</div>
+        <h2>还是卡住了？</h2>
+        <p>先去官方文档按页面搜索；如果确认是 bug，带上复现步骤提交到 GitHub Discussions。提问时附上版本号、系统与实际报错，解决速度会快很多。</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> 官方文档</a>
+          <a class="btn btn-ghost" href="https://github.com/deepseek-ai/deepseek-harness/discussions" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.6s-1.2-.4-4 1.5a13.4 13.4 0 0 0-7 0C4.6 1.3 3.4 1.7 3.4 1.7a5 5 0 0 0-.1 3.6A5.4 5.4 0 0 0 2 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-3 .9-3-2-4-2.5"/></svg> GitHub Discussions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"端口 3080 被占用 / 页面打不开怎么办？","acceptedAnswer":{"@type":"Answer","text":"换一个空闲端口启动，或先停掉占用 3080 的旧进程，再打开终端打印的新地址。"}},{"@type":"Question","name":"模型报 MISSING_CREDENTIAL 或 401，密钥应该配在哪？","acceptedAnswer":{"@type":"Answer","text":"在 设置 → 模型 中保存对应提供商的密钥；保存后下一次请求生效，不需要重启。"}},{"@type":"Question","name":"启动提示 Node 版本不满足，或 npx 直接失败？","acceptedAnswer":{"@type":"Answer","text":"当前 0.2.2-rc.1 的 dsh 包声明 Node >= 24.9.0，先升级 Node 并重开终端。"}},{"@type":"Question","name":"插件装不上，或装了却没有生效？","acceptedAnswer":{"@type":"Answer","text":"用 dsh plugin --profile <name> add 安装声明了 dsh.bundle 的组合包，并用同一个 profile 启动。"}},{"@type":"Question","name":"命令报文件写入被拒 / sandbox denied，怎么办？","acceptedAnswer":{"@type":"Answer","text":"当前沙箱模式不允许写这个路径；把目标移到工作区内，或在明确风险后走一次性提权。"}},{"@type":"Question","name":"操作一直被拒绝，或审批弹窗根本不出现？","acceptedAnswer":{"@type":"Answer","text":"ask 策略下只有 allowed-once 会放行；never 策略或没有可用应答者时，请求一律失败关闭。"}},{"@type":"Question","name":"上下文快满了、模型开始忘事，怎么压缩？","acceptedAnswer":{"@type":"Answer","text":"空闲时输入 /compact 手动压缩，或让自动压缩在压力或溢出时接管；压缩只替换模型可见的旧历史，日志不丢。"}},{"@type":"Question","name":"PowerShell 在沙箱里报「仅核心类型」或 cmdlet 不可用？","acceptedAnswer":{"@type":"Answer","text":"只读沙箱下 PowerShell 可能以 ConstrainedLanguage 运行，.NET 静态调用、Add-Type、COM 会被拒绝；改用 cmdlet 或切到 workspace-write。"}},{"@type":"Question","name":"反向代理之后页面能开，但所有 API 都返回 403？","acceptedAnswer":{"@type":"Answer","text":"浏览器使用的 authority 没有被 --trusted-host 接纳；补上它，并让代理保留原始 Host。"}},{"@type":"Question","name":"定时任务按什么时区触发？为什么没在预期时间跑？","acceptedAnswer":{"@type":"Answer","text":"每日和每周规则按保存的 IANA 时区与本地钟点触发；宿主没运行就不会投递。"}},{"@type":"Question","name":"安装插件提示 DSH 版本不兼容？","acceptedAnswer":{"@type":"Answer","text":"插件的 engines.dsh 或 dsh peer 依赖与当前 0.2.2-rc.1 不匹配；装兼容版本或升级 DSH，不要靠版本豁免硬上。"}},{"@type":"Question","name":"写了 SKILL.md，但模型看不到或不调用？","acceptedAnswer":{"@type":"Answer","text":"检查目录位置、kebab-case 名称和 description；嵌套的 SKILL.md 不会被发现。"}},{"@type":"Question","name":"长命令跑到一半被杀，或提示超时？","acceptedAnswer":{"@type":"Answer","text":"前台命令有超时上限；把长任务放后台运行，或显式提高 timeoutMs。"}},{"@type":"Question","name":"API 密钥存在哪里？怎么备份或迁移？","acceptedAnswer":{"@type":"Answer","text":"在 $DSH_HOME/.credentials.yaml，Windows 默认 C:\\Users\\<you>\\.dsh\\.credentials.yaml；settings 只保存对它的引用。"}}]}</script>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/dsh-academy/">
+          <span class="brand-mark"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17V7h4.2a5 5 0 0 1 0 10H7Z"/><path d="M17 7v10"/><path d="M17 12h-3"/></svg></span>
+          <span class="brand-name">DSH<span> Academy</span></span>
+        </a>
+        <p>一座会自己更新的 DeepSeek Harness 中文教学站：课程、场景、社区雷达与一键部署流水线。</p>
+      </div>
+      <div>
+        <h5>学习</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/courses/">全部课程</a>
+          <a href="/dsh-academy/scenarios/">实战场景</a>
+          <a href="/dsh-academy/faq/">常见问题</a>
+        </div>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/">更新雷达</a>
+          <a href="/dsh-academy/deploy/">部署指南</a>
+          <a href="https://deepseek-harness.github.io/deepseek-harness/" target="_blank" rel="noreferrer">官方文档 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">GitHub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>自动巡检</h5>
+        <div class="footer-links">
+          <a href="/dsh-academy/updates/#sources">数据源与健康状态</a>
+          <a href="/dsh-academy/deploy/#automation">每 3 天自动更新</a>
+          <a href="https://www.deepseek.com/harness/" target="_blank" rel="noreferrer">DeepSeek Harness 官网 <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DSH Academy · 教学站由 DeepSeek Harness 驱动构建</span>
+      <span class="footer-status"><span class="dot"></span>巡检正常 · 最近巡检 2026/11/6 07:21:57</span>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" type="button" data-scroll-top aria-label="回到顶部"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span></span></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="全站搜索">
+  <div class="palette-backdrop" data-search-close></div>
+  <div class="palette-panel">
+    <div class="palette-input-wrap"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palette-input" type="search" placeholder="搜索课程、场景、FAQ、更新…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="palette-results" id="palette-results"></div>
+    <div class="palette-foot"><span>↑↓ 选择</span><span>↵ 打开</span><span>Esc 关闭</span></div>
+  </div>
+</div>
+<script src="/dsh-academy/assets/js/app.js?v=670709547e" defer></script>
+</body>
+</html>
