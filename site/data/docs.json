@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T10:34:21.135Z",
+  "updatedAt": "2026-11-13T10:14:22.233Z",
   "pages": [
     {
       "title": "定时提醒",
@@ -132,7 +132,7 @@
       "category": "基础"
     },
     {
-      "title": "插件市场",
+      "title": "插件索引",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md",
       "category": "集成"
     },
@@ -289,6 +289,11 @@
     {
       "title": "网络代理",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md",
+      "category": "入门"
+    },
+    {
+      "title": "卸载 DSH 桌面端",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/desktop-uninstall-cleanup.md",
       "category": "入门"
     },
     {

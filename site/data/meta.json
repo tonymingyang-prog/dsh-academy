@@ -1,22 +1,22 @@
 {
-  "lastRun": "2026-11-10T10:34:21.135Z",
-  "nextRun": "2026-11-13T03:00:00.000Z",
+  "lastRun": "2026-11-13T10:14:22.233Z",
+  "nextRun": "2026-11-16T03:00:00.000Z",
   "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
-  "durationMs": 3650,
+  "durationMs": 4229,
   "status": "ok",
   "version": "0.2.2-rc.1",
   "previousVersion": null,
-  "docPages": 95,
+  "docPages": 96,
   "docCategories": 19,
-  "pluginTotal": 29311,
-  "newEvents": 1,
-  "totalEvents": 16,
+  "pluginTotal": 30642,
+  "newEvents": 4,
+  "totalEvents": 20,
   "sources": [
     {
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 433,
+      "ms": 190,
       "http": 200,
       "items": 1,
       "note": "v0.2.2-rc.1 · 3 个 tag"
@@ -25,25 +25,25 @@
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 693,
+      "ms": 652,
       "http": 200,
       "items": 10,
-      "note": "10 条 · 新增 0"
+      "note": "10 条 · 新增 2"
     },
     {
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 1556,
+      "ms": 2581,
       "http": 200,
-      "items": 95,
-      "note": "95 页 · 更新 0 · 新增 0"
+      "items": 96,
+      "note": "96 页 · 更新 60 · 新增 1"
     },
     {
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 337,
+      "ms": 286,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -52,13 +52,28 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 490,
+      "ms": 503,
       "http": 200,
       "items": 12,
-      "note": "29311 个插件 · 最近更新 12"
+      "note": "30642 个插件 · 最近更新 12"
     }
   ],
   "changes": [
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.3",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.3"
+    },
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.2",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.2"
+    },
+    {
+      "type": "docs",
+      "title": "官方文档变动：60 页更新 · 1 页新增",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md"
+    },
     {
       "type": "community",
       "title": "社区插件雷达：12 个新项目",

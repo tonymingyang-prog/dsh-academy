@@ -1,875 +1,884 @@
 {
   "released": [],
   "docs": {
-    "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md": {
-      "title": "使用 Web UI",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md",
+    "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md": {
+      "title": "网络代理",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md",
       "category": "入门",
-      "hash": "43783aaea8ed77100e3500ecff22101036d21091035efdda5d2e6867d34419b0",
-      "etag": "W/\"6ad37aaf-5a4\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md": {
-      "title": "Python",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md",
-      "category": "SDK",
-      "hash": "1ead3ab25b94253c89b56d823b6c7ba675aad99e8f0793bedde29b1854757ea4",
-      "etag": "W/\"6ad37aaf-20ae\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/guide/providers.md": {
-      "title": "配置模型",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.md",
-      "category": "入门",
-      "hash": "0824ac61622d25fddd9f84fd5c02c26f50ee5c8a0f0902bbc24d242618c53e93",
-      "etag": "W/\"6ad37aaf-44e5\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "8b09b36c1950dabfe7604222bc7d8bdaf175badf6249ae1ff89a04e900396e58",
+      "etag": "W/\"6af463b9-16c1\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.md": {
       "title": "公开部署",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/public-deployments.md",
       "category": "入门",
       "hash": "809259b7f08d91259a030f623773d5f3daf7390ae609125224b974a363caeeb7",
-      "etag": "W/\"6ad37aaf-11ae\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-11ae\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/guide/providers.md": {
+      "title": "配置模型",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers.md",
+      "category": "入门",
+      "hash": "84ea73507d3cfc2fb9aa143d764d2a9bf5778599dc8b84eda8fc3a8ddbfffd67",
+      "etag": "W/\"6af463b9-4e37\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/guide/github-review.md": {
       "title": "GitHub 评审会话",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/github-review.md",
       "category": "自动化",
       "hash": "af4a2dd71e065a4ee607e50695b5a0f3adf7e9d658ad57ed23589a74df953695",
-      "etag": "W/\"6ad37aaf-11e6\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md": {
-      "title": "会话内提醒",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md",
-      "category": "自动化",
-      "hash": "7bbfc39877f6410bd899865cbd2f45020cc1c0800aaa98f4cd9d4a99f357f28c",
-      "etag": "W/\"6ad37aaf-2c63\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md": {
-      "title": "第一个 Harness 插件",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md",
-      "category": "基础",
-      "hash": "e4887e5703c05a06e1cd28d9fafe4bf789e728f851b60e116627971c6e6ec48a",
-      "etag": "W/\"6ad37aaf-ef4\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md": {
-      "title": "插件市场",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md",
-      "category": "集成",
-      "hash": "10ad4f1d2127ed7b336c4a0b94680f575962ea5635e15ffda093f22bd05c5bf7",
-      "etag": "W/\"6ad37aaf-25b9\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-11e6\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/guide/mcp-memory.md": {
       "title": "记忆 MCP",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/mcp-memory.md",
       "category": "集成",
       "hash": "86b0060e4e9ef713e6dd2fcfb68ca76ca385d7e1451e38a87b09e11b0eb7933a",
-      "etag": "W/\"6ad37aaf-19c3\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-19c3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md": {
+      "title": "会话内提醒",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/schedule.md",
+      "category": "自动化",
+      "hash": "3b66ac80ca07f7a24938114cebe5d2e86ea50081b4920e637889fa135007c390",
+      "etag": "W/\"6af463b9-447c\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md": {
+      "title": "使用 Web UI",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart.md",
+      "category": "入门",
+      "hash": "f4eb96f9f7fd674a885b6c5a579a542192f9640becc30b9c5f00b021fc359ccb",
+      "etag": "W/\"6af463b9-5dd\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/guide/desktop-uninstall-cleanup.md": {
+      "title": "卸载 DSH 桌面端",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/desktop-uninstall-cleanup.md",
+      "category": "入门",
+      "hash": "bdd7903dfe10de7f3d091c8d1ead2987a38c1e7d1c294ab166593ede24098dd0",
+      "etag": "W/\"6af463b9-aa3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md": {
+      "title": "Python",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/python-sdk.md",
+      "category": "SDK",
+      "hash": "59205e8542fbd593117b554744c9af5973cf0eadef50234c7d0d55ad8e43b1cb",
+      "etag": "W/\"6af463b9-2593\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md": {
+      "title": "第一个 Harness 插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/index.md",
+      "category": "基础",
+      "hash": "e4887e5703c05a06e1cd28d9fafe4bf789e728f851b60e116627971c6e6ec48a",
+      "etag": "W/\"6af463b9-ef4\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool.md": {
       "title": "开发一个 Tool",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/tool.md",
       "category": "基础",
       "hash": "8224fdbc979a7872d7f4572ae3538280d1a4ef248e7b9626f25eb581863d194f",
-      "etag": "W/\"6ad37aaf-6dd\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md": {
-      "title": "插件配置",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md",
-      "category": "基础",
-      "hash": "8f1fbe66130a056239045ba51c05d6a62775ae6c2918f53c97c0fb986fc46d49",
-      "etag": "W/\"6ad37aaf-c0e\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md": {
-      "title": "插件与生命周期",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md",
-      "category": "框架能力",
-      "hash": "9bf34cd5e58def254236bdd6d4dc6d587caa2d37e2248a694bcb141e04669a84",
-      "etag": "W/\"6ad37aaf-e0d\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md": {
-      "title": "事件系统",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md",
-      "category": "框架能力",
-      "hash": "a934911df59d9566b61721a12c8fc6207ce883e07ff693a7c2ba546d4273f642",
-      "etag": "W/\"6ad37aaf-f98\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-6dd\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/framework/service.md": {
       "title": "服务与依赖",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/service.md",
       "category": "框架能力",
       "hash": "9afad82db7c9d7ec508142569999bb6c57f159b659a8cb007cb8dd9f25706530",
-      "etag": "W/\"6ad37aaf-e2b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-e2b\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md": {
-      "title": "打包与安装插件",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md",
-      "category": "基础",
-      "hash": "cbe34fdf4b622294540cbffc92a0509e1acef99a4cc2fca8a38bde81ff4e9ca4",
-      "etag": "W/\"6ad37aaf-2c34\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+    "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md": {
+      "title": "事件系统",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/events.md",
+      "category": "框架能力",
+      "hash": "d1ee6fd5518febd90c089168304cccafd572962eb80dec513c853c63326327d8",
+      "etag": "W/\"6af463b9-f86\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/practice/index.md": {
       "title": "能力的三层拆分",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/index.md",
       "category": "实战",
       "hash": "bbaf2f7b6194904d19ec6f2fdfeed9d9175f3bc950a6ab251cd6df6427a0ead9",
-      "etag": "W/\"6ad37aaf-13b7\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-13b7\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md": {
-      "title": "网络代理",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md",
-      "category": "入门",
-      "hash": "e183ff85f8483489eb53e9670a53da60630cf13b2f4c27291c4c12acd7ebcfcd",
-      "etag": "W/\"6ad37aaf-16b5\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+    "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md": {
+      "title": "插件索引",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market.md",
+      "category": "集成",
+      "hash": "e95a7294555b3c570dd0aa9680f3ed9babfbb1c240187282247cf90fa52500a5",
+      "etag": "W/\"6af463b9-2ab6\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md": {
+      "title": "插件配置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/config.md",
+      "category": "基础",
+      "hash": "8f1fbe66130a056239045ba51c05d6a62775ae6c2918f53c97c0fb986fc46d49",
+      "etag": "W/\"6af463b9-c0e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md": {
+      "title": "打包与安装插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish.md",
+      "category": "基础",
+      "hash": "cbe34fdf4b622294540cbffc92a0509e1acef99a4cc2fca8a38bde81ff4e9ca4",
+      "etag": "W/\"6af463b9-2c34\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md": {
+      "title": "插件与生命周期",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/framework/index.md",
+      "category": "框架能力",
+      "hash": "9bf34cd5e58def254236bdd6d4dc6d587caa2d37e2248a694bcb141e04669a84",
+      "etag": "W/\"6af463b9-e0d\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/practice/llm-adapter.md": {
       "title": "LLM 适配器",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/llm-adapter.md",
       "category": "实战",
-      "hash": "633db3942bd5a3f4cd1c14e4b76088ff8e5865a5f21a001c9fc847526df97b5f",
-      "etag": "W/\"6ad37aaf-196a\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "287d1581ae4fe295f540cc7a74b6c5e885380ede5018951eda787cd34128dcf6",
+      "etag": "W/\"6af463b9-1a1e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/practice/dynamic-cordis.md": {
       "title": "持久化 Harness 插件",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/practice/dynamic-cordis.md",
       "category": "实战",
-      "hash": "5bf2290545d82dc49d6348b221d41fa69cdeb39194f33dbc6f8fa4ffaec1ee3f",
-      "etag": "W/\"6ad37aaf-57b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "34fe5e0075dcdce3227068ce567e0841130617061d2d8294f283cf000689570e",
+      "etag": "W/\"6af463b9-59e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md": {
-      "title": "总览",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md",
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md": {
+      "title": "4. 事件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md",
       "category": "Cordis 框架教程",
-      "hash": "f27622c616d2bd8fc9e58f6d49562b0bbc6d8376c47972f92ab82f0264c1f80c",
-      "etag": "W/\"6ad37aaf-10a9\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md": {
-      "title": "1. 第一个插件",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md",
-      "category": "Cordis 框架教程",
-      "hash": "e7959e43fa9f7c53ded5e959580e8f2d97b5efb050b98ab6fce9c5766e914420",
-      "etag": "W/\"6ad37aaf-cc5\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md": {
-      "title": "2. 生命周期与副作用",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md",
-      "category": "Cordis 框架教程",
-      "hash": "59832df8a3228c8fbbd72e9503198d5e3578feca87eea02ba9fb4996d8420f5b",
-      "etag": "W/\"6ad37aaf-faf\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md": {
-      "title": "3. 服务",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md",
-      "category": "Cordis 框架教程",
-      "hash": "fed0ad034e9a175c7f89780a9482fab51d27ba64576981ccaf9a64b958bc8c1b",
-      "etag": "W/\"6ad37aaf-fb3\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "4a5596e902146f99413d262e5a70961ebf6bcc79bfae6bcc68bb40023b52319f",
+      "etag": "W/\"6af463b9-1523\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/05-config.md": {
       "title": "5. 配置",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/05-config.md",
       "category": "Cordis 框架教程",
       "hash": "e200ebcf3e00e9395dd051088fff04a71e6c3c5b953214ed6ae2251c042b16ef",
-      "etag": "W/\"6ad37aaf-140d\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md": {
-      "title": "7. 进入 Harness",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md",
-      "category": "Cordis 框架教程",
-      "hash": "b15e38d310dc98ecd1a3c13e3dff28b8946f579ad0092b0598219b40f9b3b7f4",
-      "etag": "W/\"6ad37aaf-126b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md": {
-      "title": "4. 事件",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/04-events.md",
-      "category": "Cordis 框架教程",
-      "hash": "9012dd87e0780fa997d941f7dbce5e2ebc3c98bd80bb9a1112036756e82018a1",
-      "etag": "W/\"6ad37aaf-1515\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-140d\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr.md": {
       "title": "6. 组合与热重载",
       "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/06-composition-and-hmr.md",
       "category": "Cordis 框架教程",
       "hash": "c6885f9955b4d66ca26804442cdd723900ac5a6bba784f0f041f8ceb2931e300",
-      "etag": "W/\"6ad37aaf-1321\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-1321\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md": {
+      "title": "1. 第一个插件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/01-first-plugin.md",
+      "category": "Cordis 框架教程",
+      "hash": "e7959e43fa9f7c53ded5e959580e8f2d97b5efb050b98ab6fce9c5766e914420",
+      "etag": "W/\"6af463b9-cc5\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md": {
+      "title": "7. 进入 Harness",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/07-into-the-harness.md",
+      "category": "Cordis 框架教程",
+      "hash": "0d5417f18395960a196bd72d63786d0eae67ae9bfe36d8b6c4f5420a5d753ba2",
+      "etag": "W/\"6af463b9-12b5\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md": {
+      "title": "2. 生命周期与副作用",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/02-lifecycle-and-effects.md",
+      "category": "Cordis 框架教程",
+      "hash": "59832df8a3228c8fbbd72e9503198d5e3578feca87eea02ba9fb4996d8420f5b",
+      "etag": "W/\"6af463b9-faf\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md": {
+      "title": "3. 服务",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/03-services.md",
+      "category": "Cordis 框架教程",
+      "hash": "fed0ad034e9a175c7f89780a9482fab51d27ba64576981ccaf9a64b958bc8c1b",
+      "etag": "W/\"6af463b9-fb3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md": {
+      "title": "总览",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/develop/cordis-tutorial/index.md",
+      "category": "Cordis 框架教程",
+      "hash": "f27622c616d2bd8fc9e58f6d49562b0bbc6d8376c47972f92ab82f0264c1f80c",
+      "etag": "W/\"6af463b9-10a9\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/index.md": {
       "title": "架构",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/index.md",
       "category": "概念",
-      "hash": "769981a0f082dcfaa9d45c9a162189175f6f52de9e9a3c04c089f1e3e9fda5d4",
-      "etag": "W/\"6ad37aaf-4d5b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md": {
-      "title": "Agent 生命周期",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md",
-      "category": "概念",
-      "hash": "6051fc6866150d897068d1bef94d18cc79faf9cef216c5d7bbab819a23623006",
-      "etag": "W/\"6ad37aaf-172a\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "205257a99a40730faffd01b724dec7c5dd5bc3d0e9cf96f67b4b5607e182c0fb",
+      "etag": "W/\"6af463b9-4d91\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/capability-seams.md": {
       "title": "能力服务",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/capability-seams.md",
       "category": "概念",
-      "hash": "9707d4e11c1c340af6629f2285cf93d35814b561b5565030bf25c9a3e6bfc289",
-      "etag": "W/\"6ad37aaf-1446e\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "46c0e84051c71c06266aa1f8c3d966e774a8d01f32971d4b9178b725be26af10",
+      "etag": "W/\"6af463b9-15d1a\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/api-gateway.md": {
       "title": "API Gateway",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/api-gateway.md",
       "category": "概念",
-      "hash": "edf09c4fbe2dbabe1fcf794440d82dc059ae19f9444882db317c0fd34c114f88",
-      "etag": "W/\"6ad37aaf-4c87\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "b9d1451b087d66fedeba203b028815b4a12b7a27f01a3e72231d79c4f2bef107",
+      "etag": "W/\"6af463b9-4c00\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md": {
+      "title": "插件配置",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md",
+      "category": "生成参考",
+      "hash": "25b945f331c384255ed82fb388047aa2ae2bb3d38e5ddc67367020490555d2ae",
+      "etag": "W/\"6af463b9-432bc\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md": {
+      "title": "Tool Schema",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md",
+      "category": "生成参考",
+      "hash": "e23bad948879eacca2373383b4c5e392b7ec818c277e9150ee493f936262914f",
+      "etag": "W/\"6af463b9-1bde4\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md": {
+      "title": "实验性持久化记录",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md",
+      "category": "生成参考",
+      "hash": "a42e723f5e45c2421e73b24573d1079644203b2dc80da0c33670b6522d5abd9b",
+      "etag": "W/\"6af463b9-b86\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-primer.md": {
       "title": "Cordis 入门",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-primer.md",
       "category": "概念",
       "hash": "f080793ca2284f901280f809b3ce1e4837008ce1f79ca86fa71cb0d0de8f74fe",
-      "etag": "W/\"6ad37aaf-ffd\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-ffd\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md": {
+      "title": "Agent 生命周期",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/agent-lifecycle.md",
+      "category": "概念",
+      "hash": "1b527618842c65826c8409cdaf9d668e26ab1ceb8d2383637bc6148b95848443",
+      "etag": "W/\"6af463b9-17c1\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/tool-execution-pipeline.md": {
       "title": "Tool 执行",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-execution-pipeline.md",
       "category": "概念",
-      "hash": "80a4a8e077f5cb8284b6a472b4f6d3c31a68bd9f1d808274943d9fc1ab19ce84",
-      "etag": "W/\"6ad37aaf-1218\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md": {
-      "title": "插件配置",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/config-catalog.md",
-      "category": "生成参考",
-      "hash": "275e7bc67cd144c2aacca3de6740a893b5c79a523beaf5edf6311f5430723bce",
-      "etag": "W/\"6ad37aaf-3c590\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md": {
-      "title": "Tool Schema",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/tool-catalog.md",
-      "category": "生成参考",
-      "hash": "31d1e9af93a8fa1c113d5c53b2930af136cbded1888c242b1c00672146989225",
-      "etag": "W/\"6ad37aaf-1a99b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "6fe17b5c4eaa572ed355eb82d3e64a35915d51b26c42bc269ae3fc9e71f5c8ff",
+      "etag": "W/\"6af463b9-12b3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/context.md": {
       "title": "Context",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/context.md",
       "category": "Cordis API",
-      "hash": "3eef1d7a19772a781114ac25bb318bb62c9263a7d92a2ef9fe0ec62df43aca92",
-      "etag": "W/\"6ad37aaf-347c\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md": {
-      "title": "持久化事件",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md",
-      "category": "生成参考",
-      "hash": "9369a292e0ad4edff571cf844c4d6cb5ce39f478dcc71d17dd29bf3bc4343806",
-      "etag": "W/\"6ad37aaf-5aaa9\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "bdd06e6b0fae88d203a3b7456c6e8d0f1a2759aee0b52b7bcfeb901db62f2eac",
+      "etag": "W/\"6af463b9-3488\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/events.md": {
       "title": "Events",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/events.md",
       "category": "Cordis API",
-      "hash": "2b785110da05cbb0d384f97e37426e36f35e205c9a21969dd32258180ae81860",
-      "etag": "W/\"6ad37aaf-20ac\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "6b8c43d431a7be24c32ddd436bae39d5cdf7bb272b0712ed6d57bf8ea50f6592",
+      "etag": "W/\"6af463b9-20ac\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md": {
-      "title": "实验性持久化记录",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/experimental-persistence-catalog.md",
+    "https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md": {
+      "title": "持久化事件",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/persistence-catalog.md",
       "category": "生成参考",
-      "hash": "31a36c2ebabe60c68fb2a51f557ef3b01e2904b158e0029febdf61f4c02257b9",
-      "etag": "W/\"6ad37aaf-600\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md": {
-      "title": "Fiber",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md",
-      "category": "Cordis API",
-      "hash": "f05c12af09d7633b2359d75e13468b06640bc24286d1b8f1a410b958e0395673",
-      "etag": "W/\"6ad37aaf-337a\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md": {
-      "title": "Plugin Registry",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md",
-      "category": "Cordis API",
-      "hash": "d820f7509662542e2d925b2fdeaa72daaf6bad48c78a61d14ef5a1ec3bf414b5",
-      "etag": "W/\"6ad37aaf-1660\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md": {
-      "title": "Service",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md",
-      "category": "Cordis API",
-      "hash": "057211530d38522d71e8e999dd7f948666f7427174e517b883920565e4517804",
-      "etag": "W/\"6ad37aaf-cea\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "891bb8ad4d35e6c1a7bfbeeb8966965461979daeed34ae26cab7909158f3e628",
+      "etag": "W/\"6af463b9-5d816\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/inherited.md": {
       "title": "继承接口面",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/inherited.md",
       "category": "Cordis API",
-      "hash": "9709f55f6ff5c1b230e3a825ca04295dcb77f50e0d6356ef1a34b358d7c7bd40",
-      "etag": "W/\"6ad37aaf-18d2\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "5b950ac1bde8932bfd1757248612bd88fbbf9ef2874846e8c57e304b42624b05",
+      "etag": "W/\"6af463b9-19e0\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-package.md": {
       "title": "新增 Package",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-package.md",
       "category": "开发手册",
-      "hash": "92a4e8d1b4205c73cb4a8c065e53685654109a219b9d240ef4d89354df4ad2e3",
-      "etag": "W/\"6ad37aaf-3c2e\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "0185eced28f539659b5c4ba0181a8ed9de93d32fd699aa55134bbf3ec48745d1",
+      "etag": "W/\"6af463b9-456f\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md": {
-      "title": "新增 Tool",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md",
-      "category": "开发手册",
-      "hash": "f297e9485544a14fbe1e257cdb92c967f91ded3a3ff08920a23f4074d4872307",
-      "etag": "W/\"6ad37aaf-3839\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md": {
-      "title": "新增设置页",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md",
-      "category": "开发手册",
-      "hash": "95c71feb845c1e69469feb53ca827903dac1d68315be0bba8ccc61bd68e86d10",
-      "etag": "W/\"6ad37aaf-11d8\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md": {
-      "title": "扩展模式",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md",
-      "category": "开发手册",
-      "hash": "9325891cc42c09720384d8a1d9e82aee371772bcaa8fb0420e8896ac2ad9f706",
-      "etag": "W/\"6ad37aaf-2cbe\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md": {
-      "title": "子系统",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md",
-      "category": "总览",
-      "hash": "a9f24391fe20166d29ca3c385491db2abd191f35f450d266d957354b9a61e8b3",
-      "etag": "W/\"6ad37aaf-302c\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md": {
-      "title": "作用域",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md",
-      "category": "内核与作用域",
-      "hash": "ee23bc50c077e2d86d532f1201430fec929ea34f7a53035be4c15d55abfff5de",
-      "etag": "W/\"6ad37aaf-fa6\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md": {
-      "title": "核心",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md",
-      "category": "内核与作用域",
-      "hash": "82a29b47f4b0e7b7dc4d77c32b95986b3ce3bbf0cd39cac69aade934f44c11b0",
-      "etag": "W/\"6ad37aaf-e972\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md": {
-      "title": "会话",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md",
-      "category": "会话与持久化",
-      "hash": "ec892a6b09105643a50ebf237305c1c900eb969a267bbbe286e7c35bb0c65817",
-      "etag": "W/\"6ad37aaf-129f3\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md": {
-      "title": "会话引用",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md",
-      "category": "会话与持久化",
-      "hash": "60251587623b98bfe00709665b25ef342b48dbc62736a0f78f9cb58faa41d250",
-      "etag": "W/\"6ad37aaf-29b8\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md": {
-      "title": "会话查询",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md",
-      "category": "会话与持久化",
-      "hash": "1549d44c193fb330fe7d142f0b4bf6fc465ccc897137a636e88fd57a08881aaa",
-      "etag": "W/\"6ad37aaf-557a\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md": {
-      "title": "会话投影",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md",
-      "category": "会话与持久化",
-      "hash": "69e894549fbeddc37472430bcc7810fa5b6a23f109cf17aaa0b8d0a553bb3cfb",
-      "etag": "W/\"6ad37aaf-58e1\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md": {
-      "title": "会话标题",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md",
-      "category": "会话与持久化",
-      "hash": "56072d94e5b401d3709a9e7def57a9d3008dfb0914582db100e341909ef6dd34",
-      "etag": "W/\"6ad37aaf-24d5\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md": {
-      "title": "会话持久化",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md",
-      "category": "会话与持久化",
-      "hash": "c9faf63e06e66e1cddf389f0bf4ff9293535f22c952edba112cf30a26f7f160e",
-      "etag": "W/\"6ad37aaf-6ba2\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md": {
-      "title": "遥测",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md",
-      "category": "会话与持久化",
-      "hash": "c2fbd31d3d76a10f6f2422a01a5a5394b176d2c2049334d9aaac3b5f6df02094",
-      "etag": "W/\"6ad37aaf-32d9\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md": {
-      "title": "Spill 存储",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md",
-      "category": "会话与持久化",
-      "hash": "b179d0e26c261ed0a1564b7a1bc4bc191888db7dc21b84560d76a345e2b26f87",
-      "etag": "W/\"6ad37aaf-1dcd\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md": {
-      "title": "Token 计量",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md",
-      "category": "模型与上下文",
-      "hash": "01f6d4085de2f1be03a4582028be6d3d8313ad311b6d16536496cb0b3506458e",
-      "etag": "W/\"6ad37aaf-16d1\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md": {
-      "title": "LLM 流式响应",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md",
-      "category": "模型与上下文",
-      "hash": "16314780583ac12aa4f04c8529a3b9989f8aa7be5bc4c696547c65d3868d7555",
-      "etag": "W/\"6ad37aaf-10f2c\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md": {
+      "title": "Fiber",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/fiber.md",
+      "category": "Cordis API",
+      "hash": "c52ea2b3c5883e2af13b4764486a4546ef560772f78419f8bcc73310702b1e05",
+      "etag": "W/\"6af463b9-3c6a\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-an-llm-adapter.md": {
       "title": "新增 LLM Adapter",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-an-llm-adapter.md",
       "category": "开发手册",
       "hash": "62e427ea61b0e30cf8d1650f3c94e736532a8305123f968bf4181e7738428d17",
-      "etag": "W/\"6ad37aaf-106c\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-106c\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md": {
+      "title": "Plugin Registry",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/registry.md",
+      "category": "Cordis API",
+      "hash": "d820f7509662542e2d925b2fdeaa72daaf6bad48c78a61d14ef5a1ec3bf414b5",
+      "etag": "W/\"6af463b9-1660\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md": {
+      "title": "Service",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cordis-api/service.md",
+      "category": "Cordis API",
+      "hash": "057211530d38522d71e8e999dd7f948666f7427174e517b883920565e4517804",
+      "etag": "W/\"6af463b9-cea\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md": {
+      "title": "新增设置页",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-settings-card.md",
+      "category": "开发手册",
+      "hash": "95c71feb845c1e69469feb53ca827903dac1d68315be0bba8ccc61bd68e86d10",
+      "etag": "W/\"6af463b9-11d8\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md": {
+      "title": "子系统",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/index.md",
+      "category": "总览",
+      "hash": "ed4ccaa2a893f37ef1f4ae1ca38bcdfc21db47e0eef96f196bfa0e0816e41280",
+      "etag": "W/\"6af463b9-31c9\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md": {
+      "title": "会话",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session.md",
+      "category": "会话与持久化",
+      "hash": "650d1b33699eeb65e9bb51db0775bb0b2c17a937a9ed8b9a5c2f6c04bcbec9dc",
+      "etag": "W/\"6af463b9-141a4\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md": {
+      "title": "新增 Tool",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/adding-a-tool.md",
+      "category": "开发手册",
+      "hash": "64dcea4df57fd6e9c9beb60fbccbb08d9125fdc0957f0f6380a6ceb10cef2ed0",
+      "etag": "W/\"6af463b9-3ae2\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md": {
+      "title": "会话查询",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-query.md",
+      "category": "会话与持久化",
+      "hash": "a841458898f7b619becf9ce877110ba0d136eb68c6f15ae0dd1972f87726e6ad",
+      "etag": "W/\"6af463b9-578a\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md": {
+      "title": "会话引用",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-reference.md",
+      "category": "会话与持久化",
+      "hash": "50680029e5c16434451eb48602c73465d3bb637886e19c8e5f51b7df69f8c2eb",
+      "etag": "W/\"6af463b9-2a4c\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md": {
+      "title": "扩展模式",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/cookbook/extension-cookbook.md",
+      "category": "开发手册",
+      "hash": "e30a924fb7209ac890003dd7075a8c0802631c4184bb573684873e2daea797da",
+      "etag": "W/\"6af463b9-2cac\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md": {
+      "title": "核心",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/core.md",
+      "category": "内核与作用域",
+      "hash": "1de491d7cf35ad7768d54f41fde37dfbc598f9cf8690b7af282a104c5f4b43d9",
+      "etag": "W/\"6af463b9-f1b8\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md": {
+      "title": "作用域",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/scope.md",
+      "category": "内核与作用域",
+      "hash": "ee23bc50c077e2d86d532f1201430fec929ea34f7a53035be4c15d55abfff5de",
+      "etag": "W/\"6af463b9-fa6\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md": {
+      "title": "会话标题",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-title.md",
+      "category": "会话与持久化",
+      "hash": "56072d94e5b401d3709a9e7def57a9d3008dfb0914582db100e341909ef6dd34",
+      "etag": "W/\"6af463b9-24d5\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md": {
+      "title": "会话投影",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-projection.md",
+      "category": "会话与持久化",
+      "hash": "ceea82addd9f36956b8b1fb627a275292d53b7efbb057f205d78941fab461435",
+      "etag": "W/\"6af463b9-78f0\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md": {
+      "title": "会话持久化",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/persistence.md",
+      "category": "会话与持久化",
+      "hash": "4cba14c67ea726bbec9a0b0b277623cbf7e8895a578f01bc64fac143aafb4471",
+      "etag": "W/\"6af463b9-6d88\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md": {
+      "title": "Token 计量",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/token-meter.md",
+      "category": "模型与上下文",
+      "hash": "b258f12f31dec896c490a1562c5ec1a42eb8e3592cf5ab6f11593ae0aae52b4a",
+      "etag": "W/\"6af463b9-1f72\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/system-prompt.md": {
       "title": "系统提示词",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/system-prompt.md",
       "category": "模型与上下文",
-      "hash": "7fbfdd0d181698bfa72622952deb8b2ee09b1f0b0140f31b3a477a3ffb2eba3c",
-      "etag": "W/\"6ad37aaf-3434\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md": {
-      "title": "工具",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md",
-      "category": "执行与工具",
-      "hash": "84a6f308112ccf5a238397e81c2fe376b945600be5c5f7ff8f28b579e1127d79",
-      "etag": "W/\"6ad37aaf-b0cf\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "4f5f8422de48e3197875f20eedbf29b80a7dd0c4463755df3865b230f1bfee47",
+      "etag": "W/\"6af463b9-35a7\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.md": {
       "title": "上下文压缩",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/compaction.md",
       "category": "模型与上下文",
-      "hash": "a80a4afa7d94d583324d8c82dc82617c0ae3e4ae2783628ed96e3dbc399400bd",
-      "etag": "W/\"6ad37aaf-4dd7\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md": {
-      "title": "子进程",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md",
-      "category": "执行与工具",
-      "hash": "5e057c7cbbc68064ba5ee9069d823fbb8d1bf393097c36a6b031588e62e27909",
-      "etag": "W/\"6ad37aaf-4bc3\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "14a6bb14d528a082f097f6a247e283c79c3c4c3a104000eec67c2f0041262ecb",
+      "etag": "W/\"6af463b9-4e96\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.md": {
       "title": "Bash 执行",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/shell.md",
       "category": "执行与工具",
       "hash": "e4de52ff435900b4c3de20daea37eec92f62113411d8bb93fabe8f822f97388d",
-      "etag": "W/\"6ad37aaf-4922\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-4922\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md": {
+      "title": "Spill 存储",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/spill.md",
+      "category": "会话与持久化",
+      "hash": "b179d0e26c261ed0a1564b7a1bc4bc191888db7dc21b84560d76a345e2b26f87",
+      "etag": "W/\"6af463b9-1dcd\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md": {
+      "title": "子进程",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subprocess.md",
+      "category": "执行与工具",
+      "hash": "5e057c7cbbc68064ba5ee9069d823fbb8d1bf393097c36a6b031588e62e27909",
+      "etag": "W/\"6af463b9-4bc3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md": {
+      "title": "遥测",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/session-telemetry.md",
+      "category": "会话与持久化",
+      "hash": "c2fbd31d3d76a10f6f2422a01a5a5394b176d2c2049334d9aaac3b5f6df02094",
+      "etag": "W/\"6af463b9-32d9\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md": {
+      "title": "LLM 流式响应",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/llm-streaming.md",
+      "category": "模型与上下文",
+      "hash": "c41a41dde7369414cad962adf822efa7a5f818b199d2cc1f1cbac8fba90aba2c",
+      "etag": "W/\"6af463b9-12370\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/terminal.md": {
       "title": "PTY 会话",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/terminal.md",
       "category": "执行与工具",
-      "hash": "4046481d519dc0fbe169c88987d5e633a3b0b22f6ae4a81de13d20f2d32067f7",
-      "etag": "W/\"6ad37aaf-2184\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md": {
-      "title": "后台任务",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md",
-      "category": "执行与工具",
-      "hash": "fa0fa54f7c51bb00fcf23353f2cb084dacd73fe5853feaa0a11bdbc16ec4e077",
-      "etag": "W/\"6ad37aaf-734f\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "1f98ce7a58c96faad0b68c7df7eec3a9316bf7e84043e2a464df62aed4a86ec6",
+      "etag": "W/\"6af463b9-217e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/filesystem.md": {
       "title": "文件系统",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/filesystem.md",
       "category": "执行与工具",
-      "hash": "8e98805d7c1066e4b0ccb33c3bd34e5b2f27dcddc1172f2adb295cd89fefed6d",
-      "etag": "W/\"6ad37aaf-7a28\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md": {
-      "title": "LSP 导航",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md",
-      "category": "执行与工具",
-      "hash": "959e162e31f2b3cf71b0762afabbab422942bdc76c12919310138fe6430dd848",
-      "etag": "W/\"6ad37aaf-2a89\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "5abac9df019975725df6349fa008963f66fabaa81531883e8833da7f3d41376d",
+      "etag": "W/\"6af463b9-a43d\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web.md": {
       "title": "Web 访问",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web.md",
       "category": "执行与工具",
-      "hash": "9233731786c2a91556169289948e4eab1b87463f432e24f292e5d6652d364b7f",
-      "etag": "W/\"6ad37aaf-3511\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md": {
-      "title": "PTC 运行时",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md",
-      "category": "执行与工具",
-      "hash": "97cf6495a99e57218f1d04d791e753de73bd5aa71ab5cbe9ea6efc3adfc444e0",
-      "etag": "W/\"6ad37aaf-3895\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "4ab3929e14b035dd01c5b29f0ab4c9330efff0a47cdb1291eb16eae54aabb2fd",
+      "etag": "W/\"6af463b9-4388\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.md": {
       "title": "技能",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/skills.md",
       "category": "执行与工具",
-      "hash": "c65621264f06a637388ecc377318b09d58d240c4b1e2e1956421b221f89167b4",
-      "etag": "W/\"6ad37aaf-627d\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "6a80cec6b765710aafce932dbd2704ac36c33ad4a015cbe3db81476ac39c1a94",
+      "etag": "W/\"6af463b9-6324\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workflow.md": {
       "title": "工作流",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workflow.md",
       "category": "执行与工具",
       "hash": "d04e534137b02425b83e662bfaeb4e4efbee19af96dffdaa8a0c6cb24b6cb590",
-      "etag": "W/\"6ad37aaf-3eff\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-3eff\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md": {
+      "title": "工具",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/tools.md",
+      "category": "执行与工具",
+      "hash": "5bb422de3268ffc8e2e8ccbe097b46cc4abe0d40ebd0ba09906bbb5c2b42a91b",
+      "etag": "W/\"6af463b9-cf26\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md": {
+      "title": "后台任务",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/jobs.md",
+      "category": "执行与工具",
+      "hash": "fa0fa54f7c51bb00fcf23353f2cb084dacd73fe5853feaa0a11bdbc16ec4e077",
+      "etag": "W/\"6af463b9-734f\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md": {
+      "title": "LSP 导航",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/lsp.md",
+      "category": "执行与工具",
+      "hash": "61832f7aa9e8de57a80f96a3b88d65dbaa121c38311da335ea00f49c2a7438c5",
+      "etag": "W/\"6af463b9-3695\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md": {
+      "title": "PTC 运行时",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/ptc-runtime.md",
+      "category": "执行与工具",
+      "hash": "7a8146b81a07d4c6ab39d46cf9c49d31a6d2034beeea0079622ae526a05a5ac4",
+      "etag": "W/\"6af463b9-3b90\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.md": {
       "title": "审批",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/approval.md",
       "category": "策略与交互",
       "hash": "d0b45f626a6b6d0568b6537afcc7f6e80f9fac87f35a2d481af1c49580ef26b3",
-      "etag": "W/\"6ad37aaf-2645\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md": {
-      "title": "子智能体",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md",
-      "category": "执行与工具",
-      "hash": "2053197b3909457fa64ad4bdaa797136efe86a425de9ca711ce14e5348ef9969",
-      "etag": "W/\"6ad37aaf-8629\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-2645\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.md": {
       "title": "权限预设",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/permission-presets.md",
       "category": "策略与交互",
       "hash": "01d799a3944ea51c4102f43a4e75ec679b06acb35996464e98667f2988de40fd",
-      "etag": "W/\"6ad37aaf-2bb8\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-2bb8\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md": {
-      "title": "沙箱",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md",
-      "category": "策略与交互",
-      "hash": "4424e8ae80ba6f9440a590e0af9ea29f3755401c9557e79cba9e91426150dfd6",
-      "etag": "W/\"6ad37aaf-342d\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md": {
-      "title": "计划模式",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md",
-      "category": "策略与交互",
-      "hash": "327a3b105a787fd852d1dc7b39547fe7d0ccea4ee3bc89952d56a3cbe127fb0a",
-      "etag": "W/\"6ad37aaf-1fdd\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md": {
-      "title": "用户交互",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md",
-      "category": "策略与交互",
-      "hash": "d7574a9e8d9600dcb17ba98812a62068d52dbd8d6aa5791c357db771d1e094d4",
-      "etag": "W/\"6ad37aaf-401b\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md": {
+      "title": "子智能体",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/subagent.md",
+      "category": "执行与工具",
+      "hash": "634a717cf0635e0a7c2de78775fe0ff9ce1b6387717597a0b199563d7eb54014",
+      "etag": "W/\"6af463b9-8ead\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/commands.md": {
       "title": "命令",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/commands.md",
       "category": "策略与交互",
       "hash": "b88505be91e9cc86e2f96625021e0d8642aa2dd9bfb4d9e898170c1f96b98298",
-      "etag": "W/\"6ad37aaf-28d5\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-28d5\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/goal.md": {
       "title": "目标",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/goal.md",
       "category": "策略与交互",
       "hash": "dfdaf702ea6182769aba3fae781511901077ac35b8fe4e17d613cfdc1663ddf0",
-      "etag": "W/\"6ad37aaf-2ee8\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md": {
-      "title": "HTTP 服务器",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md",
-      "category": "平台与接入",
-      "hash": "92e05198b88e61200234f6d7a77f233062336fb706292419088af68f1b934771",
-      "etag": "W/\"6ad37aaf-4152\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-2ee8\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.md": {
       "title": "定时提醒",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/schedule.md",
       "category": "策略与交互",
-      "hash": "0ecb9e4fbdd3dc89bfea7e9a7291101513b057dc23b7593243f3c03f858fc0ca",
-      "etag": "W/\"6ad37aaf-87e4\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "1a59dc2911a490982fdfa66324ecb3bcb4979abcecf8da7da4420e70b407bc20",
+      "etag": "W/\"6af463b9-5ca3\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md": {
-      "title": "Web Client 架构",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md",
-      "category": "平台与接入",
-      "hash": "db2ecf76943deae7094aa4411e388404b2b0f23c3bf1710a67a31cf90aa5ef02",
-      "etag": "W/\"6ad37aaf-3785\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md": {
+      "title": "沙箱",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sandbox.md",
+      "category": "策略与交互",
+      "hash": "7e94fffe27705ff96816e6e1d8bdca4f9b89717dfa3a0fa6f3aa7f0f8dbf9d0b",
+      "etag": "W/\"6af463b9-3c59\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md": {
-      "title": "客户端模块",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md",
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md": {
+      "title": "HTTP 服务器",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-server.md",
       "category": "平台与接入",
-      "hash": "6f5ccfb66f806f3b3cc8d370eea9c967aa1dedd5fbbc07b41569967f76ad74cb",
-      "etag": "W/\"6ad37aaf-39fe\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "7c0e17a1554990aed175620f6d3aa4c4d0dbfa9bf8040f8a54e830f6ececc992",
+      "etag": "W/\"6af463b9-4b79\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md": {
+      "title": "计划模式",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/plan.md",
+      "category": "策略与交互",
+      "hash": "2c31e3a6bd0e87f18e3b5e1f0c3b54dc34f9f175cb18d78907609ec9886b6ad7",
+      "etag": "W/\"6af463b9-210a\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md": {
+      "title": "用户交互",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/user-questions.md",
+      "category": "策略与交互",
+      "hash": "bed2b7ff1c363d0c5f5fbb833f772082dc145674762f338d594ff074fd2a89eb",
+      "etag": "W/\"6af463b9-42dc\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/slots.md": {
       "title": "客户端 Slots",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/slots.md",
       "category": "平台与接入",
-      "hash": "4da71ac905bfafa2e8836673fcb84eaa52051d6ba5f25a87cf7b7eba112a1450",
-      "etag": "W/\"6ad37aaf-3a41\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "c69ff32a3ab5bf5e2acd347e80a85965f6cf67d526a07b98f260bc206809c540",
+      "etag": "W/\"6af463b9-4c97\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-resources.md": {
       "title": "客户端资源",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-resources.md",
       "category": "平台与接入",
       "hash": "bf2f63e8a9cea9820a93b66b43b3b9a42e6ed43abe30f880d4ad9bfbde467c7e",
-      "etag": "W/\"6ad37aaf-1e97\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-1e97\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md": {
-      "title": "右侧 Sidebar",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md",
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md": {
+      "title": "客户端模块",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/client-modules.md",
       "category": "平台与接入",
-      "hash": "a96ed3d0695d9d6d13288e1f92bf7d57ddc7528203eb480012e7fd5fbf00a3d8",
-      "etag": "W/\"6ad37aaf-729c\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md": {
-      "title": "Conversation 组装",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md",
-      "category": "平台与接入",
-      "hash": "2ef8cb29e77e3c93c26d94aa42f216f3e1da840eb96268165952287e0cc2d57f",
-      "etag": "W/\"6ad37aaf-5ea8\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
-    },
-    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md": {
-      "title": "存储",
-      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md",
-      "category": "平台与接入",
-      "hash": "2720f19f2064b30d827d758735005449ffebcaf41ed34a6c4546c4b40b8f47d2",
-      "etag": "W/\"6ad37aaf-45ce\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "17228c38c9ddc3016cfb5da64c23e551699651fbb8566bcb317adef348382524",
+      "etag": "W/\"6af463b9-3e0d\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/typert.md": {
       "title": "Typert",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/typert.md",
       "category": "平台与接入",
-      "hash": "322a89e4a0fae5d8422fcc9d8f427a54caff12b64fb3428260e98713687c2d05",
-      "etag": "W/\"6ad37aaf-8577\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "f0c5b8a8b957229324668c01b71ce047f24abf3c9bacd07b7f1578b10511e0df",
+      "etag": "W/\"6af463b9-877d\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md": {
+      "title": "存储",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/storage.md",
+      "category": "平台与接入",
+      "hash": "e6f2d6bc9f36a5178816ae6fcae88bbe5789f04c66561304513003222c2c4c93",
+      "etag": "W/\"6af463b9-57ef\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workspace.md": {
       "title": "工作区",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/workspace.md",
       "category": "平台与接入",
-      "hash": "8592cdbc01223fd300f1c0fae4b6b373298d36a0170bbfa4512f14faa6c4c8dc",
-      "etag": "W/\"6ad37aaf-9770\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "4c8c763506c772ae2ad2706bb849b804777f072d946ee5218b938d907e461d41",
+      "etag": "W/\"6af463b9-ab23\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md": {
+      "title": "Web Client 架构",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/web-client.md",
+      "category": "平台与接入",
+      "hash": "90985dd2c965b01a03ace33873f648123e0424130369d6699b663c495607e8ea",
+      "etag": "W/\"6af463b9-380e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/settings.md": {
       "title": "用户设置",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/settings.md",
       "category": "平台与接入",
       "hash": "b8e6ad123bc3dcdda28a9db33ebb433d0967e5cd043b933a68148ecf426af33b",
-      "etag": "W/\"6ad37aaf-1f18\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "etag": "W/\"6af463b9-1f18\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md": {
+      "title": "右侧 Sidebar",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/sidebar-right.md",
+      "category": "平台与接入",
+      "hash": "27c859d165a30f303e495db2ea91d7c8b5767940b3d3a6ea4fd9a6bc688af8bf",
+      "etag": "W/\"6af463b9-7a21\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     },
     "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.md": {
       "title": "用户凭据",
       "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/credentials.md",
       "category": "平台与接入",
-      "hash": "cbb30079663ec5d0b3e008b347c193da1725c01b0b41d59eef7d6d34bc36e327",
-      "etag": "W/\"6ad37aaf-6362\"",
-      "lastModified": "Sat, 17 Oct 2026 13:39:59 GMT",
-      "checkedAt": "2026-11-05T22:58:39.598Z"
+      "hash": "f8e903e5510f760cd4faa9de080d5460d3e047c5691126fce0531bd32c05e6ab",
+      "etag": "W/\"6af463b9-6a50\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
+    },
+    "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md": {
+      "title": "Conversation 组装",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/reference/subsystems/conversation.md",
+      "category": "平台与接入",
+      "hash": "e7819d34125ab67cb9fd2acc6fecb2754a3b88b92828911b080f3680b42ee801",
+      "etag": "W/\"6af463b9-614e\"",
+      "lastModified": "Wed, 11 Nov 2026 12:46:49 GMT",
+      "checkedAt": "2026-11-13T10:14:22.233Z"
     }
   },
   "npm": {
     "latest": "0.2.2-rc.1",
     "previous": null,
     "tags": {
-      "latest": "0.2.2-rc.1",
       "alpha": "0.2.2-alpha.3",
-      "next": "0.2.2-rc.1"
+      "latest": "0.2.2-rc.1",
+      "next": "0.2.2-rc.3"
     },
-    "checkedAt": "2026-11-10T10:34:21.135Z"
+    "checkedAt": "2026-11-13T10:14:22.233Z"
   },
   "community": {
     "issues": [],
-    "checkedAt": "2026-11-10T10:34:21.135Z",
+    "checkedAt": "2026-11-13T10:14:22.233Z",
     "total": 0
   },
   "releases": [
@@ -882,184 +891,183 @@
     "tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.2",
     "tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-rc.1",
     "tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-alpha.5",
-    "tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-alpha.4"
+    "tag:github.com,2008:Repository/1333065091/dsh-v0.2.1-alpha.4",
+    "tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.3",
+    "tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.2"
   ],
   "plugins": {
     "recent": [
       {
-        "fullName": "JoviLecca/dsh-CAIT",
-        "name": "dsh-CAIT",
-        "url": "https://github.com/JoviLecca/dsh-CAIT",
-        "description": "Computer-aided translation, inside DeepSeek Harness.",
-        "stars": 0,
+        "fullName": "dadazhangn/dsh-prompt-snippets",
+        "name": "dsh-prompt-snippets",
+        "url": "https://github.com/dadazhangn/dsh-prompt-snippets",
+        "description": "Crash-safe prompt snippet library for DeepSeek Harness — {{placeholder}} fill forms, dropdown enums, version history, one-click insert.",
+        "stars": 2,
         "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:34:12Z",
+        "updatedAt": "2026-11-12T04:38:11Z",
+        "topics": [
+          "dsh-plugin",
+          "productivity",
+          "prompting",
+          "ui"
+        ]
+      },
+      {
+        "fullName": "stallenlu/dsh-disk-cleaner",
+        "name": "dsh-disk-cleaner",
+        "url": "https://github.com/stallenlu/dsh-disk-cleaner",
+        "description": "Disk Cleaner for DeepSeek Harness: scan known-safe caches, assess what cannot be cleaned, get a ranked plan",
+        "stars": 1,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-10T10:17:48Z",
         "topics": [
           "deepseek-harness",
+          "disk-cleaner",
+          "dsh-plugin",
+          "windows"
+        ]
+      },
+      {
+        "fullName": "qifenglun1/dsh-plugin-rss",
+        "name": "dsh-plugin-rss",
+        "url": "https://github.com/qifenglun1/dsh-plugin-rss",
+        "description": "Folo-inspired RSS and Atom reader plugin for DeepSeek Harness: subscriptions, categories, tags, full text, search, OPML, feed discovery, and DeepSeek AI summaries, translation, classification, and article Q&A.",
+        "stars": 0,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-13T10:12:15Z",
+        "topics": [
+          "atom",
+          "deepseek-harness",
+          "dsh",
           "dsh-plugin"
         ]
       },
       {
-        "fullName": "morluto/rea",
-        "name": "rea",
-        "url": "https://github.com/morluto/rea",
-        "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-        "stars": 448383,
+        "fullName": "wecode-ai/Wegent",
+        "name": "Wegent",
+        "url": "https://github.com/wecode-ai/Wegent",
+        "description": "Plan, build, and deliver with an open-source, self-hostable AI workspace for coding, collaboration, and automation.",
+        "stars": 888,
         "language": "TypeScript",
-        "updatedAt": "2026-11-10T10:34:09Z",
+        "updatedAt": "2026-11-13T03:52:03Z",
         "topics": [
-          "agent-skills",
+          "agent",
           "ai",
-          "android",
+          "chatbot",
           "claude-code"
         ]
       },
       {
-        "fullName": "knight02-bit/dsh-opencode-go-usage",
-        "name": "dsh-opencode-go-usage",
-        "url": "https://github.com/knight02-bit/dsh-opencode-go-usage",
-        "description": "在 DSH（DeepSeek Harness）Web GUI 底部常驻的 OpenCode Go 额度条：rolling / weekly / monthly 剩余百分比，点击浮出配速卡（每天 / 每周该花多少才不浪费额度）。",
+        "fullName": "xuanyuanchumo/dsh-recency-guard",
+        "name": "dsh-recency-guard",
+        "url": "https://github.com/xuanyuanchumo/dsh-recency-guard",
+        "description": "Crash-recovery guard for DeepSeek Harness: records third-party/experimental plugin install & update recency, backs up config, auto-disables recently-updated suspects after a crash, restores when stable. L4-bootstrapped, 11-layer-tested.",
         "stars": 0,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:55Z",
+        "language": "TypeScript",
+        "updatedAt": "2026-11-11T12:16:03Z",
         "topics": [
-          "cordis",
-          "deepseek-harness",
-          "dsh",
-          "dsh-plugin"
-        ]
-      },
-      {
-        "fullName": "AkotaP/dsh-model-tweaks",
-        "name": "dsh-model-tweaks",
-        "url": "https://github.com/AkotaP/dsh-model-tweaks",
-        "description": "一个简单的模型能力管理插件，包括模态选择，上下文/最大输出，以及思考强度设置，支持自定义预设。",
-        "stars": 0,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:48Z",
-        "topics": [
-          "deepseek-harness",
-          "dsh-plugin"
-        ]
-      },
-      {
-        "fullName": "LuoShanHui/dsh-doc-ledger",
-        "name": "dsh-doc-ledger",
-        "url": "https://github.com/LuoShanHui/dsh-doc-ledger",
-        "description": "DSH 会话文档台账插件：记录每个会话使用/创建/修改过哪些文档，支持时间排序、类型分组、搜索、预览与跨会话汇总。 A DSH sidebar plugin: per-session document ledger — which documents a session read, created or modified — with time ordering, type grouping, search, two preview modes and a cross-session view. Windows only.",
-        "stars": 0,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:46Z",
-        "topics": [
-          "cordis",
-          "deepseek-harness",
-          "deepseek-harness-plugin",
-          "dsh"
-        ]
-      },
-      {
-        "fullName": "dengluliang/dsh-meetclip",
-        "name": "dsh-meetclip",
-        "url": "https://github.com/dengluliang/dsh-meetclip",
-        "description": "会摘 MeetClip — DeepSeek Harness 的直播/视频/会议采集、云端转写与 AI 纪要插件",
-        "stars": 2,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:18Z",
-        "topics": [
-          "asr",
-          "bilibili",
-          "deepseek-harness",
-          "dsh-plugin"
-        ]
-      },
-      {
-        "fullName": "QingYunA/answer-me-with-html",
-        "name": "answer-me-with-html",
-        "url": "https://github.com/QingYunA/answer-me-with-html",
-        "description": "Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
-        "stars": 6197,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:17Z",
-        "topics": [
-          "agent-skill",
-          "ai-agent",
-          "claude-code",
-          "claude-code-skill"
-        ]
-      },
-      {
-        "fullName": "ferrisching/dsh-reakit",
-        "name": "dsh-reakit",
-        "url": "https://github.com/ferrisching/dsh-reakit",
-        "description": "Batteries-included REA integration for DeepSeek Harness: managed Node/REA runtime, global tool switch, live composer status indicator, on-demand optional tool setup, and in-place runtime upgrades with rollback.",
-        "stars": 0,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:11Z",
-        "topics": [
-          "binary-analysis",
-          "cordis",
-          "deepseek-harness",
-          "dsh"
-        ]
-      },
-      {
-        "fullName": "WSL043/dsh-codex-subscription",
-        "name": "dsh-codex-subscription",
-        "url": "https://github.com/WSL043/dsh-codex-subscription",
-        "description": "Use your ChatGPT Plus / Pro (Codex) subscription in DeepSeek Harness (DSH): GPT-6 & Codex models, images, web search and quota via ChatGPT sign-in — no OpenAI API key. Beta: control DSH from the ChatGPT mobile app. 在 DSH 中使用 ChatGPT 订阅，并可用 ChatGPT 手机 App 远程控制。",
-        "stars": 425,
-        "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:08Z",
-        "topics": [
-          "ai-agent",
-          "chatgpt",
-          "chatgpt-plus",
-          "chatgpt-pro"
-        ]
-      },
-      {
-        "fullName": "YujpVc/ppt-assistant",
-        "name": "ppt-assistant",
-        "url": "https://github.com/YujpVc/ppt-assistant",
-        "description": "PPT assistant agent preset and editable PowerPoint generation tools for DeepSeek Harness",
-        "stars": 0,
-        "language": "Python",
-        "updatedAt": "2026-11-10T10:33:07Z",
-        "topics": [
+          "crash-recovery",
           "deepseek-harness",
           "dsh-plugin",
-          "powerpoint",
-          "pptx"
+          "plugin-guard"
         ]
       },
       {
-        "fullName": "volcengine/OpenViking",
-        "name": "OpenViking",
-        "url": "https://github.com/volcengine/OpenViking",
-        "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
-        "stars": 41917,
-        "language": "Python",
-        "updatedAt": "2026-11-10T10:33:04Z",
-        "topics": [
-          "agent-context",
-          "agent-memory",
-          "agent-plugins",
-          "agentic-rag"
-        ]
-      },
-      {
-        "fullName": "PluieM/dsh-request-injector",
-        "name": "dsh-request-injector",
-        "url": "https://github.com/PluieM/dsh-request-injector",
-        "description": "A DSH (DeepSeek Harness) plugin that injects custom HTTP headers into downstream model requests, matched by provider / model / host. Header values may contain `${variable}` placeholders, evaluated only when the request is actually sent.",
-        "stars": 0,
+        "fullName": "tm5452/dsh-workspace-explorer",
+        "name": "dsh-workspace-explorer",
+        "url": "https://github.com/tm5452/dsh-workspace-explorer",
+        "description": "Windows file explorer for DeepSeek Harness Desktop, with tabs, previews, workspace search, and batch file operations.",
+        "stars": 24,
         "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:32:48Z",
+        "updatedAt": "2026-11-13T04:45:50Z",
         "topics": [
           "deepseek-harness",
           "dsh",
           "dsh-plugin",
-          "opencode"
+          "file-explorer"
+        ]
+      },
+      {
+        "fullName": "MLMLZJ/dsh-plugins",
+        "name": "dsh-plugins",
+        "url": "https://github.com/MLMLZJ/dsh-plugins",
+        "description": "DeepSeek Harness 插件索引：Windows 软件安装画像与动态取证 + 逆向反编译",
+        "stars": 1,
+        "language": "JavaScript",
+        "updatedAt": "2026-10-27T10:49:16Z",
+        "topics": [
+          "deepseek-harness",
+          "dsh-plugin",
+          "reverse-engineering",
+          "windows"
+        ]
+      },
+      {
+        "fullName": "alvinlui-hk/dsh-browser-bridge",
+        "name": "dsh-browser-bridge",
+        "url": "https://github.com/alvinlui-hk/dsh-browser-bridge",
+        "description": "DeepSeek Harness plugin: let agents read and control the web page open in the right Sidebar Browser tab",
+        "stars": 0,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-10T04:58:35Z",
+        "topics": [
+          "deepseek",
+          "deepseek-harness",
+          "dsh-plugin"
+        ]
+      },
+      {
+        "fullName": "superdesigndev/treg",
+        "name": "treg",
+        "url": "https://github.com/superdesigndev/treg",
+        "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+        "stars": 7899,
+        "language": "Python",
+        "updatedAt": "2026-11-13T10:10:10Z",
+        "topics": [
+          "agents",
+          "api-keys",
+          "cli",
+          "credentials"
+        ]
+      },
+      {
+        "fullName": "Linnnkkk/dsh-plugin-suggest-bar",
+        "name": "dsh-plugin-suggest-bar",
+        "url": "https://github.com/Linnnkkk/dsh-plugin-suggest-bar",
+        "description": "Input-box-top next-prompt suggestion bar for DSH web (async side-call after each turn)",
+        "stars": 0,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-13T07:13:04Z",
+        "topics": [
+          "dsh-plugin"
+        ]
+      },
+      {
+        "fullName": "liuweiqiang2016/dsh-openai-usage",
+        "name": "dsh-openai-usage",
+        "url": "https://github.com/liuweiqiang2016/dsh-openai-usage",
+        "description": "",
+        "stars": 0,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-13T10:08:38Z",
+        "topics": [
+          "dsh-plugin"
+        ]
+      },
+      {
+        "fullName": "Fatelikeshit/dsh-card-lan",
+        "name": "dsh-card-lan",
+        "url": "https://github.com/Fatelikeshit/dsh-card-lan",
+        "description": "局域网 21 点牌桌：DeepSeek Harness 插件，UDP 房间发现 + 房主权威牌局 + 房间密码 / 观战 / 浮层显示设置",
+        "stars": 0,
+        "language": "JavaScript",
+        "updatedAt": "2026-11-13T02:49:28Z",
+        "topics": [
+          "blackjack",
+          "deepseek-harness",
+          "dsh",
+          "dsh-plugin"
         ]
       }
     ],
@@ -1069,9 +1077,9 @@
         "name": "rea",
         "url": "https://github.com/morluto/rea",
         "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-        "stars": 448383,
+        "stars": 456312,
         "language": "TypeScript",
-        "updatedAt": "2026-11-10T10:34:09Z",
+        "updatedAt": "2026-11-13T10:14:01Z",
         "topics": [
           "agent-skills",
           "ai",
@@ -1084,9 +1092,9 @@
         "name": "deepseek-harness",
         "url": "https://github.com/deepseek-ai/deepseek-harness",
         "description": "DeepSeek Harness: Everything is a Plugin.",
-        "stars": 277840,
+        "stars": 280200,
         "language": "TypeScript",
-        "updatedAt": "2026-11-10T10:33:15Z",
+        "updatedAt": "2026-11-13T10:11:05Z",
         "topics": [
           "ai-agents",
           "cordis",
@@ -1099,9 +1107,9 @@
         "name": "open-design",
         "url": "https://github.com/nexu-io/open-design",
         "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
-        "stars": 106947,
+        "stars": 107452,
         "language": "TypeScript",
-        "updatedAt": "2026-11-10T10:30:35Z",
+        "updatedAt": "2026-11-13T10:13:46Z",
         "topics": [
           "agent-skills",
           "ai-design",
@@ -1114,9 +1122,9 @@
         "name": "archify",
         "url": "https://github.com/tt-a1i/archify",
         "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-        "stars": 95245,
+        "stars": 96086,
         "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:34:11Z",
+        "updatedAt": "2026-11-13T10:14:01Z",
         "topics": [
           "agent-skills",
           "ai-agents",
@@ -1129,9 +1137,9 @@
         "name": "Mole",
         "url": "https://github.com/tw93/Mole",
         "description": "🐹 Open-source Mac and PC cleaner. Keep your machine clean, light, and running like new. Fast CLI, plus native Mac and Windows apps.",
-        "stars": 74485,
+        "stars": 74855,
         "language": "Shell",
-        "updatedAt": "2026-11-10T10:18:23Z",
+        "updatedAt": "2026-11-13T10:03:49Z",
         "topics": [
           "analyzer",
           "appcleaner",
@@ -1144,9 +1152,9 @@
         "name": "dsh-our-free-model",
         "url": "https://github.com/Ebony-Vinyl/dsh-our-free-model",
         "description": "在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there, DeepSeek V4.1 Flash and Kimi K3 among them. Completely free, with no usage cap.",
-        "stars": 68116,
+        "stars": 72071,
         "language": "JavaScript",
-        "updatedAt": "2026-11-10T10:33:25Z",
+        "updatedAt": "2026-11-13T10:14:03Z",
         "topics": [
           "ai-agents",
           "deepseek",
@@ -1159,9 +1167,9 @@
         "name": "reactive-resume",
         "url": "https://github.com/reactive-resume/reactive-resume",
         "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
-        "stars": 45571,
+        "stars": 45694,
         "language": "TypeScript",
-        "updatedAt": "2026-11-10T10:27:56Z",
+        "updatedAt": "2026-11-13T09:28:22Z",
         "topics": [
           "agent-skills",
           "ai",
@@ -1174,9 +1182,9 @@
         "name": "OpenViking",
         "url": "https://github.com/volcengine/OpenViking",
         "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
-        "stars": 41917,
+        "stars": 42154,
         "language": "Python",
-        "updatedAt": "2026-11-10T10:33:04Z",
+        "updatedAt": "2026-11-13T10:05:31Z",
         "topics": [
           "agent-context",
           "agent-memory",
@@ -1189,9 +1197,9 @@
         "name": "nuwa-skill",
         "url": "https://github.com/alchaincyf/nuwa-skill",
         "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
-        "stars": 37955,
+        "stars": 38201,
         "language": "Python",
-        "updatedAt": "2026-11-10T10:18:37Z",
+        "updatedAt": "2026-11-13T10:02:39Z",
         "topics": [
           "agent-skills",
           "ai-agents",
@@ -1200,8 +1208,8 @@
         ]
       }
     ],
-    "total": 29311,
-    "checkedAt": "2026-11-10T10:34:21.135Z",
-    "lastEventDate": "2026-11-10"
+    "total": 30642,
+    "checkedAt": "2026-11-13T10:14:22.233Z",
+    "lastEventDate": "2026-11-13"
   }
 }

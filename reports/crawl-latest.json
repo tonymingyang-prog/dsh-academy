@@ -1,22 +1,22 @@
 {
-  "lastRun": "2026-11-10T10:34:21.135Z",
-  "nextRun": "2026-11-13T03:00:00.000Z",
+  "lastRun": "2026-11-13T10:14:22.233Z",
+  "nextRun": "2026-11-16T03:00:00.000Z",
   "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
-  "durationMs": 3650,
+  "durationMs": 4229,
   "status": "ok",
   "version": "0.2.2-rc.1",
   "previousVersion": null,
-  "docPages": 95,
+  "docPages": 96,
   "docCategories": 19,
-  "pluginTotal": 29311,
-  "newEvents": 1,
-  "totalEvents": 16,
+  "pluginTotal": 30642,
+  "newEvents": 4,
+  "totalEvents": 20,
   "sources": [
     {
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 433,
+      "ms": 190,
       "http": 200,
       "items": 1,
       "note": "v0.2.2-rc.1 · 3 个 tag"
@@ -25,25 +25,25 @@
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 693,
+      "ms": 652,
       "http": 200,
       "items": 10,
-      "note": "10 条 · 新增 0"
+      "note": "10 条 · 新增 2"
     },
     {
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 1556,
+      "ms": 2581,
       "http": 200,
-      "items": 95,
-      "note": "95 页 · 更新 0 · 新增 0"
+      "items": 96,
+      "note": "96 页 · 更新 60 · 新增 1"
     },
     {
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 337,
+      "ms": 286,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -52,13 +52,28 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 490,
+      "ms": 503,
       "http": 200,
       "items": 12,
-      "note": "29311 个插件 · 最近更新 12"
+      "note": "30642 个插件 · 最近更新 12"
     }
   ],
   "changes": [
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.3",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.3"
+    },
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.2",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.2"
+    },
+    {
+      "type": "docs",
+      "title": "官方文档变动：60 页更新 · 1 页新增",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md"
+    },
     {
       "type": "community",
       "title": "社区插件雷达：12 个新项目",
@@ -72,12 +87,50 @@
   },
   "additions": [
     {
-      "id": "plugins-2026-11-10-d1eac0",
+      "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.3",
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.3",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.3",
+      "date": "2026-11-13T08:04:46Z",
+      "summary": "中文 | English 。 新增功能。 新增实验性「DeepSeek 会话导入」插件，支持将 DeepSeek App 或网页版的历史会话导入工作区，并继续对话。 @imccyu 。 问题修复。 修复 Windows 桌面版应用内更新可能失败、无法自动重新打开的问题。 @winewill 。 New Features。 Add an experimental DeepSeek chat import plugin to import past conversations from DeepSeek App or ",
+      "tags": [
+        "release",
+        "预发布"
+      ],
+      "source": "GitHub Releases"
+    },
+    {
+      "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.2",
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.2",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.2",
+      "date": "2026-11-11T11:33:06Z",
+      "summary": "中文 | English 。 新增功能。 Git Worktree 支持按分支、提交和文件类型审阅改动，并直接处理 GitHub 评审、同步已审阅进度和更新分支。 @LegGasai 。 SubAgent 支持具名与多层协作，AgentTeam 可按会话开启，共用成员与任务面板。 @Dudu-0223 , @Yifffan 。 桌面端支持在设置中切换正式版与开发版更新渠道。 @winewill 。 体验优化。 改善代码审阅时的评论、文件导航与窄屏布局，减少查看大型改动时的卡顿，并放宽大型仓库创建工作树的等待时间。 ",
+      "tags": [
+        "release",
+        "预发布"
+      ],
+      "source": "GitHub Releases"
+    },
+    {
+      "id": "docs-2026-11-13-4e886cbd",
+      "type": "docs",
+      "title": "官方文档变动：60 页更新 · 1 页新增",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/network-proxy.md",
+      "date": "2026-11-13T10:14:22.233Z",
+      "summary": "网络代理、配置模型、会话内提醒、使用 Web UI、Python、事件系统 等",
+      "tags": [
+        "文档"
+      ],
+      "source": "官方文档"
+    },
+    {
+      "id": "plugins-2026-11-13-f463d0",
       "type": "community",
       "title": "社区插件雷达：12 个新项目",
       "url": "https://github.com/topics/dsh-plugin",
-      "date": "2026-11-10T10:34:21.135Z",
-      "summary": "JoviLecca/dsh-CAIT、morluto/rea、knight02-bit/dsh-opencode-go-usage、AkotaP/dsh-model-tweaks",
+      "date": "2026-11-13T10:14:22.233Z",
+      "summary": "dadazhangn/dsh-prompt-snippets、stallenlu/dsh-disk-cleaner、qifenglun1/dsh-plugin-rss、wecode-ai/Wegent",
       "tags": [
         "社区",
         "插件"
