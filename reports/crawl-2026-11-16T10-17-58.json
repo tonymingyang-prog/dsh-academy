@@ -1,0 +1,88 @@
+{
+  "lastRun": "2026-11-16T10:17:58.439Z",
+  "nextRun": "2026-11-19T03:00:00.000Z",
+  "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
+  "durationMs": 2946,
+  "status": "ok",
+  "version": "0.2.2-rc.1",
+  "previousVersion": null,
+  "docPages": 96,
+  "docCategories": 19,
+  "pluginTotal": 31808,
+  "newEvents": 1,
+  "totalEvents": 21,
+  "sources": [
+    {
+      "id": "npm",
+      "name": "npm Registry",
+      "status": "ok",
+      "ms": 398,
+      "http": 200,
+      "items": 1,
+      "note": "v0.2.2-rc.1 · 3 个 tag"
+    },
+    {
+      "id": "releases",
+      "name": "GitHub Releases",
+      "status": "ok",
+      "ms": 354,
+      "http": 200,
+      "items": 10,
+      "note": "10 条 · 新增 0"
+    },
+    {
+      "id": "docs",
+      "name": "官方文档",
+      "status": "ok",
+      "ms": 1360,
+      "http": 200,
+      "items": 96,
+      "note": "96 页 · 更新 0 · 新增 0"
+    },
+    {
+      "id": "community",
+      "name": "社区议题",
+      "status": "ok",
+      "ms": 177,
+      "http": 200,
+      "items": 0,
+      "note": "0 个议题 · 最近 0 条"
+    },
+    {
+      "id": "plugins",
+      "name": "社区插件",
+      "status": "ok",
+      "ms": 394,
+      "http": 200,
+      "items": 12,
+      "note": "31808 个插件 · 最近更新 12"
+    }
+  ],
+  "changes": [
+    {
+      "type": "community",
+      "title": "社区插件雷达：12 个新项目",
+      "url": "https://github.com/topics/dsh-plugin"
+    }
+  ],
+  "stats": {
+    "courses": 8,
+    "faqs": 14,
+    "scenarios": 6
+  },
+  "additions": [
+    {
+      "id": "plugins-2026-11-16-384c51",
+      "type": "community",
+      "title": "社区插件雷达：12 个新项目",
+      "url": "https://github.com/topics/dsh-plugin",
+      "date": "2026-11-16T10:17:58.439Z",
+      "summary": "smitfire/team、smitfire/board、smitfire/cuga、polza-ai/dsh-plugin-polza",
+      "tags": [
+        "社区",
+        "插件"
+      ],
+      "source": "GitHub Topics"
+    }
+  ]
+}

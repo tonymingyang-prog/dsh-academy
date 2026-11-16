@@ -1,5 +1,18 @@
 [
   {
+    "id": "plugins-2026-11-16-384c51",
+    "type": "community",
+    "title": "社区插件雷达：12 个新项目",
+    "url": "https://github.com/topics/dsh-plugin",
+    "date": "2026-11-16T10:17:58.439Z",
+    "summary": "smitfire/team、smitfire/board、smitfire/cuga、polza-ai/dsh-plugin-polza",
+    "tags": [
+      "社区",
+      "插件"
+    ],
+    "source": "GitHub Topics"
+  },
+  {
     "id": "docs-2026-11-13-4e886cbd",
     "type": "docs",
     "title": "官方文档变动：60 页更新 · 1 页新增",
