@@ -1,5 +1,57 @@
 [
   {
+    "id": "plugins-2026-11-19-45849e",
+    "type": "community",
+    "title": "社区插件雷达：12 个新项目",
+    "url": "https://github.com/topics/dsh-plugin",
+    "date": "2026-11-19T10:51:00.623Z",
+    "summary": "madsouris/dsh-figcraft、kejixiaoliang/awesome-dsh-plugins、ccch1mneyyy/dsh-Go、Only-Xwaisw/dsh-archive-manager",
+    "tags": [
+      "社区",
+      "插件"
+    ],
+    "source": "GitHub Topics"
+  },
+  {
+    "id": "npm-0.2.2-rc.5",
+    "type": "release",
+    "title": "npm 发布 @deepseek-ai/dsh 0.2.2-rc.5",
+    "url": "https://www.npmjs.com/package/@deepseek-ai/dsh/v/0.2.2-rc.5",
+    "date": "2026-11-19T10:51:00.000Z",
+    "summary": "dsh CLI: profile launch, plugin management, and configuration inspection",
+    "tags": [
+      "npm",
+      "latest"
+    ],
+    "source": "npm Registry"
+  },
+  {
+    "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.5",
+    "type": "release",
+    "title": "GitHub Release · v0.2.2-rc.5",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.5",
+    "date": "2026-11-18T12:51:39Z",
+    "summary": "中文 | English 。 体验优化。 DeepSeek 模型使用 DeepSeek 服务端搜索，搜索不按次收费；其他模型默认使用 DeepSeek Search API。 @LegGasai 。 Improvements。 DeepSeek models use DeepSeek server-side search with no per-search charge; other models default to DeepSeek Search API. by @LegGasai 。 Full Change",
+    "tags": [
+      "release",
+      "预发布"
+    ],
+    "source": "GitHub Releases"
+  },
+  {
+    "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.4",
+    "type": "release",
+    "title": "GitHub Release · v0.2.2-rc.4",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.4",
+    "date": "2026-11-17T17:53:41Z",
+    "summary": "中文 | English 。 问题修复。 优化模型请求收到异常消息响应时的表现。 @turtle2099 。 修复 LiveShare 在桌面端无法创建分享的问题。 @mektpoy 。 Bug Fixes。 Improve handling of unexpected model responses. by @turtle2099 。 Fix LiveShare failing to create shares in the desktop app. by @mektpoy 。 Full Changelog: d",
+    "tags": [
+      "release",
+      "预发布"
+    ],
+    "source": "GitHub Releases"
+  },
+  {
     "id": "plugins-2026-11-16-384c51",
     "type": "community",
     "title": "社区插件雷达：12 个新项目",

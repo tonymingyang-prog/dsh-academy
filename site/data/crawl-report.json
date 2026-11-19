@@ -1,40 +1,40 @@
 {
-  "lastRun": "2026-11-16T10:17:58.439Z",
-  "nextRun": "2026-11-19T03:00:00.000Z",
+  "lastRun": "2026-11-19T10:51:00.623Z",
+  "nextRun": "2026-11-22T03:00:00.000Z",
   "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
-  "durationMs": 2946,
+  "durationMs": 2984,
   "status": "ok",
-  "version": "0.2.2-rc.1",
-  "previousVersion": null,
+  "version": "0.2.2-rc.5",
+  "previousVersion": "0.2.2-rc.1",
   "docPages": 96,
   "docCategories": 19,
-  "pluginTotal": 31808,
-  "newEvents": 1,
-  "totalEvents": 21,
+  "pluginTotal": 32842,
+  "newEvents": 4,
+  "totalEvents": 25,
   "sources": [
     {
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 398,
+      "ms": 256,
       "http": 200,
       "items": 1,
-      "note": "v0.2.2-rc.1 · 3 个 tag"
+      "note": "v0.2.2-rc.5 · 3 个 tag"
     },
     {
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 354,
+      "ms": 446,
       "http": 200,
       "items": 10,
-      "note": "10 条 · 新增 0"
+      "note": "10 条 · 新增 2"
     },
     {
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 1360,
+      "ms": 1579,
       "http": 200,
       "items": 96,
       "note": "96 页 · 更新 0 · 新增 0"
@@ -43,7 +43,7 @@
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 177,
+      "ms": 190,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -52,13 +52,28 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 394,
+      "ms": 493,
       "http": 200,
       "items": 12,
-      "note": "31808 个插件 · 最近更新 12"
+      "note": "32842 个插件 · 最近更新 12"
     }
   ],
   "changes": [
+    {
+      "type": "release",
+      "title": "npm 发布 @deepseek-ai/dsh 0.2.2-rc.5",
+      "url": "https://www.npmjs.com/package/@deepseek-ai/dsh/v/0.2.2-rc.5"
+    },
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.5",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.5"
+    },
+    {
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.4",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.4"
+    },
     {
       "type": "community",
       "title": "社区插件雷达：12 个新项目",
@@ -75,25 +90,25 @@
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 398,
+      "ms": 256,
       "http": 200,
       "items": 1,
-      "note": "v0.2.2-rc.1 · 3 个 tag"
+      "note": "v0.2.2-rc.5 · 3 个 tag"
     },
     {
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 354,
+      "ms": 446,
       "http": 200,
       "items": 10,
-      "note": "10 条 · 新增 0"
+      "note": "10 条 · 新增 2"
     },
     {
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 1360,
+      "ms": 1579,
       "http": 200,
       "items": 96,
       "note": "96 页 · 更新 0 · 新增 0"
@@ -102,7 +117,7 @@
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 177,
+      "ms": 190,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -111,20 +126,59 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 394,
+      "ms": 493,
       "http": 200,
       "items": 12,
-      "note": "31808 个插件 · 最近更新 12"
+      "note": "32842 个插件 · 最近更新 12"
     }
   ],
   "additions": [
     {
-      "id": "plugins-2026-11-16-384c51",
+      "id": "npm-0.2.2-rc.5",
+      "type": "release",
+      "title": "npm 发布 @deepseek-ai/dsh 0.2.2-rc.5",
+      "url": "https://www.npmjs.com/package/@deepseek-ai/dsh/v/0.2.2-rc.5",
+      "date": "2026-11-19T10:51:00.000Z",
+      "summary": "dsh CLI: profile launch, plugin management, and configuration inspection",
+      "tags": [
+        "npm",
+        "latest"
+      ],
+      "source": "npm Registry"
+    },
+    {
+      "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.5",
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.5",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.5",
+      "date": "2026-11-18T12:51:39Z",
+      "summary": "中文 | English 。 体验优化。 DeepSeek 模型使用 DeepSeek 服务端搜索，搜索不按次收费；其他模型默认使用 DeepSeek Search API。 @LegGasai 。 Improvements。 DeepSeek models use DeepSeek server-side search with no per-search charge; other models default to DeepSeek Search API. by @LegGasai 。 Full Change",
+      "tags": [
+        "release",
+        "预发布"
+      ],
+      "source": "GitHub Releases"
+    },
+    {
+      "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.2-rc.4",
+      "type": "release",
+      "title": "GitHub Release · v0.2.2-rc.4",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.4",
+      "date": "2026-11-17T17:53:41Z",
+      "summary": "中文 | English 。 问题修复。 优化模型请求收到异常消息响应时的表现。 @turtle2099 。 修复 LiveShare 在桌面端无法创建分享的问题。 @mektpoy 。 Bug Fixes。 Improve handling of unexpected model responses. by @turtle2099 。 Fix LiveShare failing to create shares in the desktop app. by @mektpoy 。 Full Changelog: d",
+      "tags": [
+        "release",
+        "预发布"
+      ],
+      "source": "GitHub Releases"
+    },
+    {
+      "id": "plugins-2026-11-19-45849e",
       "type": "community",
       "title": "社区插件雷达：12 个新项目",
       "url": "https://github.com/topics/dsh-plugin",
-      "date": "2026-11-16T10:17:58.439Z",
-      "summary": "smitfire/team、smitfire/board、smitfire/cuga、polza-ai/dsh-plugin-polza",
+      "date": "2026-11-19T10:51:00.623Z",
+      "summary": "madsouris/dsh-figcraft、kejixiaoliang/awesome-dsh-plugins、ccch1mneyyy/dsh-Go、Only-Xwaisw/dsh-archive-manager",
       "tags": [
         "社区",
         "插件"
