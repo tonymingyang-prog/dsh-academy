@@ -1,5 +1,31 @@
 [
   {
+    "id": "plugins-2026-11-22-5582c2",
+    "type": "community",
+    "title": "社区插件雷达：10 个新项目",
+    "url": "https://github.com/topics/dsh-plugin",
+    "date": "2026-11-22T10:27:20.359Z",
+    "summary": "baolongzhanshenNo1/workflow-kit、saylordevs/dsh-plugin-deepseek-orca、Dushiqi1987/dsh-sweeper、saylordevs/dsh-plugin-theme-packs",
+    "tags": [
+      "社区",
+      "插件"
+    ],
+    "source": "GitHub Topics"
+  },
+  {
+    "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.3-alpha.1",
+    "type": "release",
+    "title": "GitHub Release · v0.2.3-alpha.1",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.1",
+    "date": "2026-11-22T06:40:15Z",
+    "summary": "中文 | English 。 新增功能。 插件市场支持添加 Git 仓库作为插件来源，私有仓库中的插件也能浏览和安装。 @acehinnnqru 。 新增实验性时间线插件，可查看智能体任务树、阻塞事项和进展报告，点击进度条可展开任务树，任务与报告语言可选跟随对话。 @Magolor 。 新增代码审阅页面，可集中查看本人相关的 GitHub PR，浏览描述和变更，并在页内与智能体协作审阅。 @LegGasai 。 代码审阅插件新增扩展机制，插件可添加自己的审阅视图和行注解，并在工具栏、文件菜单和评论框中加入自定义操作",
+    "tags": [
+      "release",
+      "预发布"
+    ],
+    "source": "GitHub Releases"
+  },
+  {
     "id": "plugins-2026-11-19-45849e",
     "type": "community",
     "title": "社区插件雷达：12 个新项目",
