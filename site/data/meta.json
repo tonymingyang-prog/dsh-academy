@@ -1,22 +1,22 @@
 {
-  "lastRun": "2026-11-22T10:27:20.359Z",
-  "nextRun": "2026-11-25T03:00:00.000Z",
+  "lastRun": "2026-11-25T11:50:37.321Z",
+  "nextRun": "2026-11-28T03:00:00.000Z",
   "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
-  "durationMs": 1585,
+  "durationMs": 2249,
   "status": "ok",
   "version": "0.2.2-rc.5",
   "previousVersion": "0.2.2-rc.1",
   "docPages": 96,
   "docCategories": 19,
-  "pluginTotal": 33775,
+  "pluginTotal": 34746,
   "newEvents": 2,
-  "totalEvents": 27,
+  "totalEvents": 29,
   "sources": [
     {
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 231,
+      "ms": 216,
       "http": 200,
       "items": 1,
       "note": "v0.2.2-rc.5 · 3 个 tag"
@@ -25,7 +25,7 @@
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 234,
+      "ms": 283,
       "http": 200,
       "items": 10,
       "note": "10 条 · 新增 1"
@@ -34,7 +34,7 @@
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 447,
+      "ms": 1007,
       "http": 200,
       "items": 96,
       "note": "96 页 · 更新 0 · 新增 0"
@@ -43,7 +43,7 @@
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 130,
+      "ms": 223,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -52,21 +52,21 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 348,
+      "ms": 493,
       "http": 200,
       "items": 12,
-      "note": "33775 个插件 · 最近更新 12"
+      "note": "34746 个插件 · 最近更新 12"
     }
   ],
   "changes": [
     {
       "type": "release",
-      "title": "GitHub Release · v0.2.3-alpha.1",
-      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.1"
+      "title": "GitHub Release · v0.2.3-alpha.2",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.2"
     },
     {
       "type": "community",
-      "title": "社区插件雷达：10 个新项目",
+      "title": "社区插件雷达：12 个新项目",
       "url": "https://github.com/topics/dsh-plugin"
     }
   ],

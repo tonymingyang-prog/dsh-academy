@@ -1,5 +1,31 @@
 [
   {
+    "id": "plugins-2026-11-25-2352e8",
+    "type": "community",
+    "title": "社区插件雷达：12 个新项目",
+    "url": "https://github.com/topics/dsh-plugin",
+    "date": "2026-11-25T11:50:37.321Z",
+    "summary": "xiaozou-second/dsh-context-orb、morluto/rea、ikevss/dsh-tencent-meeting、furkancak1r/dsh-composer-plus",
+    "tags": [
+      "社区",
+      "插件"
+    ],
+    "source": "GitHub Topics"
+  },
+  {
+    "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.3-alpha.2",
+    "type": "release",
+    "title": "GitHub Release · v0.2.3-alpha.2",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.2",
+    "date": "2026-11-22T11:00:39Z",
+    "summary": "中文 | English 。 其他变更。 调整 Node.js 版本要求为 24.22.3，26.13.1 及以上版本。 @imccyu 。 Chores。 DSH now requires Node.js 24.22.3 or later in the 24.x series, or 26.13.1 or later. by @imccyu 。 Full Changelog: dsh-v0.2.3-alpha.1...dsh-v0.2.3-alpha.2 。",
+    "tags": [
+      "release",
+      "预发布"
+    ],
+    "source": "GitHub Releases"
+  },
+  {
     "id": "plugins-2026-11-22-5582c2",
     "type": "community",
     "title": "社区插件雷达：10 个新项目",
