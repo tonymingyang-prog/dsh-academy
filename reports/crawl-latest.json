@@ -1,22 +1,22 @@
 {
-  "lastRun": "2026-11-25T11:50:37.321Z",
-  "nextRun": "2026-11-28T03:00:00.000Z",
+  "lastRun": "2026-11-28T11:01:25.688Z",
+  "nextRun": "2026-12-01T03:00:00.000Z",
   "schedule": "每 3 天 03:00（本机计划任务）/ GitHub Actions cron",
-  "durationMs": 2249,
+  "durationMs": 2447,
   "status": "ok",
   "version": "0.2.2-rc.5",
   "previousVersion": "0.2.2-rc.1",
   "docPages": 96,
   "docCategories": 19,
-  "pluginTotal": 34746,
-  "newEvents": 2,
-  "totalEvents": 29,
+  "pluginTotal": 35559,
+  "newEvents": 1,
+  "totalEvents": 30,
   "sources": [
     {
       "id": "npm",
       "name": "npm Registry",
       "status": "ok",
-      "ms": 216,
+      "ms": 211,
       "http": 200,
       "items": 1,
       "note": "v0.2.2-rc.5 · 3 个 tag"
@@ -25,16 +25,16 @@
       "id": "releases",
       "name": "GitHub Releases",
       "status": "ok",
-      "ms": 283,
+      "ms": 475,
       "http": 200,
       "items": 10,
-      "note": "10 条 · 新增 1"
+      "note": "10 条 · 新增 0"
     },
     {
       "id": "docs",
       "name": "官方文档",
       "status": "ok",
-      "ms": 1007,
+      "ms": 1061,
       "http": 200,
       "items": 96,
       "note": "96 页 · 更新 0 · 新增 0"
@@ -43,7 +43,7 @@
       "id": "community",
       "name": "社区议题",
       "status": "ok",
-      "ms": 223,
+      "ms": 177,
       "http": 200,
       "items": 0,
       "note": "0 个议题 · 最近 0 条"
@@ -52,21 +52,16 @@
       "id": "plugins",
       "name": "社区插件",
       "status": "ok",
-      "ms": 493,
+      "ms": 452,
       "http": 200,
       "items": 12,
-      "note": "34746 个插件 · 最近更新 12"
+      "note": "35559 个插件 · 最近更新 12"
     }
   ],
   "changes": [
     {
-      "type": "release",
-      "title": "GitHub Release · v0.2.3-alpha.2",
-      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.2"
-    },
-    {
       "type": "community",
-      "title": "社区插件雷达：12 个新项目",
+      "title": "社区插件雷达：11 个新项目",
       "url": "https://github.com/topics/dsh-plugin"
     }
   ],
@@ -77,25 +72,12 @@
   },
   "additions": [
     {
-      "id": "gh-tag:github.com,2008:Repository/1333065091/dsh-v0.2.3-alpha.2",
-      "type": "release",
-      "title": "GitHub Release · v0.2.3-alpha.2",
-      "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.3-alpha.2",
-      "date": "2026-11-22T11:00:39Z",
-      "summary": "中文 | English 。 其他变更。 调整 Node.js 版本要求为 24.22.3，26.13.1 及以上版本。 @imccyu 。 Chores。 DSH now requires Node.js 24.22.3 or later in the 24.x series, or 26.13.1 or later. by @imccyu 。 Full Changelog: dsh-v0.2.3-alpha.1...dsh-v0.2.3-alpha.2 。",
-      "tags": [
-        "release",
-        "预发布"
-      ],
-      "source": "GitHub Releases"
-    },
-    {
-      "id": "plugins-2026-11-25-2352e8",
+      "id": "plugins-2026-11-28-3cb798",
       "type": "community",
-      "title": "社区插件雷达：12 个新项目",
+      "title": "社区插件雷达：11 个新项目",
       "url": "https://github.com/topics/dsh-plugin",
-      "date": "2026-11-25T11:50:37.321Z",
-      "summary": "xiaozou-second/dsh-context-orb、morluto/rea、ikevss/dsh-tencent-meeting、furkancak1r/dsh-composer-plus",
+      "date": "2026-11-28T11:01:25.688Z",
+      "summary": "kejixiaoliang/awesome-dsh-plugins、Asheblog/antigravity-dsh-bridge、kikokikoTHU/dsh-issue-tree、chtchenhaitao/dsh-shiguan-memory",
       "tags": [
         "社区",
         "插件"
